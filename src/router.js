@@ -12,7 +12,7 @@ const router = new Router({
      {
          path: '/',
          component: Home
-     }
+     },
  ]
 });
 
