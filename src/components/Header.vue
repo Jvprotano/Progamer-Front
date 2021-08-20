@@ -1,72 +1,41 @@
 <template>
-    <div id="menu">
- <nav id="menu-h">
-        <ul>
-            <li><router-link id="paginaHome" to="/">Home</router-link></li>
-
-            <li><input type="text" id="pesquisa" placeholder="Faça sua pesquisa"><button>Pesquisar</button></li>
-            
-            <li><router-link to="/">Sobre</router-link></li>
-
-            <li><router-link to="/cadastrar">Cadastre-se</router-link></li>
-
-            <li><router-link to="/">Quem somos</router-link></li>
-
-            <li><a href="#" id="botLogin">Entrar</a></li>
-        </ul>
+  <div id="menu">
+    <nav id="menu-h">
+      <b-row>
+        <b-col> <router-link id="pageHome" to="/">Home</router-link></b-col>
+        <b-col>
+          <b-input-group size="sm" class="barsearch">
+            <b-input-group-prepend is-text>
+              <b-icon icon="search"></b-icon>
+            </b-input-group-prepend>
+            <b-form-input type="search" placeholder="Buscar"></b-form-input>
+          </b-input-group>
+        </b-col>
+        <b-col><router-link to="/register">Cadastre-se</router-link></b-col>
+        <b-col><router-link to="/">Quem somos</router-link></b-col>
+        <b-col><router-link to="/">Entrar</router-link></b-col>
+      </b-row>
     </nav>
-    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Menu',
-}
+  name: "Menu",
+};
 </script>
 
 <style scoped>
-#formulario {
-  background-color: #fff;
-  margin: 0;
-  text-align: center;
+#menu-h {
+  background-color: #533784;
+  padding: 14px;
 }
-#menu-h{
-  background-color:#533784;
-}
-#menu-h ul {
-    list-style: none;
-    padding: 0;
-    margin-block: 0;
-}
-#menu-h ul li {
-    display: inline;
 
+#pageHome {
+  float: left;
 }
-#menu-h ul li a {
-    color: #FFF;
-    padding: 25px;
-    display: inline-block;
-    text-decoration: none;
-    transition: background .5s;
-}
-#menu-h ul li a:hover {
-    background-color: #0F0C1D;
 
-}
-#menu-h ul li:last-child a {
-    float: right;
-    background-color: #6a5ca1;
-}
-#pesquisa{
-    padding: 0 15px;
-    border: 10px;
-    border-radius: 3px;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 16px;
-
-}
-#paginaHome{
-    float: left;
+.barsearch {
+  background-color: wheat;
 }
 </style>
