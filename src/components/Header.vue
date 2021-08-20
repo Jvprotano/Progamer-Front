@@ -1,4 +1,5 @@
 <template>
+<<<<<<< Updated upstream
     <div id="menu">
   <head>
     <meta charset="UTF-8">
@@ -17,17 +18,37 @@
             <li><a href="#">Quem Somos</a></li>
 
             <li><a href="#">Contato</a></li>
+=======
+  <div id="menu">
+    <nav id="menu-h">
+      <ul>
+        <li><router-link id="paginaHome" to="/">Home</router-link></li>
 
-            <li><a href="#" id="botLogin">Entrar</a></li>
-        </ul>
+        <li>
+          <input
+            type="text"
+            id="pesquisa"
+            placeholder="Faça sua pesquisa"
+          /><button>Pesquisar</button>
+        </li>
+
+        <li><router-link to="/">Sobre</router-link></li>
+
+        <li><router-link to="/cadastrar">Cadastre-se</router-link></li>
+>>>>>>> Stashed changes
+
+        <li><router-link to="/">Quem somos</router-link></li>
+
+        <li><a href="#" id="botLogin">Entrar</a></li>
+      </ul>
     </nav>
-    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Menu',
-}
+  name: "Menu",
+};
 </script>
 
 <style >
@@ -36,46 +57,66 @@ export default {
   margin: 0;
   text-align: center;
 }
+<<<<<<< Updated upstream
 #menu-h{
     background-color:#533784;
 }
 #menu-h ul {
     list-style: none;
     padding: 0;
+=======
+#menu-h {
+  background-color: #533784;
+}
+#menu-h ul {
+  list-style: none;
+  padding: 0;
+  margin-block: 0;
+>>>>>>> Stashed changes
 }
 #menu-h ul li {
-    display: inline;
-
+  display: inline;
 }
 #menu-h ul li a {
+<<<<<<< Updated upstream
     color: #FFF;
     padding: 25px;
     display: inline-block;
     text-decoration: none;
     transition: background .5s;
     font-family: OpenSans,;
+=======
+  color: #fff;
+  padding: 25px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background 0.5s;
+>>>>>>> Stashed changes
 }
 #menu-h ul li a:hover {
-    background-color: #0F0C1D;
-
+  background-color: #0f0c1d;
+  
 }
 #menu-h ul li:last-child a {
-    float: right;
-    background-color: #6a5ca1;
+  float: right;
+  background-color: #6a5ca1;
 }
-#pesquisa{
-    padding: 0 15px;
-    border: 10px;
-    border-radius: 3px;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 16px;
-
+#pesquisa {
+  padding: 0 15px;
+  border: 10px;
+  border-radius: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 16px;
 }
-#paginaHome{
-    float: left;
+#paginaHome {
+  float: left;
 }
+<<<<<<< Updated upstream
 input{
     flex:1;
 }
 </style>
+=======
+</style>
+>>>>>>> Stashed changes
