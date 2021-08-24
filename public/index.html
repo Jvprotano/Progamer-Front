@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <style>
@@ -13,14 +16,28 @@
       body {
         font-family: "Open Sans", sans-serif;
         color: #2c3e50;
-        background-color: #0F0C1D !important;
+        background-color: #0f0c1d !important;
         margin: 0px;
       }
-      a:link {
+      a {
         text-decoration: none !important;
+        color: #fff !important;
       }
-      a:hover{
-        text-decoration: underline !important;
+      a:hover {
+        text-decoration: none !important;
+        color: #a970ff !important;
+      }
+
+      .d-flex {
+        display: flex;
+      }
+
+      .cursor-pointer {
+        cursor: pointer;
+      }
+
+      .mb-0 {
+        margin-bottom: 0rem;
       }
     </style>
   </head>

@@ -2,18 +2,29 @@
   <div id="menu">
     <nav id="menu-h">
       <b-row>
-        <b-col> <router-link id="pageHome" to="/">Home</router-link></b-col>
+        <b-col class="home">
+          <router-link id="pageHome" to="/home">
+            <b-row>
+              <b-col class="div-logo" cols="6"><img class="logo mg-0" src="../assents/game-console.png" /></b-col>
+              <b-col class="div-home" cols="6"><h5 class="mb-0">ProGamer</h5></b-col>
+            </b-row>
+          </router-link>
+        </b-col>
         <b-col>
-          <b-input-group size="sm" class="barsearch">
+          <b-input-group size="sm" class="bar-search">
             <b-input-group-prepend is-text>
-              <b-icon icon="search"></b-icon>
+              <div class="cursor-pointer">
+                <b-icon icon="search"></b-icon>
+              </div>
             </b-input-group-prepend>
             <b-form-input type="search" placeholder="Buscar"></b-form-input>
           </b-input-group>
         </b-col>
-        <b-col><router-link to="/register">Cadastre-se</router-link></b-col>
-        <b-col><router-link to="/">Quem somos</router-link></b-col>
-        <b-col><router-link to="/">Entrar</router-link></b-col>
+        <b-col class="login">
+          <router-link id="pageLogin" to="/login"
+            ><div class="mb-0">Entrar</div></router-link
+          >
+        </b-col>
       </b-row>
     </nav>
   </div>
@@ -28,6 +39,7 @@ export default {
 <style scoped>
 #menu-h {
   background-color: #533784;
+  color: #fff !important;
   padding: 14px;
 }
 
@@ -35,7 +47,38 @@ export default {
   float: left;
 }
 
-.barsearch {
-  background-color: wheat;
+.bar-search {
+  font-family: "Open Sans", sans-serif;
+  width: 380px !important;
+}
+
+.login {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.home {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 500;
+  margin-left: 15px;
+}
+
+.logo {
+  width: 38px;
+}
+
+.div-logo {
+  padding-right: 0;
+}
+
+.div-home {
+  align-items: center;
+  display: flex;
+  padding-left: 0;
 }
 </style>
