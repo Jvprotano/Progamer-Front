@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
 #home{
     display: flex;
   justify-content: center;
