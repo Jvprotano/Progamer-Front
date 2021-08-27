@@ -3,12 +3,6 @@
     <b-container class="info-main">
       <b-row>
         <b-col cols="6">
-          <!-- <b-card
-              class="img-fluid"
-              img-src="https://revista-images.querobolsa.com.br/revista/post_images/14993/8b0c620256405b6b2705b140391800b1d8a501da.png?1550093429"
-              img-alt="Card image"
-            >
-            </b-card> -->
           <img
             class="figure-img img-fluid rounded"
             src="https://revista-images.querobolsa.com.br/revista/post_images/14993/8b0c620256405b6b2705b140391800b1d8a501da.png?1550093429"
@@ -25,74 +19,234 @@
             <h6>Categoria</h6>
           </b-row>
           <b-row>
-            <b-form-rating class="rating" inline value v-model="value" readonly precision="1" show-value></b-form-rating>
+            <b-form-rating
+              class="rating"
+              inline
+              value
+              v-model="value"
+              readonly
+              precision="1"
+              show-value
+            ></b-form-rating>
           </b-row>
           <b-row>
-            <b-col class="cost">
-            <h4>Valor R$</h4>
+            <b-col class="price">
+              <h4>Valor R$</h4>
             </b-col>
             <b-col class="buy">
-            <b-button variant="outline-primary">Comprar</b-button>
+              <b-button>Comprar</b-button>
             </b-col>
           </b-row>
         </b-col>
       </b-row>
-      </b-container>
-      <b-container class="description" >
+    </b-container>
+    <b-container class="description">
       <b-row>
         <b-col>
           <h4>Descrição</h4>
-          <p>Esse curso é muito legal, voce vai aprender a dar varias balas nos nubs e nerdolas!!!
-            Esse curso é muito legal, voce vai aprender a dar varias balas nos nubs e nerdolas!!!
-            Esse curso é muito legal, voce vai aprender a dar varias balas nos nubs e nerdolas!!!
-            Esse curso é muito legal, voce vai aprender a dar varias balas nos nubs e nerdolas!!!
+          <p>
+            Esse curso é muito legal, voce vai aprender a dar varias balas nos
+            nubs e nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
+            varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
+            vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
+            muito legal, voce vai aprender a dar varias balas nos nubs e
+            nerdolas!!!
+            Esse curso é muito legal, voce vai aprender a dar varias balas nos
+            nubs e nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
+            varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
+            vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
+            muito legal, voce vai aprender a dar varias balas nos nubs e
+            nerdolas!!!
+            Esse curso é muito legal, voce vai aprender a dar varias balas nos
+            nubs e nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
+            varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
+            vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
+            muito legal, voce vai aprender a dar varias balas nos nubs e
+            nerdolas!!!
+            Esse curso é muito legal, voce vai aprender a dar varias balas nos
+            nubs e nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
+            varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
+            vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
+            muito legal, voce vai aprender a dar varias balas nos nubs e
+            nerdolas!!!
           </p>
         </b-col>
       </b-row>
-      </b-container>
+    </b-container>
+    <b-container class="comments-ratings">
+      <b-row>
+        <b-col>
+          <h4>Comentários e avaliações</h4>
+          <b-row>
+            <b-form-rating
+              class="rating"
+              inline
+              value
+              v-model="value_comment"
+              readonly
+              precision="1"
+            ></b-form-rating>
+          </b-row>
+          <p>
+            Esse curso é muito legal, dei muita bala nos nerdolas hehe.
+          </p>
+          <b-row>
+            <b-form-rating
+              class="rating"
+              inline
+              value
+              v-model="value_comment"
+              readonly
+              precision="1"
+            ></b-form-rating>
+          </b-row>
+          <p>
+            O professor é muite gente boa.
+          </p>
+          <b-row>
+            <b-form-rating
+              class="rating"
+              inline
+              value
+              v-model="value_comment"
+              readonly
+              precision="1"
+            ></b-form-rating>
+          </b-row>
+          <p>
+            Depois desse curso eu virei profissional, recomendo muito.
+          </p>
+          <b-row>
+            <b-form-rating
+              class="rating"
+              inline
+              value
+              v-model="value_comment"
+              readonly
+              precision="1"
+            ></b-form-rating>
+          </b-row>
+          <p>
+            Eu achei q sabia pouco, mas deepois q assisti a esse curso, percebi que sabia mais que o professor. !@#@!#@@
+          </p>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-      return {
-        value: 3.5
-      }
-    }
+    return {
+      value: 3.5,
+      value_comment: 4.0,
+    };
+  },
 };
 </script>
 
 <style>
-/* .img-curso {
-  width: 200px;
-  height: 100px;
-  margin-bottom: 40%;
-} */
-
-.info-main{
-  color:  #fff;
-  border:solid 0.5px;
+.info-main {
+  color: #fff;
   border-radius: 10px;
-  background-color: #141434;
-  box-shadow: #141434;
+  background-color: #4a3a86;
   margin-top: 30px;
+  padding: 30px !important;
 }
 .text-side {
   color: #fff;
 }
 
-.rating {
+/* .rating {
   background-color: #0f0c1d;
-}
+} */
 
-.description{
-  color:  #fff;
-  border:solid 0.5px;
-  border-radius: 10px;
-  background-color: #141434;
-  box-shadow: #141434;
+.description {
+  color: #fff;
+  border-radius: 10px; 
+  background-color: #4a3a86;
   margin-top: 30px;
+  padding: 30px !important;
 }
 
+.info-main {
+  margin-top: 2%;
+}
+
+.figure-img{
+  margin-top: 2%;
+  border: solid 0.5px;
+
+}
+
+.title{
+  margin-top: 2% !important;
+  padding-left: 1px;
+}
+
+.b-rating-star{
+  color: #ffff00;
+  border: none;
+}
+
+.b-rating-value{
+  color: #fff;
+}
+
+.category{
+  padding-left: 2px;
+}
+
+.instructor-name{
+  padding-left: 2px;
+}
+
+.price{
+  margin-top: 20% !important;
+  padding-left: 2px;
+  padding-top: 10px;
+}
+
+.buy{
+  margin-top: 20% !important;
+  padding-left: 2px;
+  text-align: center !important;
+  border: none !important;
+}
+
+
+.btn{
+  background-color: #533784 !important;
+  color: #fff !important;
+  width: 200px;
+  height: 60px;
+  font-weight: bold !important;
+  /* border: none !important;  */
+  border-color: #f7f7f7 !important;
+
+}
+
+.btn:hover{
+  background-color: #530d69 !important;
+  
+}
+
+.btn:active{
+  border: none !important;
+}
+
+.form-control{
+  background-color: #4a3a86 !important;
+  border: none !important;
+}
+
+.comments-ratings{
+  color: #fff;
+  border-radius: 10px; 
+  background-color: #4a3a86;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 30px !important;
+}
 </style>
