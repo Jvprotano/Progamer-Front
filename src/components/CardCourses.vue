@@ -1,7 +1,32 @@
 <template>
   <div class="container">
        <b-row>
-      <b-col sm="3">
+         <hr>
+<h1>Jogos em alta</h1>
+<hr>
+<b-col sm="4">
+        <b-card-group deck>
+          <b-card
+            title="Title"
+            img-src="https://s2.glbimg.com/ps1kBYBuji6g04QRr8OKLdOoSNQ=/0x0:695x434/924x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2016/11/25/gta-v-leak-image-1.jpg"
+            img-alt="Image"
+            img-top
+          >
+          </b-card>
+        </b-card-group>
+      </b-col>
+      <b-col sm="4">
+        <b-card-group deck>
+          <b-card
+            title="Title"
+            img-src="https://s2.glbimg.com/ps1kBYBuji6g04QRr8OKLdOoSNQ=/0x0:695x434/924x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2016/11/25/gta-v-leak-image-1.jpg"
+            img-alt="Image"
+            img-top
+          >
+          </b-card>
+        </b-card-group>
+      </b-col>
+      <b-col sm="4">
         <b-card-group deck>
           <b-card
             title="Title"
@@ -12,7 +37,7 @@
           </b-card>
         </b-card-group>
       </b-col>
-       <b-col sm="3">
+       <b-col sm="4">
         <b-card-group deck>
           <b-card
             title="Title"
@@ -24,7 +49,7 @@
         </b-card-group>
       </b-col>
       
-      <b-col sm="3">
+      <b-col sm="4">
         <b-card-group deck>
           <b-card
             title="Title"
@@ -35,7 +60,7 @@
           </b-card>
         </b-card-group>
       </b-col>
-      <b-col sm="3">
+      <b-col sm="4">
         <b-card-group deck>
           <b-card
             title="Title"
@@ -51,7 +76,7 @@
 <h1>Cursos</h1>
 <hr>
        <b-row>
-      <b-col sm="3">
+      <b-col sm="4">
         <b-card-group deck>
           <b-card
             title="Title"
@@ -62,7 +87,7 @@
           </b-card>
         </b-card-group>
       </b-col>
-       <b-col sm="3">
+       <b-col sm="4">
         <b-card-group deck>
           <b-card
             title="Title"
@@ -74,7 +99,7 @@
         </b-card-group>
       </b-col>
       
-      <b-col sm="3">
+      <b-col sm="4">
         <b-card-group deck>
           <b-card
             title="Title"
@@ -85,7 +110,29 @@
           </b-card>
         </b-card-group>
       </b-col>
-      <b-col sm="3">
+      <b-col sm="4">
+        <b-card-group deck>
+          <b-card
+            title="Title"
+            img-src="https://s2.glbimg.com/ps1kBYBuji6g04QRr8OKLdOoSNQ=/0x0:695x434/924x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2016/11/25/gta-v-leak-image-1.jpg"
+            img-alt="Image"
+            img-top
+          >
+          </b-card>
+        </b-card-group>
+      </b-col>
+      <b-col sm="4">
+        <b-card-group deck>
+          <b-card
+            title="Title"
+            img-src="https://s2.glbimg.com/ps1kBYBuji6g04QRr8OKLdOoSNQ=/0x0:695x434/924x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2016/11/25/gta-v-leak-image-1.jpg"
+            img-alt="Image"
+            img-top
+          >
+          </b-card>
+        </b-card-group>
+      </b-col>
+      <b-col sm="4">
         <b-card-group deck>
           <b-card
             title="Title"
@@ -106,11 +153,23 @@ export default {};
 </script>
 
 <style>
-.card-deck {
-  width: 200px;
-  height: 100px;
-  margin-bottom: 40%;
-  margin-left: 24%;
-  margin-top: 16%;
+.card-deck{
+ max-width: 300px;
+ max-height: 300px;
+  padding: 5px;
+  
 }
+
+
+.card-img-top{
+  overflow: hidden;
+    
+}
+.glide__slides{
+max-width: 100%;
+    max-height: 100%;
+  
+}
+
+
 </style>
