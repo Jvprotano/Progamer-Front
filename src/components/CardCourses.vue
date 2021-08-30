@@ -1,175 +1,139 @@
 <template>
-  <div class="container">
-       <b-row>
-         <hr>
-<h1>Jogos em alta</h1>
-<hr>
-<b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://s2.glbimg.com/ps1kBYBuji6g04QRr8OKLdOoSNQ=/0x0:695x434/924x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2016/11/25/gta-v-leak-image-1.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-      <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://s2.glbimg.com/ps1kBYBuji6g04QRr8OKLdOoSNQ=/0x0:695x434/924x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2016/11/25/gta-v-leak-image-1.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-      <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://s2.glbimg.com/M0ll8r3w3WsiRLLroy5xJaK4A5c=/0x0:1656x915/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/N/j/3cZcm6Qf6TxFIAW0nMNg/como-baixar-valorant-de-graca-the-squad.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-       <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://s2.glbimg.com/M0ll8r3w3WsiRLLroy5xJaK4A5c=/0x0:1656x915/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/N/j/3cZcm6Qf6TxFIAW0nMNg/como-baixar-valorant-de-graca-the-squad.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-      
-      <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://midias.jb.com.br/_midias/jpg/2021/03/11/csgo-586394.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-      <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://s2.glbimg.com/ps1kBYBuji6g04QRr8OKLdOoSNQ=/0x0:695x434/924x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2016/11/25/gta-v-leak-image-1.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-    </b-row>
-<hr>
-<h1>Cursos</h1>
-<hr>
-       <b-row>
-      <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://s2.glbimg.com/M0ll8r3w3WsiRLLroy5xJaK4A5c=/0x0:1656x915/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/N/j/3cZcm6Qf6TxFIAW0nMNg/como-baixar-valorant-de-graca-the-squad.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-       <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://s2.glbimg.com/M0ll8r3w3WsiRLLroy5xJaK4A5c=/0x0:1656x915/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/N/j/3cZcm6Qf6TxFIAW0nMNg/como-baixar-valorant-de-graca-the-squad.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-      
-      <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://midias.jb.com.br/_midias/jpg/2021/03/11/csgo-586394.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-      <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://s2.glbimg.com/ps1kBYBuji6g04QRr8OKLdOoSNQ=/0x0:695x434/924x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2016/11/25/gta-v-leak-image-1.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-      <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://s2.glbimg.com/ps1kBYBuji6g04QRr8OKLdOoSNQ=/0x0:695x434/924x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2016/11/25/gta-v-leak-image-1.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-      <b-col sm="4">
-        <b-card-group deck>
-          <b-card
-            title="Title"
-            img-src="https://s2.glbimg.com/ps1kBYBuji6g04QRr8OKLdOoSNQ=/0x0:695x434/924x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2016/11/25/gta-v-leak-image-1.jpg"
-            img-alt="Image"
-            img-top
-          >
-          </b-card>
-        </b-card-group>
-      </b-col>
-    </b-row>
-  
-  </div>
+  <b-container class="bv-example-row">
+    <b-row>
+      <b-col sm="3">
+  <b-card-group deck>
+    <b-card title="Title" img-src="https://i.ytimg.com/vi/O8KkJvpz2xc/maxresdefault.jpg" img-alt="Image" img-top>
+      <b-card-text>
+        This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.
+      </b-card-text>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
+
+  </b-card-group>
+</b-col>
+<b-col sm="3">
+  <b-card-group deck>
+    <b-card title="Title" img-src="https://s2.glbimg.com/USoUR0oDveQ_AVGUQtwoa1gdx68=/0x0:1280x960/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/s/e/BU7M0zTY2bKdjLAKBtkw/counter-strike-global-offensive-screenshot-2021.02.08-14.54.58.88.png" img-alt="Image" img-top>
+      <b-card-text>
+        This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.
+      </b-card-text>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
+
+  </b-card-group>
+</b-col>
+<b-col sm="3">
+  <b-card-group deck>
+    <b-card title="Title" img-src="https://theclutch.com.br/wp-content/uploads/2021/03/csgo-capa-cts.jpg" img-alt="Image" img-top>
+      <b-card-text>
+        This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.
+      </b-card-text>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
+
+  </b-card-group>
+</b-col>
+<b-col sm="3">
+  <b-card-group deck>
+    <b-card title="Title" img-src="https://mundoconectado.com.br/uploads/chamadas/cs_go_chamada.jpg" img-alt="Image" img-top>
+      <b-card-text>
+        This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.
+      </b-card-text>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
+
+  </b-card-group>
+</b-col>
+</b-row>
+ <b-row>
+      <b-col sm="3">
+  <b-card-group deck>
+    <b-card title="Title" img-src="https://i.ytimg.com/vi/O8KkJvpz2xc/maxresdefault.jpg" img-alt="Image" img-top>
+      <b-card-text>
+        This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.
+      </b-card-text>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
+
+  </b-card-group>
+</b-col>
+<b-col sm="3">
+  <b-card-group deck>
+    <b-card title="Title" img-src="https://s2.glbimg.com/USoUR0oDveQ_AVGUQtwoa1gdx68=/0x0:1280x960/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/s/e/BU7M0zTY2bKdjLAKBtkw/counter-strike-global-offensive-screenshot-2021.02.08-14.54.58.88.png" img-alt="Image" img-top>
+      <b-card-text>
+        This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.
+      </b-card-text>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
+
+  </b-card-group>
+</b-col>
+<b-col sm="3">
+  <b-card-group deck>
+    <b-card title="Title" img-src="https://theclutch.com.br/wp-content/uploads/2021/03/csgo-capa-cts.jpg" img-alt="Image" img-top>
+      <b-card-text>
+        This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.
+      </b-card-text>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
+
+  </b-card-group>
+</b-col>
+<b-col sm="3">
+  <b-card-group deck>
+    <b-card title="Title" img-src="https://mundoconectado.com.br/uploads/chamadas/cs_go_chamada.jpg" img-alt="Image" img-top>
+      <b-card-text>
+        This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.
+      </b-card-text>
+      <template #footer>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </template>
+    </b-card>
+
+  </b-card-group>
+</b-col>
+</b-row>
+
+
+</b-container>
 </template>
 
 <script>
-export default {};
+export default {
+
+}
 </script>
 
 <style>
-.card-deck{
- max-width: 300px;
- max-height: 300px;
-  padding: 5px;
-  
+img {
+  height: 300px;
+  width: 300px;
 }
-
-
-.card-img-top{
-  overflow: hidden;
-    
+.row{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.glide__slides{
-max-width: 100%;
-    max-height: 100%;
-  
-}
-
-
 </style>
