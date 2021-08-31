@@ -20,6 +20,7 @@
           </b-row>
           <b-row>
             <b-form-rating
+              id="rating-main"
               class="rating"
               inline
               value
@@ -50,23 +51,21 @@
             varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
             vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
             muito legal, voce vai aprender a dar varias balas nos nubs e
-            nerdolas!!!
-            Esse curso é muito legal, voce vai aprender a dar varias balas nos
-            nubs e nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
-            varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
-            vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
+            nerdolas!!! Esse curso é muito legal, voce vai aprender a dar varias
+            balas nos nubs e nerdolas!!! Esse curso é muito legal, voce vai
+            aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
             muito legal, voce vai aprender a dar varias balas nos nubs e
-            nerdolas!!!
-            Esse curso é muito legal, voce vai aprender a dar varias balas nos
-            nubs e nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
-            varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
-            vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
+            nerdolas!!! Esse curso é muito legal, voce vai aprender a dar varias
+            balas nos nubs e nerdolas!!! Esse curso é muito legal, voce vai
+            aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
             muito legal, voce vai aprender a dar varias balas nos nubs e
-            nerdolas!!!
-            Esse curso é muito legal, voce vai aprender a dar varias balas nos
-            nubs e nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
-            varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
-            vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
+            nerdolas!!! Esse curso é muito legal, voce vai aprender a dar varias
+            balas nos nubs e nerdolas!!! Esse curso é muito legal, voce vai
+            aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
+            muito legal, voce vai aprender a dar varias balas nos nubs e
+            nerdolas!!! Esse curso é muito legal, voce vai aprender a dar varias
+            balas nos nubs e nerdolas!!! Esse curso é muito legal, voce vai
+            aprender a dar varias balas nos nubs e nerdolas!!! Esse curso é
             muito legal, voce vai aprender a dar varias balas nos nubs e
             nerdolas!!!
           </p>
@@ -76,9 +75,12 @@
     <b-container class="comments-ratings">
       <b-row>
         <b-col>
-          <h4>Comentários e avaliações</h4>
+          <h4 class="title-cr">Comentários e avaliações</h4>
           <b-row>
-            <b-form-rating
+            <h6>Lucas França</h6>
+          </b-row>
+          <b-row>
+            <b-form-rating id="rating-main"
               class="rating"
               inline
               value
@@ -87,11 +89,14 @@
               precision="1"
             ></b-form-rating>
           </b-row>
-          <p>
+          <p class="comment">
             Esse curso é muito legal, dei muita bala nos nerdolas hehe.
           </p>
           <b-row>
-            <b-form-rating
+            <h6>Lucas Nakasima</h6>
+          </b-row>
+          <b-row>
+            <b-form-rating id="rating-main"
               class="rating"
               inline
               value
@@ -100,11 +105,14 @@
               precision="1"
             ></b-form-rating>
           </b-row>
-          <p>
-            O professor é muite gente boa.
+          <p class="comment">
+            O professor é muito gente boa.
           </p>
           <b-row>
-            <b-form-rating
+            <h6>Gustavo Sumi</h6>
+          </b-row>
+          <b-row>
+            <b-form-rating id="rating-main"
               class="rating"
               inline
               value
@@ -113,11 +121,14 @@
               precision="1"
             ></b-form-rating>
           </b-row>
-          <p>
+          <p class="comment">
             Depois desse curso eu virei profissional, recomendo muito.
           </p>
           <b-row>
-            <b-form-rating
+            <h6>Gustavo Boroski</h6>
+          </b-row>
+          <b-row>
+            <b-form-rating id="rating-main"
               class="rating"
               inline
               value
@@ -126,8 +137,9 @@
               precision="1"
             ></b-form-rating>
           </b-row>
-          <p>
-            Eu achei q sabia pouco, mas deepois q assisti a esse curso, percebi que sabia mais que o professor. !@#@!#@@
+          <p class="comment">
+            Eu achei q sabia pouco, mas deepois q assisti a esse curso, percebi
+            que sabia mais que o professor. !@#@!#@@
           </p>
         </b-col>
       </b-row>
@@ -148,105 +160,111 @@ export default {
 
 <style>
 .info-main {
-  color: #fff;
+  color: #666 !important;
   border-radius: 10px;
-  background-color: #4a3a86;
+  background-color: #f7f7f8;
   margin-top: 30px;
   padding: 30px !important;
+  box-shadow: 0 0 40px rgb(0 0 0 / 20%);
 }
-.text-side {
-  color: #fff;
-}
-
-/* .rating {
-  background-color: #0f0c1d;
-} */
 
 .description {
   color: #fff;
-  border-radius: 10px; 
-  background-color: #4a3a86;
+  border-radius: 10px;
+  background-color: #533784;
   margin-top: 30px;
   padding: 30px !important;
+  box-shadow: 0 0 40px rgb(0 0 0 / 20%);
 }
 
 .info-main {
   margin-top: 2%;
 }
 
-.figure-img{
+.figure-img {
   margin-top: 2%;
   border: solid 0.5px;
-
 }
 
-.title{
+.title {
   margin-top: 2% !important;
   padding-left: 1px;
 }
 
-.b-rating-star{
+.b-rating-star {
   color: #ffff00;
   border: none;
 }
 
-.b-rating-value{
+.b-rating-value {
   color: #fff;
 }
 
-.category{
+.category {
   padding-left: 2px;
 }
 
-.instructor-name{
+.instructor-name {
   padding-left: 2px;
 }
 
-.price{
+.price {
   margin-top: 20% !important;
   padding-left: 2px;
   padding-top: 10px;
 }
 
-.buy{
+.buy {
   margin-top: 20% !important;
   padding-left: 2px;
   text-align: center !important;
   border: none !important;
 }
 
-
-.btn{
+.btn {
   background-color: #533784 !important;
   color: #fff !important;
   width: 200px;
   height: 60px;
   font-weight: bold !important;
-  /* border: none !important;  */
   border-color: #f7f7f7 !important;
-
+  box-shadow: 0 0 40px rgb(0 0 0 / 20%);
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #530d69 !important;
-  
 }
 
-.btn:active{
+.btn:active {
   border: none !important;
 }
 
-.form-control{
-  background-color: #4a3a86 !important;
+.form-control {
+  background-color: #533784 !important;
   border: none !important;
 }
 
-.comments-ratings{
+.comments-ratings {
   color: #fff;
-  border-radius: 10px; 
-  background-color: #4a3a86;
+  border-radius: 10px;
+  background-color: #533784;
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 30px !important;
+  box-shadow: 0 0 40px rgb(0 0 0 / 20%);
+
+}
+
+#rating-main {
+  background-color: #533784 !important;
+  pointer-events: none;
+}
+
+.comment{
+  padding-bottom: 15px;
+}
+
+.title-cr{
+  padding-bottom: 10px;
 }
 </style>
