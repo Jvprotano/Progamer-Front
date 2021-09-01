@@ -6,8 +6,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import VueGlide from 'vue-glide-js'
-import 'vue-glide-js/dist/vue-glide.css'
+
 import { BCarousel } from 'bootstrap-vue'
 Vue.component('b-carousel', BCarousel)
 
@@ -16,13 +15,6 @@ import 'vueperslides/dist/vueperslides.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 Vue.use(VueAwesomeSwiper)
-import VueSplide from '@splidejs/vue-splide';
-
-Vue.use( VueSplide );
-
-Vue.use(VueGlide)
-
-
 
 import Carousel3d from 'vue-carousel-3d';
 Vue.use(VueperSlides,VueperSlide)

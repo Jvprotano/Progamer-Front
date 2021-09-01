@@ -1,5 +1,7 @@
 <template>
+
   <b-container class="bv-example-row">
+    
     <hr />
     <h1>Jogos em destaque</h1>
     <hr />
@@ -149,9 +151,10 @@ export default {};
 img {
   box-shadow: 0 0 40px rgb(0 0 0 / 15%);
   height: 300px;
-  object-fit: cover;
+  object-fit: cover !important;
   border-radius: 10px !important;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
+    width: 100% !important;
 }
 .row {
   margin-top: 10px;
