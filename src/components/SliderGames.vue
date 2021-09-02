@@ -91,6 +91,8 @@ img {
   object-fit: cover !important;
   box-sizing: border-box !important;
     width: 100% !important;
+    margin: 1px black !important;
+    border: solid !important;
 }
 .row {
   margin-top: 10px !important;

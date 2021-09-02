@@ -64,7 +64,7 @@ const slides = [
   {
     title: 'Slide 10',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, maxime.',
-    src: 'https://placehold.it/360x270'
+    src: 'https://media.contentapi.ea.com/content/dam/apex-legends/images/2021/07/apex-legends-emergence-patch-notes-thumbnail.jpg.adapt.crop191x100.628p.jpg'
   },
 ]
 
@@ -109,7 +109,6 @@ export default {
 </script>
 
 <style scoped>
-
 img {
   box-shadow: 0 0 40px rgb(0 0 0 / 15%) !important;
   height: 300px;
@@ -117,10 +116,13 @@ img {
   box-sizing: border-box !important;
     width: 100% !important;
     height: 80%;
-    margin: 10px black !important;
+    margin: 1px black !important;
+    border: solid !important;
+
 }
 .carousel-3d-slide {
     background-color:#FFF;
 }
+
 
 </style>

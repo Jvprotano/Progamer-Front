@@ -106,6 +106,7 @@ img {
   object-fit: cover !important;
   box-sizing: border-box !important;
     width: 100% !important;
+    
 }
 .row {
   margin-top: 10px !important;
