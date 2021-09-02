@@ -3,12 +3,14 @@
     <Header/>
     <CoursesList/>
     <CardCourses/>
+    <FeaturedGames/>
     
     <router-view/>
   </div>
 </template>
 
 <script>
+import FeaturedGames from './components/FeaturedGames'
 import Header from './components/Header'
 import CoursesList from './components/CoursesList'
 import CardCourses from './components/CardCourses'
@@ -19,6 +21,7 @@ export default {
     Header,
     CardCourses,
     CoursesList,
+    FeaturedGames,
 
   }
 }
