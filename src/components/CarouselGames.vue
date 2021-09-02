@@ -4,9 +4,11 @@
 
     <carousel-3d :controls-visible="true" :space="400" >
       <slide v-for="(slide, i) in slides" :index="i" :key="i">
+        <router-link to="curso">
         <b-card class="card-carousel">
           <img class="image-carousel" :src="slide.src" />
         </b-card>
+        </router-link>
       </slide>
     </carousel-3d>
   </div>

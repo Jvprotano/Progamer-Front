@@ -3,7 +3,9 @@
       <h3>Jogos em destaque</h3>
       <carousel-3d :disable3d="true" :space="370" :clickable="false" :controls-visible="true" :loop="false">
         <slide v-for="(slide, i) in slides" :index="i" :key="i">
+          <router-link to="/curso">
           <img :src="slide.src">
+          </router-link>
         </slide>
       </carousel-3d>
        
