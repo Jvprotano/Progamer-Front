@@ -5,17 +5,25 @@
         <li><a href="#"><b-button id="historicoFinanceiro" variant="light" size="lg" style="margin-top: -10px; border: 5px solid rgb(0,0,0)">Histórico Financeiro</b-button></a></li>
         <li><a href="#"><b-button id="minhasVendas" variant="light" size="lg" style="margin-top: -10px; border: 5px solid rgb(0,0,0)">Minhas Vendas</b-button></a></li>
     </ul>
+    <SolicitacaoCurso/>
 </div>
 </template>
 
 <script>
-export default {}
+import SolicitacaoCurso from '../components/SolicitacaoCurso.vue'
+
+export default {
+  name: 'PageInstrutor',
+  components:{
+    SolicitacaoCurso,
+  }
+}
 </script>
 
 <style>
 #home-i{
     width: 1325px; 
-    height: 80px; 
+    height: 1300px; 
     background-color: rgb(122, 117, 117); 
     margin-top: -16px;
     padding: 20px;
