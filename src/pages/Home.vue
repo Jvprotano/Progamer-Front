@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style >
-#home{
+/* #home{
     display: flex;
   justify-content: center;
   align-items: center;
@@ -21,5 +21,5 @@ export default {
   background-color: aqua;
   font-family:Arial;
   color:#fff; 
-}
+} */
 </style>
