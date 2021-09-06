@@ -3,9 +3,21 @@
       <h3>Cursos em destaque</h3>
       <carousel-3d :disable3d="true" :space="370" :clickable="false" :controls-visible="true" :loop="false">
         <slide v-for="(slide, i) in slides" :index="i" :key="i">
-          <router-link to="curso">
+          <router-link to="curso" id="buttonCourse">
           <img :src="slide.src">
-          <h1>oi</h1>
+          <b-container class="bv-example-row">
+         <b-row>
+          <h4>CURSO DE ALGUMA COISA</h4>
+          </b-row> 
+          <b-row>
+            <b-col-sm-6> 
+          <h5>Lucas </h5>
+            </b-col-sm-6>
+          <b-col-sm-6>
+          <p>Curso de alguma coisa</p>
+          </b-col-sm-6>
+         </b-row>
+          </b-container>
           </router-link>
   
         </slide>
@@ -117,14 +129,19 @@ img {
   object-fit: cover !important;
   box-sizing: border-box !important;
     width: 100% !important;
-    height: 80%;
+    height: 68%;
     margin: 1px black !important;
     border: solid !important;
 
 }
 .carousel-3d-slide {
-    background-color:#FFF;
+    background-color: #af48;
 }
-
-
+ #buttonCourse{
+    text-decoration: none;
+    color: black;
+ }
+h3 {
+   margin-left: 30px;
+ }
 </style>

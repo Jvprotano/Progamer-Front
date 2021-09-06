@@ -108,7 +108,7 @@ img {
   object-fit: cover !important;
   box-sizing: border-box !important;
     width: 100% !important;
-    
+    height: 100% !important;
 }
 .row {
   margin-top: 10px !important;
@@ -122,26 +122,37 @@ img {
   object-fit: cover;
   border-radius: 10px !important;
   box-sizing: border-box;
-  
+ height: 450px !important;
+
 }
 .carousel-3d-slider {
   box-shadow: 0 0 40px rgb(0 0 0 / 15%);
-  height: 300px;
+  height: 500px;
   object-fit: cover;
   border-radius: 10px !important;
   box-sizing: border-box;
+
+}
+.carousel-3d-slide{
+
+height: 440px !important;
 }
 .card-carousel {
   margin: 0px !important;
+
 }
 
 .card-body {
   padding: 0px;
   box-shadow: 0 0 40px rgb(0 0 0 / 15%);
+  height: 500px;
+ 
 
   object-fit: cover;
   border-radius: 10px !important;
   box-sizing: border-box;
 }
-
+h3 {
+   margin-left: 30px;
+ }
 </style>
