@@ -4,9 +4,22 @@
     <div id="fundo-branco"></div>
     <div id="fundo-roxo"></div>
     <strong><h1>Olá alunos!</h1></strong>
-    <h1>OOPA!</h1>
-
-    <b-button id="teste">INSTRUTOR</b-button>
+    <br>
+    <br>
+    <br>
+    <h1>Para acessar essa tela,<br>
+    é necessário ser um...</h1>
+    <br>
+    <b-button id="teste" 
+    style="
+        font-size: 30px !important;
+        color: white; 
+        background-color: #533784; 
+        border: black;
+        border-width: 0px;
+        border-radius: 100px;
+        border-style: solid;
+    ">INSTRUTOR</b-button>
     <b-popover target="teste" triggers="hover" placement="down">
         <template v-slot:title>O que se ganha com isso?</template>
         <ul>
@@ -15,7 +28,34 @@
             <li>TESTE3</li>
         </ul>
     </b-popover>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Clique no botão abaixo para<br>
+     iniciar essa nova jorganda!!</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <li><a href="#">
+            <b-button id="cursoInstrutor" 
+                variant="light" 
+                size="lg" 
+                style="
+                    font-size: 40px !important;
+                    margin-top: -10px; 
+                    border: 5px solid rgb(0,0,0)
+                    border: black;
+                    border-width: 0px;
+                    border-radius: 100px;
+                    border-style: solid;">
+                Cursos Instruidos
+            </b-button>
+        </a>
+    </li>
 </div>
 </template>
 
@@ -27,7 +67,7 @@ export default {
 
 <style>
 #solic-i h1 {
-    color: black;
+    color: white;
 }
 #fundo-preto {
     width: 1289px;
