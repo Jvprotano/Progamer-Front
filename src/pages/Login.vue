@@ -38,11 +38,11 @@
 
           <div></div>
         </b-col>
-        <b-col cols="6">
+        <!-- <b-col cols="6">
           <router-link id="forgot" to="/forgot">
             <p class="forgot">Esqueceu sua senha?</p>
           </router-link>
-        </b-col>
+        </b-col> -->
       </b-row>
       <b-row class="btn-login">
         <b-button>Entrar</b-button>
@@ -76,8 +76,8 @@ export default {
   width: 400px;
   height: 400px;
   margin: auto;
-  background-color: #0f0c1d;
-  color: #fff;
+  background-color: #f7f7f8;
+  color: #0e0e10;
   border-radius: 10px;
   border: solid 0.5px;
 }
@@ -117,7 +117,7 @@ a:hover {
 }
 
 .btn {
-  background-color: #a970ff !important;
+  background-color: #8351dc !important;
   color: #fff !important;
   font-weight: bold !important;
   width: 200px !important;
@@ -132,12 +132,17 @@ a:hover {
 }
 
 .btn:hover {
-  background-color: #530d69 !important;
+  background-color: #772ce8 !important;
 }
 
 .register{
   text-align: center;
   margin-top: 34px !important;
+  color: #FFF;
+}
+
+.login-main{
+  padding: 35px !important;
 }
 
 
