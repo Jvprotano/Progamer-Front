@@ -160,7 +160,7 @@ export default {
 
 <style>
 .info-main {
-  color: #666 !important;
+  color: #0e0e10 !important;
   border-radius: 10px;
   background-color: #f7f7f8;
   margin-top: 30px;
@@ -169,9 +169,9 @@ export default {
 }
 
 .description {
-  color: #fff;
+  color: #0e0e10;
   border-radius: 10px;
-  background-color: #533784;
+  background-color: #f7f7f8;
   margin-top: 30px;
   padding: 30px !important;
   box-shadow: 0 0 40px rgb(0 0 0 / 20%);
@@ -192,12 +192,12 @@ export default {
 }
 
 .b-rating-star {
-  color: #ffff00;
+  color: /* #ffc400;  */#ffd900;
   border: none;
 }
 
 .b-rating-value {
-  color: #fff;
+  color: #0e0e10;
 }
 
 .category {
@@ -222,7 +222,7 @@ export default {
 }
 
 .btn {
-  background-color: #533784 !important;
+  background-color: #8351dc !important;
   color: #fff !important;
   width: 200px;
   height: 60px;
@@ -232,7 +232,7 @@ export default {
 }
 
 .btn:hover {
-  background-color: #530d69 !important;
+  background-color: #772ce8 !important;
 }
 
 .btn:active {
@@ -240,14 +240,14 @@ export default {
 }
 
 .form-control {
-  background-color: #533784 !important;
+  background-color: #8351dc !important;
   border: none !important;
 }
 
 .comments-ratings {
-  color: #fff;
+  color: #0e0e10;
   border-radius: 10px;
-  background-color: #533784;
+  background-color: #f7f7f8;
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 30px !important;
@@ -256,7 +256,7 @@ export default {
 }
 
 #rating-main {
-  background-color: #533784 !important;
+  background-color: #f7f7f8 !important;
   pointer-events: none;
 }
 
