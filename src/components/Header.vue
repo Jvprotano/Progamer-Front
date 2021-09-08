@@ -1,81 +1,84 @@
 <template>
-    <div id="menu">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Horizontal</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
- <nav id="menu-h">
-        <ul>
-            <li><a href="#" id="paginaHome">Home</a></li>
-
-            <li><input type="text" id="pesquisa" placeholder="Pesquisar"></li>
-
-            <li><a href="#">Sobre</a></li>
-
-            <li><a href="#">Quem Somos</a></li>
-
-            <li><a href="#">Contato</a></li>
-
-            <li><a href="#" id="botLogin">Entrar</a></li>
-        </ul>
+  <div id="menu">
+    <nav id="menu-h">
+      <b-row>
+        <b-col class="home">
+          <router-link id="pageHome" to="/home">
+            <b-row>
+              <b-col class="div-logo" cols="6"><img class="logo mg-0" src="../assents/game-console.png" /></b-col>
+              <b-col class="div-home" cols="6"><h5 class="mb-0">ProGamer</h5></b-col>
+            </b-row>
+          </router-link>
+        </b-col>
+        <b-col>
+          <b-input-group size="sm" class="bar-search">
+            <b-input-group-prepend is-text>
+              <div class="cursor-pointer">
+                <b-icon icon="search"></b-icon>
+              </div>
+            </b-input-group-prepend>
+            <b-form-input type="search" placeholder="Buscar"></b-form-input>
+          </b-input-group>
+        </b-col>
+        <b-col class="login">
+          <router-link id="pageLogin" to="/login"
+            ><div class="mb-0">Entrar</div></router-link
+          >
+        </b-col>
+      </b-row>
     </nav>
-    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Menu',
-}
+  name: "Menu",
+};
 </script>
 
-<style >
-#formulario {
-  background-color: #fff;
-  margin: 0;
-  text-align: center;
+<style scoped>
+#menu-h {
+  background-color: #533784;
+  color: #fff !important;
+  padding: 14px;
 }
-#menu-h{
-    background-color:#533784;
-}
-#menu-h ul {
-    list-style: none;
-    padding: 0;
-}
-#menu-h ul li {
-    display: inline;
 
+#pageHome {
+  float: left;
 }
-#menu-h ul li a {
-    color: #FFF;
-    padding: 25px;
-    display: inline-block;
-    text-decoration: none;
-    transition: background .5s;
-    font-family: OpenSans,;
-}
-#menu-h ul li a:hover {
-    background-color: #0F0C1D;
 
+.bar-search {
+  font-family: "Open Sans", sans-serif;
+  width: 380px !important;
 }
-#menu-h ul li:last-child a {
-    float: right;
-    background-color: #6a5ca1;
-}
-#pesquisa{
-    padding: 0 15px;
-    border: 10px;
-    border-radius: 3px;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 16px;
 
+.login {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 500;
+  margin-right: 15px;
 }
-#paginaHome{
-    float: left;
+
+.home {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 500;
+  margin-left: 15px;
 }
-input{
-    flex:1;
+
+.logo {
+  width: 38px;
+}
+
+.div-logo {
+  padding-right: 0;
+}
+
+.div-home {
+  align-items: center;
+  display: flex;
+  padding-left: 0;
 }
 </style>
