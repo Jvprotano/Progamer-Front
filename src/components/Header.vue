@@ -41,6 +41,11 @@ export default {
   background-color: #533784;
   color: #fff !important;
   padding: 14px;
+  }
+#formulario {
+  background-color: #fff;
+  margin: 0;
+  text-align: center;
 }
 
 #pageHome {
