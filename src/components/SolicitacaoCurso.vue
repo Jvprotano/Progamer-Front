@@ -6,7 +6,6 @@
     <strong><h1>Olá alunos!</h1></strong>
     <br>
     <br>
-    <br>
     <h1>Para acessar essa tela,<br>
     é necessário ser um...</h1>
     <br>
@@ -18,8 +17,8 @@
         border: black;
         border-width: 0px;
         border-radius: 100px;
-        border-style: solid;
-    ">INSTRUTOR</b-button>
+        border-style: solid;">
+        INSTRUTOR</b-button>
     <b-popover target="teste" triggers="hover" placement="down">
         <template v-slot:title>O que se ganha com isso?</template>
         <ul>
@@ -87,14 +86,14 @@ export default {
     border-radius: 50px;
 }
 #solic-i strong h1{
-    margin-top: -970px;
+    margin-top: -780px;
     text-align: center; 
     font-size: 80px;
     color: white;
 }
 #fundo-roxo{
     width: 626px;
-    height: 1000px;
+    height: 800px;
     background-color: #533784;
     margin-left: 313px;
     margin-top: -1100px;

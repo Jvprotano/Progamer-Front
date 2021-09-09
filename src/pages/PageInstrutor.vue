@@ -1,7 +1,7 @@
 <template>
 <div id="home-i">
     <ul>
-        <li><a href="#"><b-button id="cursoInstrutor" variant="light" size="lg" style="margin-top: -10px; border: 5px solid rgb(0,0,0)">Cursos Instruidos</b-button></a></li>
+        <li><a href="#"><b-button id="cursoInstrutor" variant="light" size="lg" style="outline: none !important;margin-top: -10px; border: 5px solid rgb(0,0,0)">Cursos Instruidos</b-button></a></li>
         <li><a href="#"><b-button id="historicoFinanceiro" variant="light" size="lg" style="margin-top: -10px; border: 5px solid rgb(0,0,0)">Histórico Financeiro</b-button></a></li>
         <li><a href="#"><b-button id="minhasVendas" variant="light" size="lg" style="margin-top: -10px; border: 5px solid rgb(0,0,0)">Minhas Vendas</b-button></a></li>
     </ul>
@@ -24,7 +24,7 @@ export default {
 #home-i{
     width: 1325px; 
     height: 1300px; 
-    background-color: rgb(122, 117, 117); 
+    background-color: #0F0C1D; 
     margin-top: -16px;
     padding: 20px;
 }
