@@ -135,11 +135,17 @@ img {
 
 }
 .carousel-3d-slide {
-    background-color: #af48;
+    background-color: #8351dc !important;
+    border-radius: 5px;
 }
  #buttonCourse{
-    text-decoration: none;
-    color: black;
+    
+    color: black !important;
+ }
+ #buttonCourse:hover {
+
+  color: #70ffc3 !important;
+  text-decoration: none !important;
  }
 h3 {
    margin-left: 30px;

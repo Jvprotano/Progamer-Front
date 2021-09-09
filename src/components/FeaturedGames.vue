@@ -135,7 +135,7 @@ img {
 
 }
 .carousel-3d-slide {
-    background-color: #af48;
+    background-color:beige;
 }
  #buttonCourse{
     text-decoration: none;

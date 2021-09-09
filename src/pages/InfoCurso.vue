@@ -264,6 +264,11 @@ export default {
   background-color: #f7f7f8 !important;
   pointer-events: none;
   border: none !important;
+  
+}
+
+.b-rating-value {
+  color: #772ce8;
 }
 
 .comment{
