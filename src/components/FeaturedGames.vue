@@ -3,7 +3,7 @@
       <h3>Cursos em destaque</h3>
       <carousel-3d :disable3d="true" :space="370" :clickable="false" :controls-visible="true" :loop="false">
         <slide v-for="(slide, i) in slides" :index="i" :key="i">
-          <router-link to="curso" id="buttonCourse">
+          <router-link to="info" id="buttonCourse">
           <img :src="slide.src">
           <b-container class="bv-example-row">
          <b-row>

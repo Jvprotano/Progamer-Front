@@ -18,15 +18,6 @@ components: {
 </script>
 
 <style>
-input{
-    flex:1;
-}
-
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
 
 
 

@@ -3,7 +3,7 @@
     <nav id="menu-h">
       <b-row>
         <b-col class="home">
-          <router-link id="pageHome" to="/home">
+          <router-link id="pageHome" to="/">
             <b-row>
               <b-col class="div-logo" cols="6"><img class="logo mg-0" src="../assents/game-console.png" /></b-col>
               <b-col class="div-home" cols="6"><h5 class="mb-0">ProGamer</h5></b-col>

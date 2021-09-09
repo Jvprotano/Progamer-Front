@@ -1,5 +1,7 @@
 <template>
+
   <div id="info-curso">
+    <Header />
     <b-container class="info-main">
       <b-row>
         <b-col cols="6">
@@ -148,6 +150,7 @@
 </template>
 
 <script>
+import Header from "../components/Header";
 export default {
   data() {
     return {
@@ -155,6 +158,9 @@ export default {
       value_comment: 4.0,
     };
   },
+  components: {
+    Header,
+  }
 };
 </script>
 
@@ -239,10 +245,9 @@ export default {
   border: none !important;
 }
 
-.form-control {
-  background-color: #8351dc !important;
+/* .form-control{
   border: none !important;
-}
+} */
 
 .comments-ratings {
   color: #0e0e10;
@@ -258,6 +263,7 @@ export default {
 #rating-main {
   background-color: #f7f7f8 !important;
   pointer-events: none;
+  border: none !important;
 }
 
 .comment{
