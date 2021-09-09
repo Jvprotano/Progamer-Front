@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import Home from './pages/Home';
 import InfoCurso from './pages/InfoCurso';
+import Login from './pages/Login';
 
 Vue.use(Router);
 
@@ -17,7 +18,11 @@ const router = new Router({
         path: '/info',
         component: InfoCurso
     },
-     
+     {
+        path: '/login',
+        component: Login
+
+    },
  ]
 });
 
