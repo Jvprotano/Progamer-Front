@@ -10,27 +10,12 @@
             </b-row>
           </router-link>
         </b-col>
-        <b-col>
-          <b-input-group size="sm" class="bar-search">
-            <b-input-group-prepend is-text>
-              <div class="cursor-pointer">
-                <b-icon icon="search"></b-icon>
-              </div>
-            </b-input-group-prepend>
-            <b-form-input type="search" placeholder="Buscar"></b-form-input>
-          </b-input-group>
-        </b-col>
-        <b-col class="login">
-          <router-link id="pageLogin" to="/login"
-            ><div class="mb-0 text-white">Entrar</div></router-link
-          >
-        </b-col>
       </b-row>
     </nav>
   </div>
 </template>
 
-<script>
+<script scoped>
 export default {
   name: "Menu",
 };

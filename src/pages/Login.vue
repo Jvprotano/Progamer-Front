@@ -1,4 +1,6 @@
 <template>
+<div id="components">
+      <Header2 />
   <div id="login">
     <b-container class="login-main">
       <b-row class="login-header">
@@ -56,9 +58,11 @@
       </b-row>
     </b-container>
   </div>
+</div>
 </template>
 
 <script>
+import Header2 from "../components/Header2";
 export default {
   data() {
     return {
@@ -67,10 +71,13 @@ export default {
       statuscb: "dont_remember",
     };
   },
+  components: {
+    Header2,
+},
 };
 </script>
 
-<style>
+<style scoped>
 #login {
   margin-top: 100px !important;
   width: 400px;

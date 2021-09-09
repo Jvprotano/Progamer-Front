@@ -25,7 +25,7 @@
     </div>
 </template>
 
-<script>
+<script scoped>
 import Carousel3d from "@/carousel-3d/Carousel3d";
 import Slide from "@/carousel-3d/Slide";
 
