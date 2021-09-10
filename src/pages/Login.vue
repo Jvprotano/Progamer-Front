@@ -1,7 +1,7 @@
 <template>
 <div id="components">
       <Header2 />
-  <div id="login">
+  <div id="login" class="cards">
     <b-container class="login-main">
       <b-row class="login-header">
         <h2>LOGIN</h2>
@@ -51,7 +51,7 @@
       </b-row>
       <b-row class="register">
         <p class="register">
-          Ainda não é membro?<router-link id="register" to="/register"
+          Ainda não é membro?<router-link id="register" to="/registerUser"
             > Clique aqui
           </router-link>
         </p>
@@ -82,11 +82,6 @@ export default {
   margin-top: 100px !important;
   width: 400px;
   height: 400px;
-  margin: auto;
-  background-color: #f7f7f8;
-  color: #0e0e10;
-  border-radius: 10px;
-  border: solid 0.5px;
 }
 
 .login-header {
