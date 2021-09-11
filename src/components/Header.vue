@@ -5,8 +5,12 @@
         <b-col class="home">
           <router-link id="pageHome" to="/">
             <b-row>
-              <b-col class="div-logo" cols="6"><img class="logo mg-0" src="../assents/game-console.png" /></b-col>
-              <b-col class="div-home" cols="6"><h5 class="mb-0">ProGamer</h5></b-col>
+              <b-col class="div-logo" cols="6"
+                ><img class="logo mg-0" src="../assents/game-console.png"
+              /></b-col>
+              <b-col class="div-home" cols="6"
+                ><h5 class="mb-0">ProGamer</h5></b-col
+              >
             </b-row>
           </router-link>
         </b-col>
@@ -41,7 +45,7 @@ export default {
   background-color: #533784;
   color: #fff !important;
   padding: 14px;
-  }
+}
 #formulario {
   background-color: #fff;
   margin: 0;
@@ -54,7 +58,7 @@ export default {
 
 .bar-search {
   font-family: "Open Sans", sans-serif;
-  width: 380px !important;
+  width: 100% !important;
 }
 
 .login {

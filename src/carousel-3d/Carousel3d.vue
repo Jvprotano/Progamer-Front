@@ -464,11 +464,11 @@ export default {
 <style scoped>
 .carousel-3d-container {
   min-height: 1px;
-  width: 100%;
+  width: 90%;
   position: relative;
   z-index: 0;
   overflow: hidden;
-  margin: 20px auto;
+  margin: 30px auto;
   box-sizing: border-box;
 }
 
@@ -478,7 +478,7 @@ export default {
   transform-style: preserve-3d;
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
 </style>
