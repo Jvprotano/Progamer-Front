@@ -2,7 +2,9 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Home from './pages/Home';
-import PageInstrutor from './pages/PageInstrutor';
+import CursoInstrutor from './pages/CursoInstrutor';
+import HistoricoFinanceiro from './pages/HistoricoFinanceiro';
+import MinhasVendas from './pages/MinhasVendas';
 
 Vue.use(Router);
 
@@ -14,8 +16,16 @@ const router = new Router({
          component: Home
      },
      {
-        path: '/pageInstrutor',
-        component: PageInstrutor
+        path: '/cursosInstrutor',
+        component: CursoInstrutor
+    },
+    {
+        path: '/historicoFinanceiro',
+        component: HistoricoFinanceiro
+    },
+    {
+        path: '/minhasVendas',
+        component: MinhasVendas
     }
  ]
 });
