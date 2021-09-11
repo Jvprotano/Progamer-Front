@@ -1,39 +1,38 @@
 <template>
 <div id="home-i">
-    <ul>
-        <li><a href="#"><b-button id="cursoInstrutor" variant="light" size="lg" style="outline: none !important;margin-top: -10px; border: 5px solid rgb(0,0,0)">Cursos Instruidos</b-button></a></li>
-        <li><a href="#"><b-button id="historicoFinanceiro" variant="light" size="lg" style="margin-top: -10px; border: 5px solid rgb(0,0,0)">Histórico Financeiro</b-button></a></li>
-        <li><a href="#"><b-button id="minhasVendas" variant="light" size="lg" style="margin-top: -10px; border: 5px solid rgb(0,0,0)">Minhas Vendas</b-button></a></li>
-    </ul>
-    <SolicitacaoCurso/>
+    <div class="container">
+        <div class="row">
+            <div>
+                <b-card title="Card Title" no-body>
+                    <b-card-header header-tag="nav">
+                        <b-nav card-header tabs>
+                            <b-nav-item active>Cursos instruidos</b-nav-item>
+                            <b-nav-item active>Histórico financeiro</b-nav-item>
+                            <b-nav-item active>Minhas vendas</b-nav-item>
+                        </b-nav>
+                    </b-card-header>
+
+                    <b-card-body class="text-center"><b-card-text>TESTE1</b-card-text></b-card-body>
+                </b-card>
+            </div>
+            <!-- <SolicitacaoCurso/> -->        
+        </div>
+    </div>
 </div>
 </template>
 
 <script>
-import SolicitacaoCurso from '../components/SolicitacaoCurso.vue'
+// import SolicitacaoCurso from '../components/SolicitacaoCurso.vue'
 
 export default {
   name: 'PageInstrutor',
-  components:{
-    SolicitacaoCurso,
-  }
+//   components:{
+//     SolicitacaoCurso,
+//   }
 }
 </script>
 
 <style>
-#home-i{
-    width: 1325px; 
-    height: 1300px; 
-    background-color: #0F0C1D; 
-    margin-top: -16px;
-    padding: 20px;
-}
-#home-i ul li {
-    margin-left: 10px;
-    margin-right: 10px;
-    display: inline;
-}
-#home-i ul li a:hover {
-    background-color: #0F0C1D !important;
-}
+
+
 </style>
