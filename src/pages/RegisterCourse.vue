@@ -59,6 +59,7 @@
           </b-col>
         </b-row>
         <b-row>
+          
         <p>Duração</p>
       
         <b-form-group id="input-group-2" label-for="input-2">

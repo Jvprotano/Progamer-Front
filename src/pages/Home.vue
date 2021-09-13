@@ -4,14 +4,14 @@
     <Header />
     <CarouselGames />
     <SliderGames />
-    <FeaturedGames />
+    <SliderGames />
 
     <router-view />
   </div>
 </template>
 
 <script>
-import FeaturedGames from "../components/FeaturedGames";
+/*import FeaturedGames from "../components/FeaturedGames";*/
 import Header from "../components/Header";
 import CarouselGames from "../components/CarouselGames";
 import SliderGames from "../components/SliderGames";
@@ -23,7 +23,7 @@ export default {
     Header,
     SliderGames,
     CarouselGames,
-    FeaturedGames,
+    /*FeaturedGames,*/
   },
 };
 </script>

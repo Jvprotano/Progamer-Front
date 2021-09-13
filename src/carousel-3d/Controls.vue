@@ -71,9 +71,9 @@ export default {
   width: 60px;
   position: absolute;
   z-index: 1010;
-  font-size: 60px;
+  font-size: 90px;
   height: 60px;
-  line-height: 60px;
+  line-height: 0px !important;
   color: #333;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -85,7 +85,12 @@ export default {
 
 .next:hover, .prev:hover {
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 0.5;
+  text-decoration: none !important;
+ 
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .prev {

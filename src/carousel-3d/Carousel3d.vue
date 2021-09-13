@@ -464,7 +464,7 @@ export default {
 <style scoped>
 .carousel-3d-container {
   min-height: 1px;
-  width: 90%;
+  width: 93%;
   position: relative;
   z-index: 0;
   overflow: hidden;

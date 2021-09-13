@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <h3>Pro gamer</h3>
+
 
     <carousel-3d :controls-visible="true" :space="400">
       <slide v-for="(slide, i) in slides" :index="i" :key="i">
@@ -118,6 +118,7 @@ img {
 }
 
 .carousel-3d-container {
+  padding: 5px;
   box-shadow: 0 0 40px rgb(0 0 0 / 95%);
   height: 300px;
   object-fit: cover;

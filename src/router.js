@@ -20,12 +20,21 @@ const router = new Router({
     },
      {
         path: '/login',
-        component: Login
-
+        component: Login,
+    
     },
     {
         path: '/registercourse',
-        component: RegisterCourse
+        component: RegisterCourse,
+        /*Apenas exemplo para bloquear rotas...*/ 
+        beforeEnter: (to, from, next) => {
+            if (!localStorage.getItem("token")) {
+              next("/login");
+            } else {
+              next();
+            }
+
+    }
     },
  ]
 });
