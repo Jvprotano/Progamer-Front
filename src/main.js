@@ -4,7 +4,9 @@ import router from './router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import VueFormulate from '@braid/vue-formulate'
 
+Vue.use(VueFormulate)
 
 import { BCarousel } from 'bootstrap-vue'
 Vue.component('b-carousel', BCarousel)

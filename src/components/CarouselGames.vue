@@ -1,7 +1,5 @@
 <template>
   <div class="box">
-
-
     <carousel-3d :controls-visible="true" :space="400">
       <slide v-for="(slide, i) in slides" :index="i" :key="i">
         <router-link to="curso" id="carousel">
@@ -136,23 +134,19 @@ img {
 .carousel-3d-slide {
   height: 440px !important;
   border-width: 0px !important;
-   box-shadow: 0 0 40px rgb(0 0 0 / 25%) !important;
-   border-radius: 4px !important;
-
+  box-shadow: 0 0 40px rgb(0 0 0 / 25%) !important;
+  border-radius: 4px !important;
 }
 .card-carousel {
   margin: 0px !important;
 }
 .card {
   border: 0px !important;
-
 }
 
 .card-body {
   padding: 0px;
-
   height: 500px;
-
   object-fit: cover;
   border-radius: 10px !important;
   box-sizing: border-box;

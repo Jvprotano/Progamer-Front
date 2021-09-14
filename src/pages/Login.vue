@@ -33,7 +33,7 @@
             value="remember"
             unchecked-value="dont_remember"
           >
-            Lembre-se de mim
+               Lembre-se de mim
           </b-form-checkbox>
 
           <div></div>
@@ -70,13 +70,14 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #login {
   margin-top: 100px !important;
-  width: 400px;
-  height: 400px;
+  width: 400px !important;
+  height: 400px !important;
+
   margin: auto;
-  background-color: #f7f7f8;
+  background-color: #f7f7f8 !important;
   color: #0e0e10;
   border-radius: 10px;
   border: solid 0.5px;
@@ -143,6 +144,9 @@ a:hover {
 
 .login-main{
   padding: 35px !important;
+}
+.label {
+  display: inline-flexbox !important;
 }
 
 

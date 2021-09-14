@@ -153,7 +153,7 @@ img {
   box-sizing: border-box !important;
   width: 100% !important;
   height: 60%;
- 
+
   border: solid !important;
 }
 .carousel-3d-slider {
@@ -163,10 +163,10 @@ img {
 .carousel-3d-container {
   padding: 10px !important;
   height: 400px !important;
- box-shadow: 0 0 40px rgb(0 0 0 / 95%) !important;
+  box-shadow: 0 0 40px rgb(0 0 0 / 95%) !important;
 }
 .carousel-3d-slide {
- background-color: #0f0c1d;
+  background-color: #0f0c1d;
   height: 140% !important;
 }
 #buttonCourse {
@@ -175,9 +175,8 @@ img {
 }
 #buttonCourse:hover {
   color: #533784 !important;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: black;
-  
 }
 h3 {
   margin-left: 7%;
