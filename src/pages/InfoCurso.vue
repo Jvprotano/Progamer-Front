@@ -20,6 +20,9 @@
             <b-row class="category">
               <h6>Categoria</h6>
             </b-row>
+            <b-row class="duration">
+              <h6>Duração</h6>
+            </b-row>
             <b-row>
               <b-form-rating
                 id="rating-main"
@@ -214,6 +217,10 @@ export default {
 }
 
 .category {
+  padding-left: 2px;
+}
+
+.duration {
   padding-left: 2px;
 }
 

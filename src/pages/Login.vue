@@ -79,7 +79,7 @@ export default {
 
 <style scoped>
 #login {
-  margin-top: 100px !important;
+  margin-top: 5% !important;
   width: 400px;
   height: 400px;
 }
@@ -115,8 +115,10 @@ a:hover {
 }
 
 .custom-control-label {
-  margin-left: 3px;
+  display: none !important;
+  margin-left: 5px !important;
 }
+
 
 .btn {
   background-color: #8351dc !important;
@@ -125,6 +127,7 @@ a:hover {
   width: 200px !important;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 30px !important;
   border-radius: 10px;
 }
