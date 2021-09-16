@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import InfoCurso from './pages/InfoCurso';
 import Login from './pages/Login';
 import RegisterCourse from './pages/RegisterCourse'
+import Teste from './pages/Teste'
 Vue.use(Router);
 
 const router = new Router({
@@ -22,6 +23,10 @@ const router = new Router({
         path: '/login',
         component: Login,
     
+    },
+    {
+      path: '/teste',
+      component: Teste,
     },
     {
         path: '/registercourse',

@@ -228,13 +228,8 @@ export default {
 }
 
 .btn {
-  background-color: #8351dc !important;
-  color: #fff !important;
   width: 200px;
   height: 60px;
-  font-weight: bold !important;
-  border-color: #f7f7f7 !important;
-  box-shadow: 0 0 40px rgb(0 0 0 / 20%);
 }
 
 .btn:hover {

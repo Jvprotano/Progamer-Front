@@ -157,19 +157,16 @@ img {
 .carousel-3d-slide {
   background-color: #8351dc;
   box-shadow: 0 0 40px rgb(0 0 0 / 65%) !important;
-  height:100% !important;
+  height: 100% !important;
 }
 #buttonCourse {
   text-decoration: none !important;
   color: black;
 }
 #buttonCourse:hover {
-  
   color: white !important;
   font-size: 1.2em;
   color: black;
-  
-  
 }
 h3 {
   margin-left: 7%;

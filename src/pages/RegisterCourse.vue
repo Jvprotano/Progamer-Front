@@ -1,122 +1,169 @@
 <template>
-
-<div id="register"> 
+<div class="app">
   <Header />
-  <div id="titulo">
-    <h1>Seja um instrutor, dê aulas</h1>
-  </div>
-   <b-container class="cards">
-    <FormulateForm class="login-form" v-model="formValues">
-      <b-container class="bv-example-row">
-        <b-row>
-          <b-col sm="12">
-            <h2 class="form-title">Cadastro de curso</h2>
-          </b-col>
+  <b-container class="bv-example-row">
+  <div class="cards">
+    
+      <b-row>
+        <b-col sm="12">
+          <h1>Cadastro de curso</h1>
+        </b-col>
         </b-row>
-        <b-row>
-          <b-col sm="12">
-        <FormulateInput
-          name="name"
+   
+    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+      
+      <b-form-group
+        id="input-group-1"
+        label="Título"
+        label-for="input-1"
+        description="Pense em um bom título para atrair alunos!"
+      >
+        <b-form-input
+          id="input-1"
+          v-model="form.title"
           type="text"
-          label="Título do curso"
-          placeholder="ex: Curso de Cs"
-          validation="required"
-        /></b-col>
-        </b-row>
-        <FormulateInput
-          v-model="value"
-          :options="{
-            first: 'First',
-            second: 'Second',
-            third: 'Third',
-            fourth: 'Fourth',
-          }"
-          type="select"
-          placeholder="Selecione uma categoria"
-          label="Categoria do curso"
-        />
-        <FormulateInput
-          v-model="value"
-          :options="{
-            first: 'First',
-            second: 'Second',
-            third: 'Third',
-            fourth: 'Fourth',
-          }"
-          type="select"
-          placeholder="Selecione uma categoria"
-          label="Categoria do curso"
-        />
-        <FormulateInput
-          type="textarea"
-          v-model="value"
-          label="Descreva seu curso"
-          validation="required|max:50,length"
-          validation-name="tweet"
-          error-behavior="live"
-          :help="`Insira pelo menos ${50 - value.length} caracteres.`"
-        />
+          placeholder="Insira um título para o curso"
+          required
+        ></b-form-input>
+      </b-form-group>
+      
 
-        <FormulateInput type="submit" label="Register" />
-      </b-container>
+      <b-form-group id="input-group-2" label="Horas:" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          v-model="form.hours"
+          placeholder="ex: 2 horas"
+          required
+        ></b-form-input>
+      </b-form-group>
+<b-row>
+  <b-col sm="6">
+      <b-form-group id="input-group-3" label="Categoria" label-for="input-3">
+        <b-form-select
+          id="input-3"
+          v-model="form.food"
+          :options="foods"
+          required
+        ></b-form-select>
+          </b-form-group>
+          </b-col>
+          <b-col sm="6">
+         <b-form-group id="input-group-3" label="Categoria" label-for="input-3">
+        <b-form-select
+          id="input-3"
+          v-model="form.food"
+          :options="foods"
+          required
+        ></b-form-select>
+      </b-form-group>
+      </b-col>
+      </b-row>
 
-      <pre class="code" v-text="formValues" />
-    </FormulateForm>
+      
+  
+    <b-form-textarea
+      id="textarea"
+      v-model="form.text"
+      placeholder="Descreva o seu curso.
+      Ex: Curso de react com foco em .... "
+      rows="3"
+      max-rows="6"
+    ></b-form-textarea>
+
+    <pre class="mt-3 mb-0">{{ text }}</pre>
+      
+
+      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="reset" variant="danger">Reset</b-button>
+    </b-form>
+    <b-card class="mt-3" header="RESULTADOS DO SUBMIT">
+      <pre class="m-0">{{ form }}</pre>
+    </b-card>
+     
+  </div>
   </b-container>
   </div>
-
 </template>
 
 <script>
 import Header from '../components/Header'
-export default {
-  data() {
-    return {
-      formValues: {},
-      value: [],
-    };
-  },
-  components:{
-    Header,
+  export default {
+    components: { Header, 
+    },
+    data() {
+      return {
+        form: {
+          value: '',
+          title: '',
+          food: null,
+          text: '',
+          checked: []
+        },
+        foods: [{ text: 'Selecione uma categoria', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
+        show: true
+      }
+    },
+    methods: {
+      onSubmit(event) {
+        event.preventDefault()
+        alert(JSON.stringify(this.form))
+      },
+      onReset(event) {
+        event.preventDefault()
+        // Reset our form values
+        this.form.title = ''
+        this.form.text = ''
+        this.form.food = null
+        this.form.checked = []
+        // Trick to reset/clear native browser form validation state
+        this.show = false
+        this.$nextTick(() => {
+          this.show = true
+        })
+      }
+    }
   }
-};
 </script>
-
 <style scoped>
+.cards{
+  background-color: aqua !important;
+  width: 50%;
+  padding: 20px;
+   margin-top: 100px !important;
+  width: 500px !important;
+  height: 700px !important;
 
-.login-form {
-  margin-top: 10%;
-  margin-left: 30%;
-  padding: 2em !important;
-  border: 1px solid #a8a8a8;
-  border-radius: 0.5em;
-  box-sizing: border-box;
-   max-width: 500px;
+  margin: auto;
   background-color: #f7f7f8 !important;
+  color: #0e0e10;
+  border-radius: 10px;
+  border: solid 0.5px;
+  
 }
-.form-title {
-  margin-top: 0;
+input {
+  padding: 10px;
+  border-radius: 10px;
 }
-.login-form::v-deep .formulate-input .formulate-input-element {
-  max-width: none;
+#input-3 {
+  margin-bottom: 10px;
+  border-radius: 4px;
+  margin-right: 10px;
 }
-@media (min-width: 420px) {
-  .double-wide {
-    display: flex;
-  }
-  .double-wide .formulate-input {
-    flex-grow: 1;
-    width: calc(50% - 0.5em);
-  }
-  .double-wide .formulate-input:first-child {
-    margin-right: 0.5em;
-  }
-  .double-wide .formulate-input:last-child {
-    margin-left: 0.5em;
-  }
+
+#input-group-1 {
+  width: 80% !important;
+}
+#input-group-2 {
+  width: 25% !important;
 }
 h1{
   text-align: center;
-  color: #f7f7f8;
+}
+button {
+height: 10% !important;
+width: 20% !important;
+padding: 5px;
+margin-left: 10px;
+
 }
 </style>
