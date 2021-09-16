@@ -5,12 +5,13 @@ import Home from './pages/Home';
 import InfoCurso from './pages/InfoCurso';
 import Login from './pages/Login';
 import RegisterCourse from './pages/RegisterCourse'
-import Teste from './pages/Teste'
+
 Vue.use(Router);
 
 const router = new Router({
  mode: 'history',
  routes:[
+  
      {
          path: '/',
          component: Home
@@ -24,10 +25,7 @@ const router = new Router({
         component: Login,
     
     },
-    {
-      path: '/teste',
-      component: Teste,
-    },
+  
     {
         path: '/registercourse',
         component: RegisterCourse,
