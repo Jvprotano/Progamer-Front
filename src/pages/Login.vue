@@ -47,7 +47,7 @@
         </b-col> -->
       </b-row>
       <b-row class="btn-login">
-        <b-button>Entrar</b-button>
+        <b-button class="btn content-center">Entrar</b-button>
       </b-row>
       <b-row class="register">
         <p class="register">

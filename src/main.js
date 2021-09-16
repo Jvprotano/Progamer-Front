@@ -19,10 +19,6 @@ import Carousel3d from 'vue-carousel-3d';
 Vue.use(VueperSlides,VueperSlide)
 Vue.use(Carousel3d);
 
-import VueFormulate from '@braid/vue-formulate'
-Vue.use(VueFormulate)
-
-
 Vue.use(IconsPlugin)
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
