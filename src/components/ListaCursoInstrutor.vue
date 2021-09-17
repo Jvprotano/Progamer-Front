@@ -1,18 +1,47 @@
 <template>
     <div id="home-i"> 
-        <div>
-            <b-media right-align vertical-align="center">
-                <template #aside>
-                    <b-img blank blank-color="#ccc" width="80" alt="placeholder"></b-img>
+        <b-container>
+            <b-container class="bv-example-row">
+                <b-row>
+                    <b-media>
+                        <template v-slot:aside>        
+                            <b-row>
+                                <b-col cols="1" class="pr-0">
+                                    <div class="size-img">
+                                        <b-img blank blank-color="#ccc" width="100" alt="My placeholder"></b-img>
+                                    </div>
+                                </b-col>
+                                <b-col cols="11" class="text pl-0">
+                                    <b-row><h2><strong>Como chegar no ferro 4 em 4 partidas</strong></h2></b-row>
+                                    <b-row><p>Game: League of legends</p></b-row>
+                                    <b-row><p>Data: 16/09/2021 Ativo: Sim</p></b-row>
+                                    <b-row><p>Avaliação: XXXX</p></b-row>
+                                </b-col>
+                            </b-row>
+                            <hr>
+                        </template>
+                    </b-media>
+                </b-row>
+            </b-container>
+            <b-media>
+                <template v-slot:aside>        
+                    <b-row>
+                        <b-col cols="1" class="pr-0">
+                            <div class="size-img">
+                                <b-img blank blank-color="#ccc" width="100" alt="My placeholder"></b-img>
+                            </div>
+                        </b-col>
+                        <b-col cols="11" class="text pl-0">
+                            <b-row><h2><strong>Como morrer mais rapido</strong></h2></b-row>
+                            <b-row><p>Game: CSGO</p></b-row>
+                            <b-row><p>Data: 16/09/2021 Ativo: Sim</p></b-row>
+                            <b-row><p>Avaliação: XXXX</p></b-row>
+                        </b-col>
+                    </b-row>
+                    <hr>
                 </template>
-                <h5 class="mt-0 mb-1">Media object</h5>
-                <p class="mb-0">
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-                    nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </p>
             </b-media>
-        </div>
+        </b-container>
     </div>
 </template>
 
@@ -23,5 +52,17 @@ export default {
 </script>
 
 <style scoped>
-
+.media-aside{
+    display: inline !important;
+}
+.size-img{
+    text-align: left;
+}
+.text{
+    text-align: left;
+    line-height: 10px;
+}
+.home-i{
+    padding: 15px;
+}
 </style>

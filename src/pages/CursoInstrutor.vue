@@ -3,7 +3,7 @@
         <div class="container">
             <b-card title="Card Title" no-body>
                 <PerfilMenu/>
-                <b-card-body class="text-center">
+                <b-card-body class="text">
                     <b-card-text><ListaCursoInstrutor/></b-card-text>
                     <b-card-text><b-row><b-col sm="12"><SolicitacaoModal/></b-col></b-row></b-card-text>
                 </b-card-body>
