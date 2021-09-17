@@ -1,5 +1,4 @@
 <template>
-
   <div id="info-curso">
     <Header />
     <b-container class="info-main">
@@ -82,7 +81,8 @@
             <h6>Lucas França</h6>
           </b-row>
           <b-row>
-            <b-form-rating id="rating-main"
+            <b-form-rating
+              id="rating-main"
               class="rating"
               inline
               value
@@ -98,7 +98,8 @@
             <h6>Lucas Nakasima</h6>
           </b-row>
           <b-row>
-            <b-form-rating id="rating-main"
+            <b-form-rating
+              id="rating-main"
               class="rating"
               inline
               value
@@ -114,7 +115,8 @@
             <h6>Gustavo Sumi</h6>
           </b-row>
           <b-row>
-            <b-form-rating id="rating-main"
+            <b-form-rating
+              id="rating-main"
               class="rating"
               inline
               value
@@ -130,7 +132,8 @@
             <h6>Gustavo Boroski</h6>
           </b-row>
           <b-row>
-            <b-form-rating id="rating-main"
+            <b-form-rating
+              id="rating-main"
               class="rating"
               inline
               value
@@ -160,7 +163,7 @@ export default {
   },
   components: {
     Header,
-  }
+  },
 };
 </script>
 
@@ -198,7 +201,7 @@ export default {
 }
 
 .b-rating-star {
-  color: /* #ffc400;  */#ffd900;
+  color: /* #ffc400;  */ #ffd900;
   border: none;
 }
 
@@ -252,7 +255,6 @@ export default {
   margin-bottom: 30px;
   padding: 30px !important;
   box-shadow: 0 0 40px rgb(0 0 0 / 20%);
-
 }
 
 #rating-main {
@@ -261,11 +263,11 @@ export default {
   border: none !important;
 }
 
-.comment{
+.comment {
   padding-bottom: 15px;
 }
 
-.title-cr{
+.title-cr {
   padding-bottom: 10px;
 }
 </style>

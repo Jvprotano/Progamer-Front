@@ -1,6 +1,6 @@
 <template>
 <div class="app">
-  <Header />
+      <Header />
   <b-container class="bv-example-row">
   <div class="cards">
    
@@ -90,18 +90,18 @@
       rows="1"
       max-rows="1"
     ></b-form-textarea>
-
-    
-      
-      <b-button type="reset" variant="danger">Limpar</b-button>
-      <b-button type="submit" variant="primary">Criar Curso</b-button>
-    </b-form>
-   <p v-if="errors.length">
+ <p v-if="errors.length">
     <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
     <ul>
 <li v-for="error in errors" :key="error">{{error}} </li>
     </ul>
   </p>
+    
+      
+      <b-button type="reset" variant="danger">Limpar</b-button>
+      <b-button type="submit" variant="primary">Criar Curso</b-button>
+    </b-form>
+  
   </div>
    
   </b-container>
@@ -112,7 +112,8 @@
 import Header from '../components/Header'
 
   export default {
-    components: { Header, 
+    components: { 
+      Header, 
     },
     data() {
       return {
@@ -144,9 +145,11 @@ import Header from '../components/Header'
 
         if (valor.length > 6) {
             valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+					
         }
 
         elemento.value = valor;
+				this.form.value= elemento.value;
         if(valor == 'NaN') elemento.value = '';
     },
       submitForm: function() {
@@ -156,13 +159,34 @@ import Header from '../components/Header'
           this.errors.push('É necessário inserir um título ao curso')
         }else{
           console.log('valido')
+					
         }
         
-        if(this.form.valor<= 0) {
-          this.errors.push('Insira um valor')
+        if(!this.form.value) {
+          this.errors.push('É necessário inserir um valor')
+					console.log('inválido')
+					
+
         }else {
-          console.log('graninha')
+          console.log(this.form.value)
+					console.log('valido irmao')
         }
+				
+				if(!this.form.hours) {
+					this.errors.push('É necessário informar o tempo do curso')
+				}
+				else {
+					console.log('Horas válidas')
+				}
+
+				if(!this.form.textarea) {
+					this.errors.push('É necessário inserir uma descrição')
+				}
+				if(!this.form.game) {
+					this.errors.push('É necessário selecionar um jogo')
+				}
+
+			
         
         
       },
@@ -178,7 +202,7 @@ import Header from '../components/Header'
         this.form.hours = ''
         this.form.game = ''
         this.form.textarea = ''
-        
+        this.form.value = ''
         this.form.food = null
         // Trick to reset/clear native browser form validation state
         this.show = false
@@ -245,6 +269,8 @@ border: none;
 li {
 list-style: none;
 padding: 1px;
+color: red;
+
 
 }
 </style>
