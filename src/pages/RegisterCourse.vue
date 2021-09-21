@@ -31,21 +31,19 @@
         ></b-form-input>
       </b-form-group>
       <b-form-group>
-         
- 
       </b-form-group>
       <b-row>
         <b-col sm="6">
         <b-form-group id="input-group-2" label="Valor:" label-for="valor">
           <b-form-input
-            
+            placeholder="R$:"
             type="text"
             max="10"
             maxlenght="9" id="valor" v-on:keyup="formatarMoeda">
 >     </b-form-input>
         </b-form-group>
-        </b-col>
-
+        </b-col >
+        <b-col sm="6">
           <b-form-group id="input-group-2" label="Horas:"  label-for="input-2">
             <b-form-input
               type="number"
@@ -56,6 +54,7 @@
               placeholder="ex: 2 horas"
         ></b-form-input>
       </b-form-group>
+      </b-col>
       </b-row>
 <b-row>
   <b-col sm="6">
@@ -78,9 +77,10 @@
         ></b-form-select>
       </b-form-group>
       </b-col>
-      </b-row>
-     
+     </b-row>
+     <label for="textarea">Insira uma descrição do seu curso</label>
     <b-form-textarea
+    label="Insira uma descrição do curso"
       id="textarea"
       maxlength="400"
       v-model="form.textarea"
@@ -89,14 +89,22 @@
       rows="1"
       max-rows="1"
     ></b-form-textarea>
-    
-    
- 
 
 <div class="cardsImg">
+ <b-container class="bv-example-row">
+  <b-row>
+    <b-col cols="12">
+  <label for="myFile">Insira uma capa para o curso</label>
+  </b-col>
+  </b-row>  
+   <input type="file"  @change="fileChange" id="myFile" name="image" accept="image/png,image/jpeg"  style="width: 147px;" onchange="this.style.width = '100%';" />
+   <div class="card-img">
+   <h5>Pré Visualização</h5>
    
-   <b-form-file @change="fileChange" name="image" accept="image/jpeg, image/png, image/gif"></b-form-file>
    <img  :src="image" id="imgPrev"  name="image"  class="hidden"/>
+</div>
+
+</b-container>
 </div>
    
  <p v-if="errors.length">
@@ -105,10 +113,8 @@
 <li v-for="error in errors" :key="error">{{error}} </li>
     </ul>
   </p>
-    
-      
-      <b-button type="reset" variant="danger">Limpar</b-button>
-      <b-button type="submit" variant="primary">Criar Curso</b-button>
+      <b-button type="reset" id="resetInputs" >Limpar</b-button>
+      <b-button type="submit" >Criar Curso</b-button>
     </b-form>
   
   </div>
@@ -127,6 +133,7 @@ import Header from '../components/Header'
     data() {
       return {
         imagePreview : '../assents/game-console.png',
+        
         image: null,
         errors: [],
         form: {
@@ -145,6 +152,18 @@ import Header from '../components/Header'
       }
     },
     methods: {
+     checkfiles: function() {
+    var fup = document.getElementById('filename');
+    var fileName = fup.value;
+    var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+
+    if(ext =="jpeg" || ext=="png"){
+        return true;
+    }
+    else{
+        return false;
+    }
+},
       
     fileChange: function(e) {
  const file =e.target.files[0]
@@ -173,40 +192,42 @@ import Header from '../components/Header'
         this.errors = [];
         
         if(!this.form.title) {
-          this.errors.push('É necessário inserir um título ao curso')
+          this.errors.push('É necessário inserir um título ao curso');
         }else{
-          console.log('valido')
+          console.log('valido');
 					
         }
         if(!this.image) {
-          this.errors.push("É necessário inserir uma imagem para o curso")
+          this.errors.push("É necessário inserir uma imagem para o curso");
         }
+         
         
         if(!this.form.value) {
-          this.errors.push('É necessário inserir um valor')
+          this.errors.push('É necessário inserir um valor');
 					console.log('inválido')
-					
-
+				
         } 
         
         else {
           console.log(this.form.value)
-					console.log('valido irmao')
+					console.log('valido irmao');
         }
 				
 				if(!this.form.hours) {
-					this.errors.push('É necessário informar o tempo do curso')
+					this.errors.push('É necessário informar o tempo do curso');
 				}
 				else {
-					console.log('Horas válidas')
+					console.log('Horas válidas');
 				}
-
 				if(!this.form.textarea) {
-					this.errors.push('É necessário inserir uma descrição')
+					this.errors.push('É necessário inserir uma descrição');
 				}
 				if(!this.form.game) {
-					this.errors.push('É necessário selecionar um jogo')
+					this.errors.push('É necessário selecionar um jogo');
 				}
+        if(!this.form.food) {
+          this.errors.push('É necessário selecionar uma categoria');
+        }
 
         
       },
@@ -218,10 +239,10 @@ import Header from '../components/Header'
       onReset(event) {
         event.preventDefault()
         // Método para limpar os inputs
-        this.image = ''
+        this.image = null,
         this.form.title = ''
         this.form.hours = ''
-        this.form.game = ''
+        this.form.game = null
         this.form.textarea = ''
         this.form.value = ''
         this.form.food = null
@@ -237,16 +258,14 @@ import Header from '../components/Header'
 <style scoped>
 .form-control {
   margin: 1px;
-  width: 70%;
+  width: 62%;
 }
 .cards{
    box-shadow: 0 0 40px rgb(0 0 0 / 15%) !important;
-  width: 50%;
   padding: 2%;
    margin-top: 10% !important;
-  width: 70% !important;
+  width: 50% !important;
   height: 2% !important;
-
   margin: auto;
   background-color: #f7f7f8 !important;
   color: #0e0e10;
@@ -254,9 +273,18 @@ import Header from '../components/Header'
   border: solid 0.5px;
   
 }
-
+#resetInputs{
+ background-color: #AF5FE8 !important;
+  box-shadow: 0 0 40px rgb(0 0 0 / 10%) !important;
+}
+.card-img {
+ 
+ width: 50% !important;
+ margin-top: 10px;
+ 
+}
 #imgPrev {
-box-shadow: 0 0 40px rgb(0 0 0 / 10%) !important;
+ box-shadow: 0 0 40px rgb(0 0 0 / 10%) !important;
 object-fit: cover !important;
 box-sizing: border-box !important;
 padding: 10px !important;
@@ -268,26 +296,32 @@ height: 100% !important;
 input {
   padding: 10px;
   border-radius: 10px;
+ 
 }
+#input-1, #input-2, #input-3 {
+  box-shadow: 0 0 40px rgb(0 0 0 / 10%) !important;
+}
+
 #input-3 {
   margin-bottom: 10px;
   border-radius: 4px;
   margin-right: 10px;
 }
 
-#input-group-1 {
+#input-group-1 { 
   width: 80% !important;
-  
 }
 #input-group-2 {
-  width: 25% !important;
+  width: 65% !important;
+}
+#input-group-3 {
+  padding: 10px;
 }
 .custom-select {
   width: 50% !important;
 }
 h1, h4{
   text-align: center;
- 
 }
 button {
 height: 10% !important;
@@ -296,8 +330,6 @@ margin-top: 10px;
 padding: 8px;
 margin-left: 10px;
 border: none;
- 
-
 }
 
 li {
@@ -305,11 +337,13 @@ list-style: none;
 padding: 1px;
 color: red;
 }
-#valor {
-  width: 120%;
+#valor, #input-2 {
+  width: 110%;
 }
-input[type=file]{
-    width:90px;
-    color:transparent;
+
+#textarea {
+  width: 100%;
+  background-color: #f7f7f8;
+  box-shadow: 0 0 40px rgb(0 0 0 / 15%) !important;
 }
 </style>
