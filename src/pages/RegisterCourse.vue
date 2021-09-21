@@ -32,7 +32,30 @@
       </b-form-group>
       <b-form-group>
       </b-form-group>
-      <b-row>
+   
+<b-row>
+  <b-col sm="6">
+      <b-form-group id="input-group-3" label="Categoria" label-for="input-3">
+        <b-form-select
+          id="input-3"
+          v-model="form.food"
+          :options="foods"
+          
+        ></b-form-select>
+          </b-form-group>
+          </b-col>
+          <b-col sm="6">
+         <b-form-group id="input-group-3" label="Jogo" label-for="input-3">
+        <b-form-select
+          id="input-3"
+          v-model="form.game"
+          :options="games"
+          
+        ></b-form-select>
+      </b-form-group>
+      </b-col>
+     </b-row>
+        <b-row>
         <b-col sm="6">
         <b-form-group id="input-group-2" label="Valor:" label-for="valor">
           <b-form-input
@@ -56,28 +79,6 @@
       </b-form-group>
       </b-col>
       </b-row>
-<b-row>
-  <b-col sm="6">
-      <b-form-group id="input-group-3" label="Categoria" label-for="input-3">
-        <b-form-select
-          id="input-3"
-          v-model="form.food"
-          :options="foods"
-          
-        ></b-form-select>
-          </b-form-group>
-          </b-col>
-          <b-col sm="6">
-         <b-form-group id="input-group-3" label="Jogo" label-for="input-3">
-        <b-form-select
-          id="input-3"
-          v-model="form.game"
-          :options="games"
-          
-        ></b-form-select>
-      </b-form-group>
-      </b-col>
-     </b-row>
      <label for="textarea">Insira uma descrição do seu curso</label>
     <b-form-textarea
     label="Insira uma descrição do curso"
@@ -295,8 +296,7 @@ height: 100% !important;
 }
 input {
   padding: 10px;
-  border-radius: 10px;
- 
+  margin-top: 10px !important;
 }
 #input-1, #input-2, #input-3 {
   box-shadow: 0 0 40px rgb(0 0 0 / 10%) !important;
@@ -310,9 +310,12 @@ input {
 
 #input-group-1 { 
   width: 80% !important;
+  
+  
 }
 #input-group-2 {
   width: 65% !important;
+  margin-bottom: 12px;
 }
 #input-group-3 {
   padding: 10px;
@@ -345,5 +348,6 @@ color: red;
   width: 100%;
   background-color: #f7f7f8;
   box-shadow: 0 0 40px rgb(0 0 0 / 15%) !important;
+  margin-bottom: 10px;
 }
 </style>
