@@ -12,7 +12,7 @@
                                     </div>
                                 </b-col>
                                 <b-col cols="11" class="text pl-0">
-                                    <b-row><h2><strong>Como chegar no ferro 4 em 4 partidas</strong></h2></b-row>
+                                    <b-row><h2><strong>Como chegar no ferro 4 em 4 partidas teste</strong></h2></b-row>
                                     <b-row><p>Game: League of legends</p></b-row>
                                     <b-row><p>Data: 16/09/2021 Ativo: Sim</p></b-row>
                                     <b-row><p>Avaliação: XXXX</p></b-row>
