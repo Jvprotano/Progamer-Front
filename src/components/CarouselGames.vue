@@ -2,7 +2,7 @@
   <div class="box">
     <carousel-3d :controls-visible="true" :space="400">
       <slide v-for="(slide, i) in slides" :index="i" :key="i">
-        <router-link to="curso" id="carousel">
+        <router-link to="info" id="carousel">
           <b-card class="card-carousel">
             <img class="image-carousel" :src="slide.src" />
           </b-card>

@@ -6,6 +6,7 @@ import InfoCurso from './pages/InfoCurso';
 import Login from './pages/Login';
 import RegisterCourse from './pages/RegisterCourse'
 
+
 Vue.use(Router);
 
 const router = new Router({
@@ -24,7 +25,8 @@ const router = new Router({
         path: '/login',
         component: Login,
     
-    },
+   },
+  
   
     {
         path: '/registercourse',

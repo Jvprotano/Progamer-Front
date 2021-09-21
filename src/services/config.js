@@ -1,5 +1,5 @@
 import axios from 'axios'
-
-export const http = axios.create({
-    baseURL: 'http://localhost:8080'
-})
+const http = axios.create({
+    baseURL: 'https://progamerapi.azurewebsites.net/Api'
+});
+export default http

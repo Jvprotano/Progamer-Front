@@ -3,7 +3,6 @@
       <Header />
   <b-container class="bv-example-row">
   <div class="cards">
-   
       <b-row>
         <b-col sm="12">
           <h1>Cadastro de curso</h1>
@@ -31,31 +30,33 @@
           placeholder="Insira um título para o curso"
         ></b-form-input>
       </b-form-group>
+      <b-form-group>
+         
+ 
+      </b-form-group>
+      <b-row>
+        <b-col sm="6">
+        <b-form-group id="input-group-2" label="Valor:" label-for="valor">
+          <b-form-input
+            
+            type="text"
+            max="10"
+            maxlenght="9" id="valor" v-on:keyup="formatarMoeda">
+>     </b-form-input>
+        </b-form-group>
+        </b-col>
 
-       
-
-<b-form-group id="input-group-2" label="Valor:" label-for="valor">
-<b-form-input
-  type="text"
-  max="10"
-  maxlenght="9" id="valor" v-on:keyup="formatarMoeda">
-
-
-> </b-form-input>
-</b-form-group>
-
-
-      <b-form-group id="input-group-2" label="Horas:"  label-for="input-2">
-        <b-form-input
-        type="number"
-      
-        min="1"
-        max="100"
-          id="input-2"
-          v-model="form.hours"
-          placeholder="ex: 2 horas"
+          <b-form-group id="input-group-2" label="Horas:"  label-for="input-2">
+            <b-form-input
+              type="number"
+              min="1"
+              max="100"
+              id="input-2"
+              v-model="form.hours"
+              placeholder="ex: 2 horas"
         ></b-form-input>
       </b-form-group>
+      </b-row>
 <b-row>
   <b-col sm="6">
       <b-form-group id="input-group-3" label="Categoria" label-for="input-3">
@@ -78,9 +79,7 @@
       </b-form-group>
       </b-col>
       </b-row>
-
-      
-  
+     
     <b-form-textarea
       id="textarea"
       maxlength="400"
@@ -90,6 +89,16 @@
       rows="1"
       max-rows="1"
     ></b-form-textarea>
+    
+    
+ 
+
+<div class="cardsImg">
+   
+   <b-form-file @change="fileChange" name="image" accept="image/jpeg, image/png, image/gif"></b-form-file>
+   <img  :src="image" id="imgPrev"  name="image"  class="hidden"/>
+</div>
+   
  <p v-if="errors.length">
     <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
     <ul>
@@ -107,7 +116,7 @@
   </b-container>
   </div>
 </template>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 import Header from '../components/Header'
 
@@ -117,6 +126,8 @@ import Header from '../components/Header'
     },
     data() {
       return {
+        imagePreview : '../assents/game-console.png',
+        image: null,
         errors: [],
         form: {
           value: '',
@@ -134,6 +145,12 @@ import Header from '../components/Header'
       }
     },
     methods: {
+      
+    fileChange: function(e) {
+ const file =e.target.files[0]
+ this.image= URL.createObjectURL(file)
+    },
+
         formatarMoeda: function() {
         var elemento = document.getElementById('valor');
         var valor = elemento.value;
@@ -161,13 +178,18 @@ import Header from '../components/Header'
           console.log('valido')
 					
         }
+        if(!this.image) {
+          this.errors.push("É necessário inserir uma imagem para o curso")
+        }
         
         if(!this.form.value) {
           this.errors.push('É necessário inserir um valor')
 					console.log('inválido')
 					
 
-        }else {
+        } 
+        
+        else {
           console.log(this.form.value)
 					console.log('valido irmao')
         }
@@ -186,8 +208,6 @@ import Header from '../components/Header'
 					this.errors.push('É necessário selecionar um jogo')
 				}
 
-			
-        
         
       },
     
@@ -197,14 +217,15 @@ import Header from '../components/Header'
       },
       onReset(event) {
         event.preventDefault()
-        // Reset our form values
+        // Método para limpar os inputs
+        this.image = ''
         this.form.title = ''
         this.form.hours = ''
         this.form.game = ''
         this.form.textarea = ''
         this.form.value = ''
         this.form.food = null
-        // Trick to reset/clear native browser form validation state
+       
         this.show = false
         this.$nextTick(() => {
           this.show = true
@@ -221,9 +242,9 @@ import Header from '../components/Header'
 .cards{
    box-shadow: 0 0 40px rgb(0 0 0 / 15%) !important;
   width: 50%;
-  padding: 4%;
+  padding: 2%;
    margin-top: 10% !important;
-  width: 80% !important;
+  width: 70% !important;
   height: 2% !important;
 
   margin: auto;
@@ -232,6 +253,17 @@ import Header from '../components/Header'
   border-radius: 10px;
   border: solid 0.5px;
   
+}
+
+#imgPrev {
+box-shadow: 0 0 40px rgb(0 0 0 / 10%) !important;
+object-fit: cover !important;
+box-sizing: border-box !important;
+padding: 10px !important;
+max-height: 250px !important;
+max-width: 350px;
+width: 100% !important;
+height: 100% !important;
 }
 input {
   padding: 10px;
@@ -260,17 +292,24 @@ h1, h4{
 button {
 height: 10% !important;
 width: 20% !important;
-padding: 5px;
+margin-top: 10px;
+padding: 8px;
 margin-left: 10px;
 border: none;
  
 
 }
+
 li {
 list-style: none;
 padding: 1px;
 color: red;
-
-
+}
+#valor {
+  width: 120%;
+}
+input[type=file]{
+    width:90px;
+    color:transparent;
 }
 </style>

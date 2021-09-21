@@ -163,6 +163,7 @@ img {
 .carousel-3d-container {
   padding: 10px !important;
   height: 400px !important;
+  width: 97.8% !important;
   box-shadow: 0 0 40px rgb(0 0 0 / 95%) !important;
 }
 .carousel-3d-slide {

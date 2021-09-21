@@ -1,6 +1,5 @@
 <template>
   <div id="home">
-    
     <Header />
     <CarouselGames />
     <SliderGames />
@@ -16,7 +15,6 @@ import Header from "../components/Header";
 import CarouselGames from "../components/CarouselGames";
 import SliderGames from "../components/SliderGames";
 
-
 export default {
   name: "Home",
   components: {
@@ -28,6 +26,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

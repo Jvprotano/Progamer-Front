@@ -33,7 +33,7 @@
             value="remember"
             unchecked-value="dont_remember"
           >
-               Lembre-se de mim
+            Lembre-se de mim
           </b-form-checkbox>
 
           <div></div>
@@ -49,8 +49,8 @@
       </b-row>
       <b-row class="register">
         <p class="register">
-          Ainda não é membro?<router-link id="register" to="/register"
-            > Clique aqui
+          Ainda não é membro?<router-link id="register" to="/register">
+            Clique aqui
           </router-link>
         </p>
       </b-row>
@@ -59,6 +59,7 @@
 </template>
 
 <script>
+import http from "../services/config";
 export default {
   data() {
     return {
@@ -66,6 +67,13 @@ export default {
       typesp: ["password"],
       statuscb: "dont_remember",
     };
+  },
+  mounted() {
+    http
+      .get("https://progamerapi.azurewebsites.net/api/account/login")
+      .then((response) => {
+        console.log(response.data);
+      });
   },
 };
 </script>
@@ -136,18 +144,16 @@ a:hover {
   background-color: #772ce8 !important;
 }
 
-.register{
+.register {
   text-align: center;
   margin-top: 34px !important;
-  color: #FFF;
+  color: #fff;
 }
 
-.login-main{
+.login-main {
   padding: 35px !important;
 }
 .label {
   display: inline-flexbox !important;
 }
-
-
 </style>
