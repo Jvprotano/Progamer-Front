@@ -42,6 +42,7 @@
             </b-col>
           </b-row>
           <b-row>
+            <b-col class="col-12 col-sm-12 col-md-6">
             <b-form-group
               class="pad-top"
               id="email"
@@ -55,11 +56,27 @@
                 placeholder="usuario@hotmail.com"
               ></b-form-input>
             </b-form-group>
+            </b-col>
+            <b-col class="col-12 col-sm-12 col-md-6">
+            <b-form-group
+              class="pad-top"
+              id="date"
+              label="Data de nascimento:"
+              label-for="date"
+            >
+              <b-form-input
+                id="date"
+                v-model="form.date"
+                type="date"
+                placeholder=""
+              ></b-form-input>
+            </b-form-group>
+            </b-col>
           </b-row>
           <b-row>
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
-                class="pad-top"
+                class="pad-top-pass"
                 id="pass"
                 label="Senha:"
                 label-for="pass"
@@ -74,7 +91,7 @@
             </b-col>
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
-                class="pad-top"
+                class="pad-top-pass"
                 id="confpass"
                 label="Confirme a senha:"
                 label-for="confpass"
@@ -88,27 +105,13 @@
               </b-form-group>
             </b-col>
           </b-row>
-          <b-row>
-            <b-form-group
-              class="pad-top"
-              id="date"
-              label="Data de nascimento:"
-              label-for="date"
-            >
-              <b-form-input
-                id="date"
-                v-model="form.date"
-                type="date"
-                placeholder=""
-              ></b-form-input>
-            </b-form-group>
-          </b-row>
+          
           <p v-if="errors.length">
                 <ul>
                     <li v-for="error in errors" :key="error">{{error}} </li>
                 </ul>
                 </p>
-          <b-row>
+          <b-row class="content-center">
             <b-button type="submit" class="btn content-center"
               >Cadastrar</b-button
             >
@@ -222,13 +225,29 @@ export default {
 </script>
 
 <style scoped>
+#name {
+  width: 85% !important;
+}
+
+#lname{
+  width: 85% !important;
+}
+
 #date {
-  width: 55% !important;
+  width: 78% !important;
+}
+
+#pass {
+  width: 85% !important;
+}
+
+#confpass {
+  width: 85% !important;
 }
 .cards {
   margin-top: 2% !important;
-  width: 40% !important;
-  height: 40% !important;
+  width: 55% !important;
+  /* height: 40% !important; */
   padding: 3% !important;
 }
 
@@ -240,15 +259,16 @@ export default {
 }
 
 .form-control {
-  width: 70% !important;
+  width: 100% !important;
 }
 
 .pad-top {
-  padding-top: 1% !important;
+  padding-top: 3% !important;
 }
 
 .btn {
-  margin-top: 3% !important;
+  margin-top: 5% !important;
+  width: 60% !important;
 }
 
 li:first-child{
@@ -256,12 +276,20 @@ li:first-child{
 }
 
 li{
-  list-style: none !important;
+   /* list-style: square; */
   color: red !important;
 }
 
 .restpass{
   font-size: small !important;
   color: #6A7376 !important;
+}
+
+.pad-top-pass{
+  padding-top: 5% !important;
+}
+
+.restpass{
+  margin-bottom: 0% !important;
 }
 </style>
