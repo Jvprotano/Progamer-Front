@@ -51,8 +51,13 @@
       </b-row>
       <b-row class="register">
         <p class="register">
+<<<<<<< HEAD
           Ainda não é membro?<router-link id="register" to="/registerUser"
             > Clique aqui
+=======
+          Ainda não é membro?<router-link id="register" to="/register">
+            Clique aqui
+>>>>>>> register-course
           </router-link>
         </p>
       </b-row>
@@ -62,7 +67,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import Header2 from "../components/Header2";
+=======
+import http from "../services/config";
+>>>>>>> register-course
 export default {
   data() {
     return {
@@ -71,17 +80,39 @@ export default {
       statuscb: "dont_remember",
     };
   },
+<<<<<<< HEAD
   components: {
     Header2,
 },
+=======
+  mounted() {
+    http
+      .get("https://progamerapi.azurewebsites.net/api/account/login")
+      .then((response) => {
+        console.log(response.data);
+      });
+  },
+>>>>>>> register-course
 };
 </script>
 
 <style scoped>
 #login {
+<<<<<<< HEAD
   margin-top: 5% !important;
   width: 400px;
   height: 400px;
+=======
+  margin-top: 100px !important;
+  width: 400px !important;
+  height: 400px !important;
+
+  margin: auto;
+  background-color: #f7f7f8 !important;
+  color: #0e0e10;
+  border-radius: 10px;
+  border: solid 0.5px;
+>>>>>>> register-course
 }
 
 .login-header {
@@ -140,15 +171,16 @@ a:hover {
   background-color: #772ce8 !important;
 }
 
-.register{
+.register {
   text-align: center;
   margin-top: 34px !important;
-  color: #FFF;
+  color: #fff;
 }
 
-.login-main{
+.login-main {
   padding: 35px !important;
 }
-
-
+.label {
+  display: inline-flexbox !important;
+}
 </style>

@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 
+
 import { BCarousel } from 'bootstrap-vue'
 Vue.component('b-carousel', BCarousel)
 
