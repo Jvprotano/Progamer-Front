@@ -98,7 +98,9 @@
   <label for="myFile">Insira uma capa para o curso</label>
   </b-col>
   </b-row>  
+  <b-row>
    <input type="file"  @change="fileChange" id="myFile" name="image" accept="image/png,image/jpeg"  style="width: 147px;" onchange="this.style.width = '100%';" />
+</b-row>
    <div class="card-img">
    <h5>Pré Visualização</h5>
    
@@ -114,8 +116,11 @@
 <li v-for="error in errors" :key="error">{{error}} </li>
     </ul>
   </p>
-      <b-button type="reset" id="resetInputs" >Limpar</b-button>
+  <b-row>
+      <b-col>
       <b-button type="submit" >Criar Curso</b-button>
+      </b-col>
+  </b-row>  
     </b-form>
   
   </div>
@@ -265,7 +270,7 @@ import Header from '../components/Header'
    box-shadow: 0 0 40px rgb(0 0 0 / 15%) !important;
   padding: 2%;
    margin-top: 10% !important;
-  width: 50% !important;
+  width: 70% !important;
   height: 2% !important;
   margin: auto;
   background-color: #f7f7f8 !important;
@@ -327,8 +332,8 @@ h1, h4{
   text-align: center;
 }
 button {
-height: 10% !important;
-width: 20% !important;
+height: 50px !important;
+width: 140px !important;
 margin-top: 10px;
 padding: 8px;
 margin-left: 10px;
