@@ -10,35 +10,33 @@
             comunidade!
           </p>
         </b-row>
-        <b-form @submit="onSubmit" v-if="show">
+        <b-form v-on:submit.prevent="submitForm" v-if="show">
           <b-row>
-            <b-col>
+            <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top"
-                id="input-group-1"
+                id="name"
                 label="Primeiro nome:"
-                label-for="input-1"
+                label-for="name"
               >
                 <b-form-input
-                  id="input-1"
+                  id="name"
                   v-model="form.name"
                   placeholder="Primeiro nome"
-                  required
                 ></b-form-input>
               </b-form-group>
             </b-col>
-            <b-col>
+            <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top"
-                id="input-group-2"
+                id="lname"
                 label="Último nome:"
-                label-for="input-2"
+                label-for="lname"
               >
                 <b-form-input
-                  id="input-2"
+                  id="lname"
                   v-model="form.lname"
                   placeholder="Último nome"
-                  required
                 ></b-form-input>
               </b-form-group>
             </b-col>
@@ -46,69 +44,70 @@
           <b-row>
             <b-form-group
               class="pad-top"
-              id="input-group-3"
+              id="email"
               label="Email:"
-              label-for="input-3"
+              label-for="email"
             >
               <b-form-input
-                id="input-3"
+                id="email"
                 v-model="form.email"
-                type="email"
+                type="text"
                 placeholder="usuario@hotmail.com"
-                required
               ></b-form-input>
             </b-form-group>
           </b-row>
           <b-row>
-            <b-col>
+            <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top"
-                id="input-group-4"
+                id="pass"
                 label="Senha:"
-                label-for="input-4"
+                label-for="pass"
               >
                 <b-form-input
-                  id="input-4"
+                  id="pass"
                   v-model="form.pass"
                   type="password"
-                  placeholder=""
-                  required
                 ></b-form-input>
+                <p class="restpass"> Mínimo 8 caracteres, contendo pelo menos uma letra maiúscula, uma letra minúscula e um número.</p>
               </b-form-group>
             </b-col>
-            <b-col>
+            <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top"
-                id="input-group-5"
+                id="confpass"
                 label="Confirme a senha:"
-                label-for="input-5"
+                label-for="confpass"
               >
                 <b-form-input
-                  id="input-5"
+                  id="confpass"
                   v-model="form.confpass"
                   type="password"
                   placeholder=""
-                  required
                 ></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
           <b-row>
-              <b-form-group
-                class="pad-top"
-                id="input-group-6"
-                label="Data de nascimento:"
-                label-for="input-6"
-              >
-                <b-form-input
-                  id="input-6"
-                  v-model="form.date"
-                  type="date"
-                  placeholder=""
-                  required
-                ></b-form-input>
-              </b-form-group>
-            </b-row>
+            <b-form-group
+              class="pad-top"
+              id="date"
+              label="Data de nascimento:"
+              label-for="date"
+            >
+              <b-form-input
+                id="date"
+                v-model="form.date"
+                type="date"
+                placeholder=""
+              ></b-form-input>
+            </b-form-group>
+          </b-row>
+          <p v-if="errors.length">
+                <ul>
+                    <li v-for="error in errors" :key="error">{{error}} </li>
+                </ul>
+                </p>
           <b-row>
             <b-button type="submit" class="btn content-center"
               >Cadastrar</b-button
@@ -125,6 +124,7 @@ import Header2 from "../components/Header2";
 export default {
   data() {
     return {
+      errors: [],
       form: {
         name: "",
         lname: "",
@@ -132,7 +132,6 @@ export default {
         pass: "",
         confpass: "",
         date: "",
-        checked: [],
       },
       show: true,
     };
@@ -140,7 +139,7 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      alert(JSON.stringify(this.form));
+      /* alert(JSON.stringify(this.form)); */
     },
     onReset(event) {
       event.preventDefault();
@@ -157,6 +156,64 @@ export default {
         this.show = true;
       });
     },
+    submitForm: function(e) {
+      this.errors = [];
+      
+      if (!this.form.name) {
+        this.errors.push("O primeiro nome é obrigatório.");
+      }
+      if (!this.form.lname) {
+        this.errors.push("O último nome é obrigatório.");
+      }
+      if (!this.form.email) {
+        this.errors.push('O e-mail é obrigatório.');
+      } else if (!this.validEmail(this.form.email)) {
+        this.errors.push('Utilize um e-mail válido.');
+      }
+      if (!this.form.pass) {
+        this.errors.push("A senha é obrigatória.");
+      } else if (!this.stardPassword(this.form.pass)) {
+        this.errors.push("A senha precisa estar no padrão solicitado.");
+      }
+      if (!this.form.confpass) {
+        this.errors.push("A confirmação de senha é obrigatória.");
+      }  else if (!this.validPassword(this.form.confpass)) {
+        this.errors.push("As senhas precisão ser iguais.");
+      } 
+      if (!this.form.date) {
+        this.errors.push("A data de nascimento é obrigatória.");
+      }  else if (!this.validDate(this.form.date)) {
+        this.errors.push("A data de nascimento não é válida.");
+      }
+
+      if (!this.errors.length) {
+        return true;
+      }
+
+      e.preventDefault(e);
+    },
+    validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
+    validPassword: function() {
+      var pass1 = document.getElementById("pass")
+      var pass2 = document.getElementById("confpass");
+      if (pass1 != pass2) {
+        return true;
+      }
+    },
+    stardPassword: function(pass){
+      var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+      return re.test(pass);
+    },
+    validDate: function (date) {
+      let today = new Date();
+      today = new Date(today.getTime() - (today.getTimezoneOffset() * 60000)).toISOString();
+      let parts = today.split('T')
+      today = (parts[0]);
+      return date <= today ? true : false
+    },
   },
   components: {
     Header2,
@@ -165,10 +222,14 @@ export default {
 </script>
 
 <style scoped>
+#date {
+  width: 55% !important;
+}
 .cards {
   margin-top: 2% !important;
-  width: 50% !important;
-  height: 50% !important;
+  width: 40% !important;
+  height: 40% !important;
+  padding: 3% !important;
 }
 
 .form-title {
@@ -178,11 +239,29 @@ export default {
   text-align: center;
 }
 
-.pad-top{
+.form-control {
+  width: 70% !important;
+}
+
+.pad-top {
   padding-top: 1% !important;
 }
 
-.btn{
+.btn {
   margin-top: 3% !important;
+}
+
+li:first-child{
+  margin-top: 2% !important;
+}
+
+li{
+  list-style: none !important;
+  color: red !important;
+}
+
+.restpass{
+  font-size: small !important;
+  color: #6A7376 !important;
 }
 </style>
