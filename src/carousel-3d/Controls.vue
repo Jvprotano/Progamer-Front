@@ -1,15 +1,27 @@
 <template>
   <div class="carousel-3d-controls">
-    <a href="#" class="prev" @click.prevent="parent.goPrev()"
-       :class="{ disabled: !parent.isPrevPossible }"
-       :style="`width: ${width}px; height: ${height}px; line-height: ${height}px;`"
-       aria-label="Previous slide">
+    <a
+      href="#"
+      class="prev"
+      @click.prevent="parent.goPrev()"
+      :class="{ disabled: !parent.isPrevPossible }"
+      :style="
+        `width: ${width}px; height: ${height}px; line-height: ${height}px;`
+      "
+      aria-label="Previous slide"
+    >
       <span v-html="prevHtml"></span>
     </a>
-    <a href="#" class="next" @click.prevent="parent.goNext()"
-       :class="{ disabled: !parent.isNextPossible }"
-       :style="`width: ${width}px; height: ${height}px; line-height: ${height}px;`"
-       aria-label="Next slide">
+    <a
+      href="#"
+      class="next"
+      @click.prevent="parent.goNext()"
+      :class="{ disabled: !parent.isNextPossible }"
+      :style="
+        `width: ${width}px; height: ${height}px; line-height: ${height}px;`
+      "
+      aria-label="Next slide"
+    >
       <span v-html="nextHtml"></span>
     </a>
   </div>
@@ -17,43 +29,43 @@
 
 <script>
 export default {
-  name: 'controls',
+  name: "controls",
   props: {
     /**
      * Width in pixels of the navigation buttons
      */
     width: {
       type: [String, Number],
-      default: 50
+      default: 50,
     },
     /**
      * Height in pixels of the navigation buttons
      */
     height: {
       type: [String, Number],
-      default: 60
+      default: 60,
     },
     /**
      * Text content of the navigation prev button
      */
     prevHtml: {
       type: String,
-      default: '&lsaquo;'
+      default: "&lsaquo;",
     },
     /**
      * Text content of the navigation next button
      */
     nextHtml: {
       type: String,
-      default: '&rsaquo;'
-    }
+      default: "&rsaquo;",
+    },
   },
-  data () {
+  data() {
     return {
-      parent: this.$parent
-    }
-  }
-}
+      parent: this.$parent,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -67,14 +79,15 @@ export default {
   z-index: 1000;
 }
 
-.next, .prev {
-  width: 60px;
+.next,
+.prev {
+  width: 100px;
   position: absolute;
   z-index: 1010;
   font-size: 90px;
   height: 60px;
   line-height: 0px !important;
-  color: #333;
+  color: #533784;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -83,11 +96,12 @@ export default {
   top: 0;
 }
 
-.next:hover, .prev:hover {
+.next:hover,
+.prev:hover {
   cursor: pointer;
   opacity: 0.5;
   text-decoration: none !important;
- 
+
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;

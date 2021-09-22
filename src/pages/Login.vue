@@ -51,7 +51,7 @@
         </b-row>
         <b-row class="register">
           <p class="register">
-            Ainda não é membro?<router-link id="register" to="/register">
+            Ainda não é membro?<router-link id="register" to="/registerUser">
               Clique aqui
             </router-link>
           </p>
