@@ -5,17 +5,12 @@
         <b-col class="home">
           <router-link id="pageHome" to="/">
             <b-row>
-<<<<<<< HEAD
-              <b-col class="div-logo" cols="6"><img class="logo mg-0" src="../assents/game-console.png" /></b-col>
-              <b-col class="div-home" cols="6"><h5 id="linkhome" class="mb-0 text-white">ProGamer</h5></b-col>
-=======
               <b-col class="div-logo" cols="6"
                 ><img class="logo mg-0" src="../assents/game-console.png"
               /></b-col>
               <b-col class="div-home" cols="6"
-                ><h5 class="mb-0">ProGamer</h5></b-col
+                ><h5 id="linkhome" class="mb-0 text-white">ProGamer</h5></b-col
               >
->>>>>>> register-course
             </b-row>
           </router-link>
         </b-col>
@@ -95,5 +90,4 @@ export default {
   display: flex;
   padding-left: 0;
 }
-
 </style>

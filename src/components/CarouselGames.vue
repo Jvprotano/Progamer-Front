@@ -98,13 +98,9 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
-
-=======
 #carousel {
   background-color: blueviolet !important;
 }
->>>>>>> register-course
 img {
   box-shadow: 0 0 40px rgb(0 0 0 / 15%) !important;
   height: 300px;

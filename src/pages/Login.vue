@@ -1,77 +1,68 @@
 <template>
-<div id="components">
-      <Header2 />
-  <div id="login" class="cards">
-    <b-container class="login-main">
-      <b-row class="login-header">
-        <h2>LOGIN</h2>
-      </b-row>
-      <b-row class="user" v-for="type in typesu" :key="type">
-        <b-col sm="12">
-          <label :for="`type-${type}`"
-            >Usuário: <code>{{ text }}</code></label
-          >
-        </b-col>
-        <b-col sm="12">
-          <b-form-input :id="`type-${type}`" :type="type"></b-form-input>
-        </b-col>
-      </b-row>
-      <b-row class="password" v-for="type in typesp" :key="type">
-        <b-col sm="12">
-          <label :for="`type-${type}`"
-            >Senha: <code>{{ password }}</code></label
-          >
-        </b-col>
-        <b-col sm="12">
-          <b-form-input :id="`type-${type}`" :type="type"></b-form-input>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col cols="6">
-          <b-form-checkbox
-            id="checkbox-1"
-            v-model="statuscb"
-            name="checkbox-1"
-            value="remember"
-            unchecked-value="dont_remember"
-          >
-            Lembre-se de mim
-          </b-form-checkbox>
+  <div class="header">
+    <Header2 />
+    <div id="login">
+      <b-container class="login-main">
+        <b-row class="login-header">
+          <h2>LOGIN</h2>
+        </b-row>
+        <b-row class="user" v-for="type in typesu" :key="type">
+          <b-col sm="12">
+            <label :for="`type-${type}`"
+              >Usuário: <code>{{ text }}</code></label
+            >
+          </b-col>
+          <b-col sm="12">
+            <b-form-input :id="`type-${type}`" :type="type"></b-form-input>
+          </b-col>
+        </b-row>
+        <b-row class="password" v-for="type in typesp" :key="type">
+          <b-col sm="12">
+            <label :for="`type-${type}`"
+              >Senha: <code>{{ password }}</code></label
+            >
+          </b-col>
+          <b-col sm="12">
+            <b-form-input :id="`type-${type}`" :type="type"></b-form-input>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col cols="6">
+            <b-form-checkbox
+              id="checkbox-1"
+              v-model="statuscb"
+              name="checkbox-1"
+              value="remember"
+              unchecked-value="dont_remember"
+            >
+              Lembre-se de mim
+            </b-form-checkbox>
 
-          <div></div>
-        </b-col>
-        <!-- <b-col cols="6">
+            <div></div>
+          </b-col>
+          <!-- <b-col cols="6">
           <router-link id="forgot" to="/forgot">
             <p class="forgot">Esqueceu sua senha?</p>
           </router-link>
         </b-col> -->
-      </b-row>
-      <b-row class="btn-login">
-        <b-button class="btn content-center">Entrar</b-button>
-      </b-row>
-      <b-row class="register">
-        <p class="register">
-<<<<<<< HEAD
-          Ainda não é membro?<router-link id="register" to="/registerUser"
-            > Clique aqui
-=======
-          Ainda não é membro?<router-link id="register" to="/register">
-            Clique aqui
->>>>>>> register-course
-          </router-link>
-        </p>
-      </b-row>
-    </b-container>
+        </b-row>
+        <b-row class="btn-login">
+          <b-button>Entrar</b-button>
+        </b-row>
+        <b-row class="register">
+          <p class="register">
+            Ainda não é membro?<router-link id="register" to="/register">
+              Clique aqui
+            </router-link>
+          </p>
+        </b-row>
+      </b-container>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
-<<<<<<< HEAD
 import Header2 from "../components/Header2";
-=======
-import http from "../services/config";
->>>>>>> register-course
 export default {
   data() {
     return {
@@ -80,29 +71,14 @@ export default {
       statuscb: "dont_remember",
     };
   },
-<<<<<<< HEAD
   components: {
     Header2,
-},
-=======
-  mounted() {
-    http
-      .get("https://progamerapi.azurewebsites.net/api/account/login")
-      .then((response) => {
-        console.log(response.data);
-      });
   },
->>>>>>> register-course
 };
 </script>
 
 <style scoped>
 #login {
-<<<<<<< HEAD
-  margin-top: 5% !important;
-  width: 400px;
-  height: 400px;
-=======
   margin-top: 100px !important;
   width: 400px !important;
   height: 400px !important;
@@ -112,7 +88,6 @@ export default {
   color: #0e0e10;
   border-radius: 10px;
   border: solid 0.5px;
->>>>>>> register-course
 }
 
 .login-header {
@@ -146,10 +121,8 @@ a:hover {
 }
 
 .custom-control-label {
-  display: none !important;
-  margin-left: 5px !important;
+  margin-left: 3px;
 }
-
 
 .btn {
   background-color: #8351dc !important;
@@ -158,7 +131,6 @@ a:hover {
   width: 200px !important;
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-top: 30px !important;
   border-radius: 10px;
 }
