@@ -20,7 +20,7 @@
 import Header from "../components/Header";
 import PerfilMenu from "../components/PerfilMenu";
 export default {
-  name: "HistoricoFinanceiro",
+  name: "HistoryFinancial",
   components: {
     PerfilMenu,
     Header,

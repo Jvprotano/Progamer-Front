@@ -9,7 +9,7 @@
         <b-row class="user" v-for="type in typesu" :key="type">
           <b-col sm="12">
             <label :for="`type-${type}`"
-              >Usuário: <code>{{ text }}</code></label
+              >Usuário: <code>{{ typesu.text }}</code></label
             >
           </b-col>
           <b-col sm="12">
@@ -19,7 +19,7 @@
         <b-row class="password" v-for="type in typesp" :key="type">
           <b-col sm="12">
             <label :for="`type-${type}`"
-              >Senha: <code>{{ password }}</code></label
+              >Senha: <code>{{ typesp.password }}</code></label
             >
           </b-col>
           <b-col sm="12">

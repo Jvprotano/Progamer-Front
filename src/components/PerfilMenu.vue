@@ -6,9 +6,9 @@
                 <div>
                     <b-card-header header-tag="nav">
                         <b-nav card-header tabs>
-                            <b-col sm="4"><b-nav-item active to="/cursosInstrutor">Cursos instruidos</b-nav-item></b-col>
-                            <b-col sm="4"><b-nav-item active to="/historicoFinanceiro">Histórico financeiro</b-nav-item></b-col>
-                            <b-col sm="4"><b-nav-item active to="/minhasVendas">Minhas vendas</b-nav-item></b-col>
+                            <b-col sm="4"><b-nav-item active to="/courseInstructor">Cursos instruidos</b-nav-item></b-col>
+                            <b-col sm="4"><b-nav-item active to="/historyFinancial">Histórico financeiro</b-nav-item></b-col>
+                            <b-col sm="4"><b-nav-item active to="/mySales">Minhas vendas</b-nav-item></b-col>
                         </b-nav>
                     </b-card-header>
                 </div>    

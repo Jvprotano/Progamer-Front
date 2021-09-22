@@ -1,15 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-
 import Home from './pages/Home';
-import InfoCurso from './pages/InfoCurso';
+import InfoCourse from './pages/InfoCourse';
 import Login from './pages/Login';
 import RegisterUser from './pages/RegisterUser';
-import RegisterCourse from './pages/RegisterCourse'
-
-import CursoInstrutor from './pages/CursoInstrutor';
-import HistoricoFinanceiro from './pages/HistoricoFinanceiro';
-import MinhasVendas from './pages/MinhasVendas';
+import RegisterCourse from './pages/RegisterCourse';
+import CourseInstructor from './pages/CourseInstructor';
+import HistoryFinancial from './pages/HistoryFinancial';
+import MySales from './pages/MySales';
 
 Vue.use(Router);
 
@@ -22,8 +20,8 @@ const router = new Router({
             component: Home,
         },
         {
-            path: '/info',
-            component: InfoCurso,
+            path: '/infoCourse',
+            component: InfoCourse,
         },
         {
             path: '/login',
@@ -31,7 +29,7 @@ const router = new Router({
     
         },
         {
-            path: '/registercourse',
+            path: '/registerCourse',
             component: RegisterCourse,
             /*Apenas exemplo para bloquear rotas...*/
             /* beforeEnter: (to, from, next) => {
@@ -49,16 +47,16 @@ const router = new Router({
 
         },
     {
-        path: '/cursosInstrutor',
-        component: CursoInstrutor,
+        path: '/courseInstructor',
+        component: CourseInstructor,
     },
     {
-        path: '/historicoFinanceiro',
-        component: HistoricoFinanceiro,
+        path: '/historyFinancial',
+        component: HistoryFinancial,
     },
     {
-        path: '/minhasVendas',
-        component: MinhasVendas,
+        path: '/mySales',
+        component: MySales,
     },
  ]
 });

@@ -1,7 +1,7 @@
 <template>
   <div id="components">
     <Header />
-    <div id="info-curso">
+    <div id="info-course">
       <b-container class="info-main">
         <b-row>
           <b-col cols="6">
