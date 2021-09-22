@@ -26,10 +26,6 @@ export default {
 };
 </script>
 
-<<<<<<< HEAD
 <style scoped>
 
 </style>
-=======
-<style></style>
->>>>>>> register-course
