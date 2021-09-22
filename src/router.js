@@ -7,45 +7,58 @@ import Login from './pages/Login';
 import RegisterUser from './pages/RegisterUser';
 import RegisterCourse from './pages/RegisterCourse'
 
+import CursoInstrutor from './pages/CursoInstrutor';
+import HistoricoFinanceiro from './pages/HistoricoFinanceiro';
+import MinhasVendas from './pages/MinhasVendas';
 
 Vue.use(Router);
 
 const router = new Router({
- mode: 'history',
- routes:[
+    mode: 'history',
+    routes: [
   
-     {
-         path: '/',
-         component: Home
-     },
-     {
-        path: '/info',
-        component: InfoCurso
-    },
-     {
-        path: '/login',
-        component: Login,
+        {
+            path: '/',
+            component: Home,
+        },
+        {
+            path: '/info',
+            component: InfoCurso,
+        },
+        {
+            path: '/login',
+            component: Login,
     
-   },
-  
-  
-    {
-        path: '/registercourse',
-        component: RegisterCourse,
-        /*Apenas exemplo para bloquear rotas...*/ 
-       /* beforeEnter: (to, from, next) => {
-            if (!localStorage.getItem("token")) {
-              next("/login");
-            } else {
-              next();
-            }
+        },
+        {
+            path: '/registercourse',
+            component: RegisterCourse,
+            /*Apenas exemplo para bloquear rotas...*/
+            /* beforeEnter: (to, from, next) => {
+                 if (!localStorage.getItem("token")) {
+                   next("/login");
+                 } else {
+                   next();
+                 }
+     
+         }*/
+        },
+        {
+            path: '/registerUser',
+            component: RegisterUser,
 
-    }*/
+        },
+    {
+        path: '/cursosInstrutor',
+        component: CursoInstrutor,
     },
     {
-        path: '/registerUser',
-        component: RegisterUser
-
+        path: '/historicoFinanceiro',
+        component: HistoricoFinanceiro,
+    },
+    {
+        path: '/minhasVendas',
+        component: MinhasVendas,
     },
  ]
 });
