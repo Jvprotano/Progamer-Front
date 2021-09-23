@@ -9,7 +9,7 @@
       :loop="true"
     >
       <slide v-for="(slide, i) in slides" :index="i" :key="i">
-        <router-link to="curso" id="buttonCourse">
+        <router-link to="infoCourse" id="buttonCourse">
           <img :src="slide.src" />
           <div class="infos">
           <b-row>
