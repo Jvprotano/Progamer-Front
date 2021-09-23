@@ -1,5 +1,6 @@
 <template>
   <div class="box">
+    <div class="mainCarousel">
     <carousel-3d :controls-visible="true" :space="400">
       <slide v-for="(slide, i) in slides" :index="i" :key="i">
         <router-link to="InfoCourse" id="carousel">
@@ -9,6 +10,7 @@
         </router-link>
       </slide>
     </carousel-3d>
+    </div>
   </div>
 </template>
 
@@ -98,6 +100,10 @@ export default {
 </script>
 
 <style scoped>
+.mainCarousel{
+  position: relative !important;
+  left: none !important;
+}
 #carousel {
   background-color: blueviolet !important;
 }

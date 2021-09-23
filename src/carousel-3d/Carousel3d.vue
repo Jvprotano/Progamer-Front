@@ -514,7 +514,6 @@ export default {
 }
 
 .carousel-3d-slider {
-  position: relative;
   margin: 0 auto;
   transform-style: preserve-3d;
   -webkit-perspective: 1000px;

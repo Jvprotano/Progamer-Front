@@ -1,5 +1,6 @@
 <template>
   <div class="box">
+    
     <h3>Cursos em destaque</h3>
     <carousel-3d
       :disable3d="true"
@@ -8,6 +9,7 @@
       :controls-visible="true"
       :loop="true"
     >
+    
       <slide v-for="(slide, i) in slides" :index="i" :key="i">
         <router-link to="curso" id="buttonCourse">
           <img :src="slide.src" />
@@ -29,7 +31,9 @@
           </div>
         </router-link>
       </slide>
+      
     </carousel-3d>
+    
   </div>
 </template>
 
@@ -156,10 +160,6 @@ img {
   height: 60%;
 
   border: solid !important;
-}
-.carousel-3d-slider {
-  height: 500px !important;
-  width: 500px !important;
 }
 .carousel-3d-container {
   padding: 10px !important;
