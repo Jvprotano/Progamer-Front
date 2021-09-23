@@ -29,7 +29,7 @@ import Controls from "../carousel-3d/Controls.vue";
 const noop = () => {};
 
 export default {
-  name: "carousel3d",
+  name: "carouselGames",
   components: {
     Controls,
   },
@@ -514,7 +514,8 @@ export default {
 }
 
 .carousel-3d-slider {
-  position: relative;
+  position: absolute;
+  left: 759px;
   margin: 0 auto;
   transform-style: preserve-3d;
   -webkit-perspective: 1000px;

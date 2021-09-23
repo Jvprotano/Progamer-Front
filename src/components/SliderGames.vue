@@ -1,44 +1,41 @@
 <template>
   <div class="box">
-    
     <h3>Cursos em destaque</h3>
-    <carousel-3d
+    <carousel-games
+      class="slid"
       :disable3d="true"
       :space="375"
       :clickable="true"
       :controls-visible="true"
       :loop="true"
     >
-    
-      <slide v-for="(slide, i) in slides" :index="i" :key="i">
+      <slide v-for="(slide, i) in slides" :index="i" :key="i" id="alo">
         <router-link to="curso" id="buttonCourse">
           <img :src="slide.src" />
           <div class="infos">
-          <b-row>
-            <b-col sm="12">
-              <h4>CURSO DE ALGUMA COISA</h4>
-            </b-col>
-          </b-row>
-          <b-row>
-            <b-col sm="12">
-              <h5>Lucas</h5>
-            </b-col>
-            <b-col sm="12">
-              <p>Curso de alguma coisa</p>
-              <p>Ou sei lá</p>
-            </b-col>
-          </b-row>
+            <b-row>
+              <b-col sm="12">
+                <h4>CURSO DE ALGUMA COISA</h4>
+              </b-col>
+            </b-row>
+            <b-row>
+              <b-col sm="12">
+                <h5>Lucas</h5>
+              </b-col>
+              <b-col sm="12">
+                <p>Curso de alguma coisa</p>
+                <p>Ou sei lá</p>
+              </b-col>
+            </b-row>
           </div>
         </router-link>
       </slide>
-      
-    </carousel-3d>
-    
+    </carousel-games>
   </div>
 </template>
 
 <script scoped>
-import Carousel3d from "@/carousel-3d/Carousel3d";
+import CarouselGames from "@/carousel-3d/CarouselGames";
 import Slide from "@/carousel-3d/Slide";
 
 const slides = [
@@ -108,7 +105,7 @@ const slides = [
 export default {
   name: "App",
   components: {
-    Carousel3d,
+    CarouselGames,
     Slide,
   },
   data() {
@@ -171,6 +168,7 @@ img {
   background-color: #0f0c1d;
   height: 140% !important;
 }
+
 #buttonCourse {
   text-decoration: none !important;
   color: black;
@@ -193,7 +191,7 @@ a {
   color: #0f0c1d !important;
 }
 
-.infos{
+.infos {
   padding: 4% !important;
 }
 </style>
