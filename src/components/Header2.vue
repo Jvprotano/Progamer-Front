@@ -22,11 +22,17 @@ export default {
 </script>
 
 <style scoped>
+#menu{
+  width: 100% !important;
+}
+
 #menu-h {
   background-color: #533784;
   color: #fff !important;
   padding: 14px;
+  width: 100% !important;
   }
+
 #formulario {
   background-color: #fff;
   margin: 0;

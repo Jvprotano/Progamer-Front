@@ -6,12 +6,12 @@
       :space="375"
       :clickable="true"
       :controls-visible="true"
-      :loop="false"
+      :loop="true"
     >
       <slide v-for="(slide, i) in slides" :index="i" :key="i">
         <router-link to="curso" id="buttonCourse">
           <img :src="slide.src" />
-
+          <div class="infos">
           <b-row>
             <b-col sm="12">
               <h4>CURSO DE ALGUMA COISA</h4>
@@ -26,6 +26,7 @@
               <p>Ou sei lá</p>
             </b-col>
           </b-row>
+          </div>
         </router-link>
       </slide>
     </carousel-3d>
@@ -190,5 +191,9 @@ p {
 }
 a {
   color: #0f0c1d !important;
+}
+
+.infos{
+  padding: 4% !important;
 }
 </style>

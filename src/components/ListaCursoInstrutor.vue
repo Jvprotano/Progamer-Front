@@ -68,6 +68,7 @@
 </template>
 
 <script>
+/* import Courses from "../services/courses" */
 export default {
     name: "ListaCursoInstrutor",
 }

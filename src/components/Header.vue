@@ -1,20 +1,20 @@
 <template>
   <div id="menu">
     <nav id="menu-h">
-      <b-row>
+      <b-row id="menu-h">
         <b-col class="home">
           <router-link id="pageHome" to="/">
             <b-row>
-              <b-col class="div-logo" cols="6"
+              <b-col class="div-logo" cols="col-6 col-sm-6 col-md-6"
                 ><img class="logo mg-0" src="../assents/game-console.png"
               /></b-col>
-              <b-col class="div-home" cols="6"
+              <b-col class="div-home" cols="col-6 col-sm-6 col-md-6"
                 ><h5 id="linkhome" class="mb-0 text-white">ProGamer</h5></b-col
               >
             </b-row>
           </router-link>
         </b-col>
-        <b-col>
+        <b-col cols="col-12 col-sm-12 col-md-6">
           <b-input-group size="sm" class="bar-search">
             <b-input-group-prepend is-text>
               <div class="cursor-pointer">
@@ -24,7 +24,7 @@
             <b-form-input type="search" placeholder="Buscar"></b-form-input>
           </b-input-group>
         </b-col>
-        <b-col class="login">
+        <b-col class="login" cols="">
           <router-link id="pageLogin" to="/login"
             ><div class="mb-0 text-white">Entrar</div></router-link
           >
@@ -41,11 +41,16 @@ export default {
 </script>
 
 <style scoped>
+#menu{
+  width: 100% !important;
+}
+
 #menu-h {
   background-color: #533784;
   color: #fff !important;
   padding: 14px;
 }
+
 #formulario {
   background-color: #fff;
   margin: 0;
@@ -75,6 +80,7 @@ export default {
   justify-content: flex-start;
   font-weight: 500;
   margin-left: 15px;
+  width: 40%;
 }
 
 .logo {

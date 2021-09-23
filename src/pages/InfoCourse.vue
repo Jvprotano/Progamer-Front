@@ -18,7 +18,7 @@
               <h6>Nome do Instrutor</h6>
             </b-row>
             <b-row class="category">
-              <h6>Categoria</h6>
+              <h6>Nível de dificuldade</h6>
             </b-row>
             <b-row class="duration">
               <h6>Duração</h6>
@@ -159,6 +159,7 @@
 
 <script>
 import Header from "../components/Header";
+import Course from "../services/courses";
 export default {
   data() {
     return {
@@ -169,6 +170,11 @@ export default {
   components: {
     Header,
   },
+  mounted(){
+    Course.infoCourse().then(resposta => {
+      console.log(resposta)
+    })
+  }
 };
 </script>
 

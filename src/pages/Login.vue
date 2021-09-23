@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div id="components">
     <Header2 />
     <div id="login">
       <b-container class="login-main">
@@ -35,7 +35,7 @@
               value="remember"
               unchecked-value="dont_remember"
             >
-              Lembre-se de mim
+              <p class="textcheck">Lembre-se de mim</p>
             </b-form-checkbox>
 
             <div></div>
@@ -120,8 +120,8 @@ a:hover {
   margin-top: 5px;
 }
 
-.custom-control-label {
-  margin-left: 3px;
+.textcheck {
+  margin-left: 3px !important;
 }
 
 .btn {
@@ -151,7 +151,9 @@ a:hover {
 
 .login-main {
   padding: 35px !important;
+  width: 100% !important;
 }
+
 .label {
   display: inline-flexbox !important;
 }
