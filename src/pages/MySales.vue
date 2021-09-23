@@ -7,7 +7,7 @@
           <PerfilMenu />
           <b-card-body class="text-center"
             ><b-card-text
-              >Desculpe, tela vazia! (MINHAS VENDAS)</b-card-text
+              >Desculpe, tela vazia! (MINHAS VENDAS) teste</b-card-text
             ></b-card-body
           >
         </b-card>
