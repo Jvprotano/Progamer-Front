@@ -87,8 +87,8 @@
       v-model="form.textarea"
       placeholder="Descreva o seu curso.
       Ex: Curso de react com foco em .... "
-      rows="1"
-      max-rows="1"
+      rows="3"
+      max-rows="3"
     ></b-form-textarea>
 
 <div class="cardsImg">
@@ -281,7 +281,7 @@ import Header from '../components/Header'
 }
 #resetInputs{
  background-color: #AF5FE8 !important;
-  box-shadow: 0 0 40px rgb(0 0 0 / 10%) !important;
+  
 }
 .card-img {
  
@@ -303,9 +303,7 @@ input {
   padding: 10px;
   margin-top: 10px !important;
 }
-#input-1, #input-2, #input-3 {
-  box-shadow: 0 0 40px rgb(0 0 0 / 10%) !important;
-}
+
 
 #input-3 {
   margin-bottom: 10px;
@@ -352,7 +350,6 @@ color: red;
 #textarea {
   width: 100%;
   background-color: #f7f7f8;
-  box-shadow: 0 0 40px rgb(0 0 0 / 15%) !important;
   margin-bottom: 10px;
 }
 </style>
