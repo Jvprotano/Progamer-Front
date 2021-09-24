@@ -10,7 +10,7 @@
       :loop="true"
     >
       <slide v-for="(slide, i) in slides" :index="i" :key="i" id="alo">
-        <router-link to="curso" id="buttonCourse">
+        <router-link to="infocourse" id="buttonCourse">
           <img :src="slide.src" />
           <div class="infos">
             <b-row>
@@ -179,7 +179,7 @@ img {
   color: black;
 }
 h3 {
-  margin-left: 7%;
+  margin-left: 1.5%;
 }
 h3,
 h4,

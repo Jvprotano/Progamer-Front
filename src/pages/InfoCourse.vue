@@ -7,21 +7,21 @@
           <b-col cols="6">
             <img
               class="figure-img img-fluid rounded"
-              src="https://revista-images.querobolsa.com.br/revista/post_images/14993/8b0c620256405b6b2705b140391800b1d8a501da.png?1550093429"
-            />
+              :src= courses.imageUrl
+              />
           </b-col>
           <b-col class="text-side" cols="6">
             <b-row class="title">
-              <h2>Curso de dar muita bala</h2>
+              <h2>{{courses.title}}</h2>
             </b-row>
             <b-row class="instructor-name">
-              <h6>Nome do Instrutor</h6>
+              <h6>Instrutor: {{courses.instructorFullName}}</h6>
             </b-row>
             <b-row class="category">
-              <h6>Nível de dificuldade</h6>
+              <h6>Nível: {{courses.categoryName}}</h6>
             </b-row>
             <b-row class="duration">
-              <h6>Duração</h6>
+              <h6>Duração: {{courses.duration}} horas</h6>
             </b-row>
             <b-row>
               <b-form-rating
@@ -37,7 +37,7 @@
             </b-row>
             <b-row>
               <b-col class="price">
-                <h4>Valor R$</h4>
+                <h4>Valor R$ {{courses.value}}</h4>
               </b-col>
               <b-col class="buy">
                 <b-button>Comprar</b-button>
@@ -51,28 +51,7 @@
           <b-col>
             <h4>Descrição</h4>
             <p>
-              Esse curso é muito legal, voce vai aprender a dar varias balas nos
-              nubs e nerdolas!!! Esse curso é muito legal, voce vai aprender a
-              dar varias balas nos nubs e nerdolas!!! Esse curso é muito legal,
-              voce vai aprender a dar varias balas nos nubs e nerdolas!!! Esse
-              curso é muito legal, voce vai aprender a dar varias balas nos nubs
-              e nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
-              varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
-              vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso
-              é muito legal, voce vai aprender a dar varias balas nos nubs e
-              nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
-              varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
-              vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso
-              é muito legal, voce vai aprender a dar varias balas nos nubs e
-              nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
-              varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
-              vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso
-              é muito legal, voce vai aprender a dar varias balas nos nubs e
-              nerdolas!!! Esse curso é muito legal, voce vai aprender a dar
-              varias balas nos nubs e nerdolas!!! Esse curso é muito legal, voce
-              vai aprender a dar varias balas nos nubs e nerdolas!!! Esse curso
-              é muito legal, voce vai aprender a dar varias balas nos nubs e
-              nerdolas!!!
+              {{courses.description}}
             </p>
           </b-col>
         </b-row>
@@ -165,14 +144,16 @@ export default {
     return {
       value: 3.5,
       value_comment: 4.0,
+      courses: [],
     };
   },
   components: {
     Header,
   },
   mounted(){
-    Course.infoCourse().then(resposta => {
-      console.log(resposta)
+    Course.infoCourse().then(apiResponse => {
+      this.courses = apiResponse.data
+      console.log(this.courses)
     })
   }
 };
