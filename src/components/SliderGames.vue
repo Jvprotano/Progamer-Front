@@ -8,9 +8,9 @@
       :controls-visible="true"
       :loop="true"
     >
-      <slide v-for="(slide, i) in 12" :index="i" :key="i">
+      <slide v-for="(slide, i) in slideCount" :index="i" :key="i">
         <router-link to="infoCourse" id="buttonCourse">
-          <img src= '#' />
+          <img :src= homeData[i].imageUrl />
           <div class="infos">
           <b-row>
             <b-col sm="12">
@@ -35,7 +35,7 @@
 <script scoped>
 import Carousel3d from "@/carousel-3d/Carousel3d";
 import Slide from "@/carousel-3d/Slide";
-import courses from '../services/courses';
+import Courses from '../services/courses';
 
 const slides = [
   {
@@ -60,9 +60,8 @@ export default {
     };
   },
   mounted(){
-    courses.homeLoadData().then(apiResponse => {
+    Courses.homeLoadData().then(apiResponse => {
       this.homeData = apiResponse.data.listCourseRecommended
-      console.log(this.homeData)
     })
   },
   

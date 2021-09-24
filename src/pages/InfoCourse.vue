@@ -61,7 +61,7 @@
           <b-col>
             <h4 class="title-cr">Comentários e avaliações</h4>
             <b-row>
-              <h6>Lucas França</h6>
+              <h6>{{courses.listRating[0].userFullName}}</h6>
             </b-row>
             <b-row>
               <b-form-rating
@@ -75,59 +75,7 @@
               ></b-form-rating>
             </b-row>
             <p class="comment">
-              Esse curso é muito legal, dei muita bala nos nerdolas hehe.
-            </p>
-            <b-row>
-              <h6>Lucas Nakasima</h6>
-            </b-row>
-            <b-row>
-              <b-form-rating
-                id="rating-main"
-                class="rating"
-                inline
-                value
-                v-model="value_comment"
-                readonly
-                precision="1"
-              ></b-form-rating>
-            </b-row>
-            <p class="comment">
-              O professor é muito gente boa.
-            </p>
-            <b-row>
-              <h6>Gustavo Sumi</h6>
-            </b-row>
-            <b-row>
-              <b-form-rating
-                id="rating-main"
-                class="rating"
-                inline
-                value
-                v-model="value_comment"
-                readonly
-                precision="1"
-              ></b-form-rating>
-            </b-row>
-            <p class="comment">
-              Depois desse curso eu virei profissional, recomendo muito.
-            </p>
-            <b-row>
-              <h6>Gustavo Boroski</h6>
-            </b-row>
-            <b-row>
-              <b-form-rating
-                id="rating-main"
-                class="rating"
-                inline
-                value
-                v-model="value_comment"
-                readonly
-                precision="1"
-              ></b-form-rating>
-            </b-row>
-            <p class="comment">
-              Eu achei q sabia pouco, mas deepois q assisti a esse curso,
-              percebi que sabia mais que o professor. !@#@!#@@
+              {{courses.listRating[0].comment}}
             </p>
           </b-col>
         </b-row>
@@ -143,7 +91,7 @@ export default {
   data() {
     return {
       value: 3.5,
-      value_comment: 4.0,
+      value_comment: 4,
       courses: [],
     };
   },
@@ -153,7 +101,6 @@ export default {
   mounted(){
     Course.infoCourse().then(apiResponse => {
       this.courses = apiResponse.data
-      console.log(this.courses)
     })
   }
 };
