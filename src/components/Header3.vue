@@ -14,6 +14,28 @@
             </b-row>
           </router-link>
         </b-col>
+        <b-col class="login" cols="">
+          <b-dropdown
+            id="dropdown-right"
+            right
+            size="lg"
+            toggle-class="text-decoration-none"
+            no-caret
+          >
+            <template #button-content>
+              <img class="logo mg-0" src="../assents/profile.png" />
+            </template>
+            <b-dropdown-item class="text-center">Configurações</b-dropdown-item>
+            <b-dropdown-item class="text-center"
+              >Página do aluno</b-dropdown-item
+            >
+            <b-dropdown-item class="text-center"  to="/courseInstructor"
+              >Página do instrutor</b-dropdown-item
+            >
+            <b-dropdown-divider></b-dropdown-divider>
+            <b-dropdown-item class="text-center"  to="/">Logout</b-dropdown-item>
+          </b-dropdown>
+        </b-col>
       </b-row>
     </nav>
   </div>
@@ -33,7 +55,7 @@ export default {
 #menu-h {
   background-color: #533784;
   color: #fff !important;
-  padding: 14px;
+  padding: 7px;
   width: 100% !important;
 }
 
@@ -76,4 +98,18 @@ export default {
   display: flex;
   padding-left: 0;
 }
+
+.btn {
+  background-color: #fff !important;
+}
+
+.btn:hover {
+  text-decoration: none !important;
+}
+
+.btn-profile {
+  background-color: #533784 !important;
+}
+
+
 </style>

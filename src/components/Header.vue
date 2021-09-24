@@ -14,7 +14,7 @@
             </b-row>
           </router-link>
         </b-col>
-        <b-col cols="col-12 col-sm-12 col-md-6">
+        <b-col cols="col-4 col-sm-4 col-md-4" class="content-center">
           <b-input-group size="sm" class="bar-search">
             <b-input-group-prepend is-text>
               <div class="cursor-pointer">
@@ -48,7 +48,8 @@ export default {
 #menu-h {
   background-color: #533784;
   color: #fff !important;
-  padding: 14px;
+  width: 100% !important;
+  padding: 7px;
 }
 
 #formulario {
@@ -63,7 +64,6 @@ export default {
 
 .bar-search {
   font-family: "Open Sans", sans-serif;
-  width: 100% !important;
 }
 
 .login {
