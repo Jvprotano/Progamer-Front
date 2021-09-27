@@ -1,14 +1,16 @@
 <template>
   <div class="box">
-    <carousel-3d :controls-visible="true" :space="400">
-      <slide v-for="(slide, i) in slides" :index="i" :key="i">
-        <router-link to="InfoCourse" id="carousel">
-          <b-card class="card-carousel">
-            <img class="image-carousel" :src="slide.src" />
-          </b-card>
-        </router-link>
-      </slide>
-    </carousel-3d>
+    <div class="mainCarousel">
+      <carousel-3d :controls-visible="true" :space="400">
+        <slide v-for="(slide, i) in slides" :index="i" :key="i">
+          <router-link to="InfoCourse" id="carousel">
+            <b-card class="card-carousel">
+              <img class="image-carousel" :src="slide.src" />
+            </b-card>
+          </router-link>
+        </slide>
+      </carousel-3d>
+    </div>
   </div>
 </template>
 
@@ -98,6 +100,9 @@ export default {
 </script>
 
 <style scoped>
+.carousel-3d-slider {
+  position: relative !important;
+}
 #carousel {
   background-color: blueviolet !important;
 }
@@ -153,5 +158,8 @@ img {
 }
 h3 {
   margin-left: 30px;
+}
+#alo {
+  position: absolute !important;
 }
 </style>
