@@ -131,12 +131,12 @@ export default {
     return {
       errors: [],
         form:{
-        name: "",
-        lastName: "",
-        email: "",
-        password: "",
-        ConfirmPassword: "",
-        dateBirth: "",
+        name: "Jose",
+        lastName: "Vinicius",
+        email: "juse@hotmail.com",
+        password: "Senha123",
+        ConfirmPassword: "Senha123",
+        dateBirth: "null",
         },
         show: true,
       }
@@ -145,11 +145,9 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      /* alert(JSON.stringify(this.form)); */
     },
     onReset(event) {
       event.preventDefault();
-      // Reset our form values
       this.form.name = "";
       this.form.lastName = "";
       this.form.email = "";
@@ -165,30 +163,13 @@ export default {
     submitForm: function(e) {
       this.errors = [];
       
-      if (!this.form.name) {
-        this.errors.push("O primeiro nome é obrigatório.");
-      }
-      if (!this.form.lastName) {
-        this.errors.push("O último nome é obrigatório.");
-      }
-      if (!this.form.email) {
-        this.errors.push('O e-mail é obrigatório.');
-      } else if (!this.validEmail(this.form.email)) {
+      if (!this.validEmail(this.form.email)) {
         this.errors.push('Utilize um e-mail válido.');
       }
-      if (!this.form.password) {
-        this.errors.push("A senha é obrigatória.");
-      } else if (!this.stardPassword(this.form.password)) {
+      if (!this.stardPassword(this.form.password)) {
         this.errors.push("A senha precisa estar no padrão solicitado.");
       }
-      if (!this.form.ConfirmPassword) {
-        this.errors.push("A confirmação de senha é obrigatória.");
-      }  else if (!this.validPassword(this.form.ConfirmPassword)) {
-        this.errors.push("As senhas precisão ser iguais.");
-      } 
-      if (!this.form.dateBirth) {
-        this.errors.push("A data de nascimento é obrigatória.");
-      }  else if (!this.validDate(this.form.dateBirth)) {
+      if (!this.validDate(this.form.dateBirth)) {
         this.errors.push("A data de nascimento não é válida.");
       }
 
@@ -201,14 +182,6 @@ export default {
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
-    },
-    validPassword: function() {
-      var pass1 = this.form.password;
-      var pass2 = this.form.ConfirmPassword;
-      console.log(pass1, pass2);
-      if (pass1 === pass2) {
-        return true;
-      }
     },
     stardPassword: function(password){
       var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
@@ -225,7 +198,7 @@ export default {
       User.salvar(this.form).then(apiResponse => {
         alert(apiResponse)
       })
-      .catch(error => console.log(error.Message))
+      .catch(error => this.errors.push(error.response.data.Message))
     }
   },
   mounted(){
@@ -260,7 +233,6 @@ export default {
 .cards {
   margin-top: 2% !important;
   width: 55% !important;
-  /* height: 40% !important; */
   padding: 3% !important;
 }
 
