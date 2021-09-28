@@ -3,7 +3,7 @@
     <div class="mainCarousel">
       <carousel-3d :controls-visible="true" :space="400">
         <slide v-for="(slide, i) in slides" :index="i" :key="i">
-          <router-link to="InfoCourse" id="carousel">
+          <router-link to="CourseByGame" id="carousel">
             <b-card class="card-carousel">
               <img class="image-carousel" :src="slide.src" />
             </b-card>

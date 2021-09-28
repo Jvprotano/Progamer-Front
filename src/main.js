@@ -10,6 +10,10 @@ import Carousel3d from 'vue-carousel-3d'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import i18n from './i18n'
+
+
+Vue.config.productionTip = false
 
 Vue.use(VueAwesomeSwiper)
 Vue.component('b-carousel', BCarousel)
@@ -22,5 +26,11 @@ Vue.use(BootstrapVue)
 
 new Vue({
   router,
+  i18n,
   render: h => h(App),
 }).$mount('#app')
+
+
+
+
+
