@@ -19,6 +19,7 @@
                 label-for="cod"
               >
                 <b-form-input
+                  v-mask="'#### #### #### ####'"
                   id="cod"
                   v-model="form.cod"
                   type="text"
@@ -75,6 +76,7 @@
                 label-for="pass"
               >
                 <b-form-input
+                  v-mask="'###'"
                   id="pass"
                   v-model="form.pass"
                   type="password"
