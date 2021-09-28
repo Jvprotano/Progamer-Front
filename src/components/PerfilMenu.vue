@@ -31,6 +31,7 @@ export default {
 .container{
     padding-right: var(--bs-gutter-x, 0.0rem) !important; 
     padding-left: var(--bs-gutter-x, 0.0rem) !important;
+    
 }
 .router-link-exact-active:focus, .router-link-exact-active:read-only{
     background-color: #8351dc !important;

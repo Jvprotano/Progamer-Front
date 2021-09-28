@@ -34,11 +34,21 @@ export default {
             })
             .then(value => {
                 this.boxTwo = value
+                if(this.boxTwo == true){
+                    console.log("TRUE")
+                }else{
+                    console.log("FALSE")
+                }
             })
             .catch(err => {
                 console.log("Texto de erro", err);
             })
-        }
+        },
+        // formCourse(){
+        //     this.to = ''
+        //     if(this.boxTwo == true) return to='/registerCourse'
+            
+        // }
     }
 }
 </script>
