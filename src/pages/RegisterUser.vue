@@ -10,7 +10,8 @@
             comunidade!
           </p>
         </b-row>
-        <b-form v-on:submit.prevent="submitForm" v-if="show">
+
+        <b-form @submit.prevent="salvar()" v-on:submit.prevent="submitForm" v-if="show">
           <b-row>
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
@@ -35,7 +36,7 @@
               >
                 <b-form-input
                   id="lname"
-                  v-model="form.lname"
+                  v-model="form.lastName"
                   placeholder="Último nome"
                 ></b-form-input>
               </b-form-group>
@@ -66,7 +67,7 @@
             >
               <b-form-input
                 id="date"
-                v-model="form.date"
+                v-model="form.dateBirth"
                 type="date"
                 placeholder=""
               ></b-form-input>
@@ -77,13 +78,13 @@
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top-pass"
-                id="pass"
+                id="password"
                 label="Senha:"
-                label-for="pass"
+                label-for="password"
               >
                 <b-form-input
-                  id="pass"
-                  v-model="form.pass"
+                  id="password"
+                  v-model="form.password"
                   type="password"
                 ></b-form-input>
                 <p class="restpass"> Mínimo 8 caracteres, contendo pelo menos uma letra maiúscula, uma letra minúscula e um número.</p>
@@ -92,13 +93,13 @@
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top-pass"
-                id="confpass"
+                id="ConfirmPassword"
                 label="Confirme a senha:"
-                label-for="confpass"
+                label-for="ConfirmPassword"
               >
                 <b-form-input
-                  id="confpass"
-                  v-model="form.confpass"
+                  id="ConfirmPassword"
+                  v-model="form.ConfirmPassword"
                   type="password"
                   placeholder=""
                 ></b-form-input>
@@ -124,21 +125,23 @@
 
 <script>
 import Header2 from "../components/Header2";
+import User from "../services/user";
 export default {
   data() {
     return {
       errors: [],
-      form: {
+        form:{
         name: "",
-        lname: "",
+        lastName: "",
         email: "",
-        pass: "",
-        confpass: "",
-        date: "",
-      },
-      show: true,
-    };
-  },
+        password: "",
+        ConfirmPassword: "",
+        dateBirth: "",
+        },
+        show: true,
+      }
+    },
+  
   methods: {
     onSubmit(event) {
       event.preventDefault();
@@ -148,11 +151,11 @@ export default {
       event.preventDefault();
       // Reset our form values
       this.form.name = "";
-      this.form.lname = "";
+      this.form.lastName = "";
       this.form.email = "";
-      this.form.pass = "";
-      this.form.confpass = "";
-      this.form.date = "";
+      this.form.password = "";
+      this.form.ConfirmPassword = "";
+      this.form.dateBirth = "";
       this.form.checked = [];
       this.show = false;
       this.$nextTick(() => {
@@ -165,7 +168,7 @@ export default {
       if (!this.form.name) {
         this.errors.push("O primeiro nome é obrigatório.");
       }
-      if (!this.form.lname) {
+      if (!this.form.lastName) {
         this.errors.push("O último nome é obrigatório.");
       }
       if (!this.form.email) {
@@ -173,19 +176,19 @@ export default {
       } else if (!this.validEmail(this.form.email)) {
         this.errors.push('Utilize um e-mail válido.');
       }
-      if (!this.form.pass) {
+      if (!this.form.password) {
         this.errors.push("A senha é obrigatória.");
-      } else if (!this.stardPassword(this.form.pass)) {
+      } else if (!this.stardPassword(this.form.password)) {
         this.errors.push("A senha precisa estar no padrão solicitado.");
       }
-      if (!this.form.confpass) {
+      if (!this.form.ConfirmPassword) {
         this.errors.push("A confirmação de senha é obrigatória.");
-      }  else if (!this.validPassword(this.form.confpass)) {
+      }  else if (!this.validPassword(this.form.ConfirmPassword)) {
         this.errors.push("As senhas precisão ser iguais.");
       } 
-      if (!this.form.date) {
+      if (!this.form.dateBirth) {
         this.errors.push("A data de nascimento é obrigatória.");
-      }  else if (!this.validDate(this.form.date)) {
+      }  else if (!this.validDate(this.form.dateBirth)) {
         this.errors.push("A data de nascimento não é válida.");
       }
 
@@ -200,23 +203,33 @@ export default {
       return re.test(email);
     },
     validPassword: function() {
-      var pass1 = document.getElementById("pass")
-      var pass2 = document.getElementById("confpass");
-      if (pass1 != pass2) {
+      var pass1 = this.form.password;
+      var pass2 = this.form.ConfirmPassword;
+      console.log(pass1, pass2);
+      if (pass1 === pass2) {
         return true;
       }
     },
-    stardPassword: function(pass){
+    stardPassword: function(password){
       var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
-      return re.test(pass);
+      return re.test(password);
     },
-    validDate: function (date) {
+    validDate: function (dateBirth) {
       let today = new Date();
       today = new Date(today.getTime() - (today.getTimezoneOffset() * 60000)).toISOString();
       let parts = today.split('T')
       today = (parts[0]);
-      return date <= today ? true : false
+      return dateBirth <= today ? true : false
     },
+    salvar(){
+      User.salvar(this.form).then(apiResponse => {
+        alert(apiResponse)
+      })
+      .catch(error => console.log(error.Message))
+    }
+  },
+  mounted(){
+
   },
   components: {
     Header2,
@@ -237,11 +250,11 @@ export default {
   width: 78% !important;
 }
 
-#pass {
+#password {
   width: 85% !important;
 }
 
-#confpass {
+#ConfirmPassword {
   width: 85% !important;
 }
 .cards {
