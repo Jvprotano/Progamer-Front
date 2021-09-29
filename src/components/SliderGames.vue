@@ -9,6 +9,7 @@
       :loop="true"
     >
       <slide v-for="(slide, i) in slideCount" :index="i" :key="i">
+        <template  v-if=" i < homeData.length">
         <router-link to="infoCourse" id="buttonCourse">
           <img :src= homeData[i].imageUrl />
           <div class="infos">
@@ -27,6 +28,7 @@
           </b-row>
           </div>
         </router-link>
+        </template>
       </slide>
     </carousel-3d>
   </div>
@@ -39,10 +41,9 @@ import Courses from '../services/courses';
 
 const slides = [
   {
-    title: "Slide 0",
+    title: "",
     desc: "",
-    src:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmnjWwG4MnRCD7vZ_mQvG5uS0Tern03U20sg&usqp=CAU"
+    src: ""
   }
 ];
 

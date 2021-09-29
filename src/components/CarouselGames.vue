@@ -3,11 +3,13 @@
     <div class="mainCarousel">
       <carousel-3d :controls-visible="true" :space="400">
         <slide v-for="(slide, i) in slideCount" :index="i" :key="i">
+          <template  v-if=" i < gameData.length">
           <router-link to="InfoCourse" id="carousel">
             <b-card class="card-carousel">
               <img class="image-carousel" :src= gameData[i].imageUrl />
             </b-card>
           </router-link>
+          </template>
         </slide>
       </carousel-3d>
     </div>
@@ -21,11 +23,9 @@ import Games from "../services/courses"
 
 const slides = [
   {
-    title: "Slide 1",
-    desc:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, maxime.",
-    src:
-      "https://theclutch.com.br/wp-content/uploads/2021/03/csgo-capa-cts.jpg",
+    title: "",
+    desc: "",
+    src: "",
   }
 ];
 
