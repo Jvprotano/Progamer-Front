@@ -10,7 +10,7 @@
             comunidade!
           </p>
         </b-row>
-        <b-form v-on:submit.prevent="submitForm" v-if="show">
+        <b-form v-on:submit.prevent="registerUser" v-if="show">
           <b-row>
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
@@ -124,6 +124,7 @@
 
 <script>
 import Header2 from "../components/Header2";
+import Cadastro from '../services/courses';
 export default {
   data() {
     return {
@@ -140,6 +141,13 @@ export default {
     };
   },
   methods: {
+    registerUser() {
+      Cadastro.registerUser(this.form).then(response => {
+        this.registerUser = response.registerUser
+        alert('salvo com sucesso!')
+      })
+    },
+      
     onSubmit(event) {
       event.preventDefault();
       /* alert(JSON.stringify(this.form)); */
