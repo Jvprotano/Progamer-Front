@@ -5,16 +5,16 @@
         <b-col class="home">
           <router-link id="pageHome" to="/">
             <b-row>
-              <b-col class="div-logo" cols="col-6 col-sm-6 col-md-6"
-                ><img class="logo mg-0" src="../assents/game-console.png"
-              /></b-col>
-              <b-col class="div-home" cols="col-6 col-sm-6 col-md-6"
-                ><h5 id="linkhome" class="mb-0 text-white">ProGamer</h5></b-col
-              >
+              <b-col class="div-logo text-center" cols="col-6 col-sm-6 col-md-6">
+                <img class="logo mg-0" src="../assents/game-console.png"/>
+              </b-col>
+              <b-col class="div-home" cols="col-6 col-sm-6 col-md-6">
+                <h5 id="linkhome" class="mb-0 text-white">ProGamer</h5>
+              </b-col>
             </b-row>
           </router-link>
         </b-col>
-        <b-col cols="col-4 col-sm-4 col-md-4" class="content-center">
+        <b-col cols="col-4 col-sm-4 col-md-4" class="content-center bar-search">
           <b-input-group size="sm" class="bar-search">
             <b-input-group-prepend is-text>
               <div class="cursor-pointer">
@@ -26,7 +26,7 @@
         </b-col>
         <b-col class="login" cols="">
           <router-link id="pageLogin" to="/login"
-            ><div class="mb-0 text-white">Entrar</div></router-link
+            ><div class="mb-0 text-white font-600">Entrar</div></router-link
           >
         </b-col>
       </b-row>
@@ -45,11 +45,23 @@ export default {
   width: 100% !important;
 }
 
+@media (max-width: 750px)
+{
+  .bar-search
+   {
+    display: none !important;
+   }
+
+   .div-logo{
+     padding-right: 50% !important;
+   }
+}
+
 #menu-h {
   background-color: #533784;
   color: #fff !important;
   width: 100% !important;
-  padding: 7px;
+  padding: 5px;
 }
 
 #formulario {

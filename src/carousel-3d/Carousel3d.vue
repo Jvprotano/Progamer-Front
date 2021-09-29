@@ -1,6 +1,6 @@
 <template>
   <div
-    class="carousel-3d-container"
+    class="carousel-3d-container bg-secundary"
     :style="{ height: this.slideHeight + 'px' }"
   >
     <div
@@ -505,11 +505,11 @@ export default {
 <style scoped>
 .carousel-3d-container {
   min-height: 1px;
-  width: 93%;
+  width: 72%;
   position: relative;
   z-index: 0;
   overflow: hidden;
-  margin: 30px auto;
+  margin: 20px auto;
   box-sizing: border-box;
 }
 
@@ -519,6 +519,7 @@ export default {
   transform-style: preserve-3d;
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
-  perspective: 1200px;
+  perspective: 645px;
+  width: 310px !important;
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div class="box">
     <div class="mainCarousel">
+      <h5 class="title-home">Em qual game você deseja se tornar um Pro? </h5> 
       <carousel-3d :controls-visible="true" :space="400">
         <slide v-for="(slide, i) in slides" :index="i" :key="i">
           <router-link to="InfoCourse" id="carousel">
@@ -121,26 +122,26 @@ img {
 }
 
 .carousel-3d-container {
-  padding: 5px;
   box-shadow: 0 0 40px rgb(0 0 0 / 95%);
   height: 300px;
   object-fit: cover;
   border-radius: 10px !important;
   box-sizing: border-box;
-  height: 450px !important;
+  height: 375px !important;
 }
 .carousel-3d-slider {
   box-shadow: 0 0 40px rgb(0 0 0 / 15%) !;
   height: 500px;
   object-fit: cover;
   border-radius: 10px !important;
-  box-sizing: border-box;
+  box-sizing: border-box;  
 }
 .carousel-3d-slide {
-  height: 440px !important;
+  height: 410px !important;
   border-width: 0px !important;
   box-shadow: 0 0 40px rgb(0 0 0 / 25%) !important;
   border-radius: 4px !important;
+  width: 311px !important;
 }
 .card-carousel {
   margin: 0px !important;
@@ -151,7 +152,7 @@ img {
 
 .card-body {
   padding: 0px;
-  height: 500px;
+  height: 410px;
   object-fit: cover;
   border-radius: 10px !important;
   box-sizing: border-box;
@@ -162,4 +163,18 @@ h3 {
 #alo {
   position: absolute !important;
 }
+
+.title-home{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 0px;
+    margin-top: 50px;
+    font-size: 1.7rem;
+    margin-bottom: 32px;
+}
+
+.mainCarousel{
+  margin-bottom: 85px;
+}
+
 </style>
