@@ -49,12 +49,14 @@ const slides = [
 
 export default {
   name: "App",
+  
   components: {
     Carousel3d,
     Slide,
     },
     data() {
     return {
+      idCourse: 1,
       slides: slides,
       slideCount: 12,
       homeData: [],

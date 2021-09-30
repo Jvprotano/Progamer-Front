@@ -29,7 +29,7 @@
                 class="rating"
                 inline
                 value
-                v-model="value"
+                v-model="courses.ratingTotal"
                 readonly
                 precision="1"
                 show-value
@@ -57,11 +57,11 @@
         </b-row>
       </b-container>
       <b-container class="comments-ratings">
-        <b-row>
+        <h4 class="title-cr">Comentários e avaliações</h4>
+        <b-row v-for=" i in courses.listRating" :key="i.id">
           <b-col>
-            <h4 class="title-cr">Comentários e avaliações</h4>
             <b-row>
-              <h6>{{courses.listRating[0].userFullName}}</h6>
+              <h6>{{i.userFullName}}</h6>
             </b-row>
             <b-row>
               <b-form-rating
@@ -69,13 +69,13 @@
                 class="rating"
                 inline
                 value
-                v-model="value_comment"
+                v-model="i.note"
                 readonly
                 precision="1"
               ></b-form-rating>
             </b-row>
             <p class="comment">
-              {{courses.listRating[0].comment}}
+              {{i.comment}}
             </p>
           </b-col>
         </b-row>
@@ -87,22 +87,27 @@
 <script>
 import Header from "../components/Header";
 import Course from "../services/courses";
+import idCourse from '../components/SliderGames.vue';
+
 export default {
   data() {
     return {
-      value: 3.5,
-      value_comment: 4,
       courses: [],
+      value: 0,
+      value_comment: 1,
     };
   },
   components: {
     Header,
   },
+  
   mounted(){
-    Course.infoCourse().then(apiResponse => {
+    console.log(idCourse)
+    Course.infoCourse(idCourse.idCourse).then(apiResponse => {
       this.courses = apiResponse.data
+      console.log(this.courses)
     })
-  }
+  },
 };
 </script>
 
