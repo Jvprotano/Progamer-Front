@@ -509,17 +509,26 @@ export default {
   position: relative;
   z-index: 0;
   overflow: hidden;
-  margin: 30px auto;
+  margin: 15px auto;
   box-sizing: border-box;
+  margin-bottom: 50px;
 }
 
 .carousel-3d-slider {
   position: absolute;
-  left: 759px;
+  left: 800px;
   margin: 0 auto;
   transform-style: preserve-3d;
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
   perspective: 1200px;
+}
+
+@media (max-width: 750px)
+{
+  .carousel-3d-slider
+   {
+    left: 760px;
+   }
 }
 </style>

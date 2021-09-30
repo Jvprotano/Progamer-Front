@@ -1,5 +1,5 @@
 <template>
-	<div class="carousel-3d-slide" :style="slideStyle" :class="computedClasses" @click="goTo()">
+	<div class="carousel-3d-slide bg-secundary" :style="slideStyle" :class="computedClasses" @click="goTo()">
 		<slot :index="index" :isCurrent="isCurrent" :leftIndex="leftIndex" :rightIndex="rightIndex"/>
 	</div>
 </template>
@@ -55,7 +55,7 @@
                 }
 
                 return Object.assign(styles, {
-                    'border-width': this.parent.border + 'px',
+                    'border-width': 0 + 'px',
                     'width': this.parent.slideWidth + 'px',
                     'height': this.parent.slideHeight + 'px',
                     'transition': ' transform ' + this.parent.animationSpeed + 'ms, ' +

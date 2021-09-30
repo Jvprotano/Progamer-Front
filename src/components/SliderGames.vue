@@ -1,8 +1,8 @@
 <template>
   <div class="box">
-    <h3>Cursos em destaque</h3>
+    <h3 class="sub-title">Cursos em destaque</h3>
     <carousel-games
-      class="slid"
+      class="slid bg-secundary"
       :disable3d="true"
       :space="375"
       :clickable="true"
@@ -10,21 +10,22 @@
       :loop="true"
     >
       <slide v-for="(slide, i) in slides" :index="i" :key="i" id="alo">
-        <router-link to="infocourse" id="buttonCourse">
-          <img :src="slide.src" />
+        <router-link to="infocourse" class="buttonCourse">
+          <span class="img-container">
+            <img :src="slide.src" />
+          </span> 
           <div class="infos">
             <b-row>
               <b-col sm="12">
-                <h4>CURSO DE ALGUMA COISA</h4>
+                <h5 class="title-course">Titulo teste do curso</h5>
               </b-col>
             </b-row>
             <b-row>
               <b-col sm="12">
-                <h5>Lucas</h5>
+                <h5 class="name-instructor">Lucas Matheus</h5>
               </b-col>
               <b-col sm="12">
-                <p>Curso de alguma coisa</p>
-                <p>Ou sei lá</p>
+                <p class="description">Lorem ipsum sed orci fusce porttitor euissmod odio justo at vitale, orci habitasse masecenas vehiculad...</p>              
               </b-col>
             </b-row>
           </div>
@@ -153,15 +154,19 @@ img {
   box-shadow: 0 0 40px rgb(0 0 0 / 15%) !important;
   object-fit: cover !important;
   box-sizing: border-box !important;
-  width: 100% !important;
-  height: 60%;
-
+  width: 98% !important;
+  height: 55%;
   border: solid !important;
 }
+.img-container:hover img{
+   -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+}
+
 .carousel-3d-container {
   padding: 10px !important;
-  height: 400px !important;
-  width: 97.8% !important;
+  height: 350px !important;
+  width: 100% !important;
   box-shadow: 0 0 40px rgb(0 0 0 / 95%) !important;
 }
 .carousel-3d-slide {
@@ -169,29 +174,45 @@ img {
   height: 140% !important;
 }
 
-#buttonCourse {
+.buttonCourse {
   text-decoration: none !important;
   color: black;
 }
-#buttonCourse:hover {
-  color: #533784 !important;
-  font-size: 1.1em;
-  color: black;
-}
+
 h3 {
-  margin-left: 1.5%;
+  margin-left: 2%;
 }
-h3,
-h4,
-h5,
-p {
-  color: white;
-}
+
 a {
   color: #0f0c1d !important;
 }
 
 .infos {
-  padding: 4% !important;
+  padding: 10px 10px 0px 10px !important;
+}
+
+.sub-title{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.description{
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.44;
+  margin: 0;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.title-course{
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.name-instructor{
+  font-size: 1.15rem;
+  font-weight: 500;
 }
 </style>

@@ -168,9 +168,10 @@ h3 {
     text-align: center;
     color: #fff;
     margin-bottom: 0px;
-    margin-top: 50px;
-    font-size: 1.7rem;
-    margin-bottom: 32px;
+    margin-top: 55px;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
 
 .mainCarousel{

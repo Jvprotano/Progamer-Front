@@ -4,7 +4,7 @@
     <CarouselGames />
     <SliderGames />
     <SliderGames />
-
+    <SliderGames />
     <router-view />
   </div>
 </template>
@@ -27,5 +27,9 @@ export default {
 </script>
 
 <style scoped>
+
+#home{
+  margin-bottom: 120px;
+}
 
 </style>
