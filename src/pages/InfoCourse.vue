@@ -103,7 +103,8 @@ export default {
   
   mounted(){
     console.log(idCourse)
-    Course.infoCourse(idCourse.idCourse).then(apiResponse => {
+    var id = this.$route.params.id
+    Course.infoCourse(id).then(apiResponse => {
       this.courses = apiResponse.data
       console.log(this.courses)
     })

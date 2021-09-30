@@ -5,12 +5,13 @@
       :disable3d="true"
       :space="375"
       :clickable="true"
+      :on-main-slide-click="onMainSlideClick"
       :controls-visible="true"
       :loop="true"
     >
       <slide v-for="(slide, i) in slideCount" :index="i" :key="i">
         <template  v-if=" i < homeData.length">
-        <router-link to="infoCourse" id="buttonCourse">
+        <router-link :to="{name: 'infoCourse', params: { id: homeData[i].id } }" id="buttonCourse">
           <img :src= homeData[i].imageUrl />
           <div class="infos">
           <b-row>
@@ -49,6 +50,7 @@ const slides = [
 
 export default {
   name: "App",
+  idCourse: 1,
   
   components: {
     Carousel3d,
@@ -56,10 +58,11 @@ export default {
     },
     data() {
     return {
-      idCourse: 1,
+      
       slides: slides,
       slideCount: 12,
       homeData: [],
+      id: ''
     };
   },
   mounted(){
@@ -76,7 +79,6 @@ export default {
       console.log("onLastSlide Callback Triggered", "Slide Index " + index);
     },
     onMainSlideClick() {
-      console.log("onMainSlideClick Callback Triggered");
     },
     onAfterSlideChanged(index) {
       console.log(
