@@ -1,6 +1,6 @@
 import {http} from './config'
 export default{
-    infoCourse:() => {
-        return http.get('course?id=1')
+    infoCourse:(id) => {
+        return http.get('course?id=' + id )
     }
 }

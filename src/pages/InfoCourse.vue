@@ -87,19 +87,23 @@
 <script>
 import Header from "../components/Header";
 import Course from "../services/courses";
+import idCourse from '../components/SliderGames.vue';
+
 export default {
   data() {
     return {
       courses: [],
       value: 0,
-      value_comment: 1
+      value_comment: 1,
     };
   },
   components: {
     Header,
   },
+  
   mounted(){
-    Course.infoCourse().then(apiResponse => {
+    console.log(idCourse)
+    Course.infoCourse(idCourse.idCourse).then(apiResponse => {
       this.courses = apiResponse.data
       console.log(this.courses)
     })

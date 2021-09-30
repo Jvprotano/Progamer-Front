@@ -8,7 +8,7 @@
       :controls-visible="true"
       :loop="true"
     >
-      <slide v-for="(slide, i) in slides" :index="i" :key="i">
+      <slide v-for="(slide, i) in slides" :index="i" :key="i" v-on:click="idCourse = 77">
         <router-link to="infoCourse" id="buttonCourse">
           <img :src="slide.src" />
           <div class="infos">
@@ -103,14 +103,17 @@ const slides = [
 
 export default {
   name: "App",
+  
   components: {
     Carousel3d,
-    Slide,
+    Slide,    
   },
   data() {
     return {
+      idCourse: 1,
       slides: slides,
       slideCount: 10,
+      
     };
   },
   methods: {
