@@ -114,8 +114,9 @@
                 </p>
           <b-row class="content-center">
             <b-button type="submit" class="btn content-center"
-              >Cadastrar</b-button
-            >
+              >Cadastrar</b-button>
+              <vue-simple-spinner size="medium" message="Loading..."></vue-simple-spinner>
+              <!-- <button :disabled="errors.any() || !isCompleted" class="btn btn-primary" v-on:click="salvar();" data-dismiss="modal" type="submit">Send Invite</button> -->
           </b-row>
         </b-form>
       </div>
@@ -126,21 +127,36 @@
 <script>
 import Header2 from "../components/Header2";
 import User from "../services/user";
+import VueSimpleSpinner from 'vue-simple-spinner';
 export default {
   data() {
     return {
       errors: [],
         form:{
-        name: "Jose",
-        lastName: "Vinicius",
-        email: "juse@hotmail.com",
-        password: "Senha123",
-        ConfirmPassword: "Senha123",
-        dateBirth: "null",
+        name: "",
+        lastName: "",
+        email: "",
+        password: "",
+        ConfirmPassword: "",
+        dateBirth: null,
         },
         show: true,
       }
     },
+
+ /*  let app = new Vue({
+  el: '#app',
+  data: {
+
+    errors: [],
+    name: "Jose",
+        lastName: "Vinicius",
+        email: "juse@hotmail.com",
+        password: "Senha123",
+        ConfirmPassword: "Senha123",
+        dateBirth: null,
+  }, */
+  
   
   methods: {
     onSubmit(event) {
@@ -163,29 +179,47 @@ export default {
     submitForm: function(e) {
       this.errors = [];
       
-      if (!this.validEmail(this.form.email)) {
+      if (!this.form.name) {
+        this.errors.push("O primeiro nome é obrigatório.");
+      }
+      
+      if (!this.form.lastName) {
+        this.errors.push("O último nome é obrigatório.");
+      }
+
+      if (!this.form.email) {
+        this.errors.push('O e-mail é obrigatório.');
+      } else if (!this.validEmail(this.form.email)) {
         this.errors.push('Utilize um e-mail válido.');
       }
-      if (!this.stardPassword(this.form.password)) {
-        this.errors.push("A senha precisa estar no padrão solicitado.");
-      }
-      if (!this.validDate(this.form.dateBirth)) {
+
+      if (!this.form.dateBirth) {
+        this.errors.push("A data de nascimento é obrigatória.");
+      } else if (!this.validDate(this.form.dateBirth)) {
         this.errors.push("A data de nascimento não é válida.");
       }
+      
+      if (!this.form.password) {
+        this.errors.push("A senha é obrigatória.");
+      } else if (!this.stardPassword(this.form.password)) {
+        this.errors.push("A senha precisa estar no padrão solicitado.");
+      } 
+
+      if (!this.form.ConfirmPassword) {
+        this.errors.push("A confirmação de senha é obrigatória.");
+      }  else if (!this.validPassword(this.form.ConfirmPassword)) {
+        this.errors.push("As senhas precisam ser iguais.");
+      } 
 
       if (!this.errors.length) {
         return true;
       }
 
-      e.preventDefault(e);
+      e.preventDefault();
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
-    },
-    stardPassword: function(password){
-      var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
-      return re.test(password);
     },
     validDate: function (dateBirth) {
       let today = new Date();
@@ -194,19 +228,42 @@ export default {
       today = (parts[0]);
       return dateBirth <= today ? true : false
     },
+    stardPassword: function (password){
+      var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+      return re.test(password);
+    },
+     validPassword: function() {
+      var pass1 = this.form.password;
+      var pass2 = this.form.ConfirmPassword;
+      if (pass1 === pass2) {
+        return true;
+      }
+    },
+
     salvar(){
-      User.salvar(this.form).then(apiResponse => {
-        alert(apiResponse)
+      let result = this.submitForm();
+      if (result){
+        User.salvar(this.form).then(apiResponse => {
+        alert(`Bem-vindo ${this.form.name} ${this.form.lastName}`, apiResponse);
       })
       .catch(error => this.errors.push(error.response.data.Message))
+      } 
     }
+      
   },
   mounted(){
 
   },
   components: {
     Header2,
+    VueSimpleSpinner,
   },
+  /* computed: {
+  isComplete () {
+    return this.name && this.lastName && this.email && this.password;
+  }
+} */
+/* }); */
 };
 </script>
 
