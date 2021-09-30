@@ -5,12 +5,12 @@
         <b-col class="home">
           <router-link id="pageHome" to="/">
             <b-row>
-              <b-col class="div-logo" cols="6"
-                ><img class="logo mg-0" src="../assents/game-console.png"
-              /></b-col>
-              <b-col class="div-home" cols="6"
-                ><h5 id="linkhome" class="mb-0 text-white">ProGamer</h5></b-col
-              >
+              <b-col class="div-logo" cols="4">
+                <img class="logo mg-0" src="../assents/game-console.png"/>
+              </b-col>
+              <b-col class="div-home" cols="8">
+                <h4 id="linkhome" class="mb-0 text-white">ProGamer</h4>
+              </b-col>
             </b-row>
           </router-link>
         </b-col>
@@ -33,7 +33,7 @@ export default {
 #menu-h {
   background-color: #533784;
   color: #fff !important;
-  padding: 14px;
+  padding: 13px;
   width: 100% !important;
 }
 
@@ -58,17 +58,17 @@ export default {
 .home {
   align-items: center;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   font-weight: 500;
-  margin-left: 15px;
 }
 
 .logo {
-  width: 38px;
+  width: 40px;
 }
 
 .div-logo {
   padding-right: 0;
+  padding-left: 0;
 }
 
 .div-home {

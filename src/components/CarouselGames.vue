@@ -170,7 +170,7 @@ h3 {
     margin-bottom: 0px;
     margin-top: 55px;
     font-size: 1.6rem;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
     font-weight: bold;
 }
 

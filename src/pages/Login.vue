@@ -4,11 +4,11 @@
     <div id="login">
       <b-container class="login-main">
         <b-row class="login-header">
-          <h2>LOGIN</h2>
+          <h2 class="text-black">LOGIN</h2>
         </b-row>
         <b-row class="user" v-for="type in typesu" :key="type">
           <b-col sm="12">
-            <label :for="`type-${type}`"
+            <label class="font-500" :for="`type-${type}`"
               >Usuário: <code>{{ typesu.text }}</code></label
             >
           </b-col>
@@ -18,7 +18,7 @@
         </b-row>
         <b-row class="password" v-for="type in typesp" :key="type">
           <b-col sm="12">
-            <label :for="`type-${type}`"
+            <label class="font-500" :for="`type-${type}`"
               >Senha: <code>{{ typesp.password }}</code></label
             >
           </b-col>
@@ -27,7 +27,7 @@
           </b-col>
         </b-row>
         <b-row>
-          <b-col cols="6">
+          <b-col cols="12">
             <b-form-checkbox
               id="checkbox-1"
               v-model="statuscb"
@@ -35,7 +35,7 @@
               value="remember"
               unchecked-value="dont_remember"
             >
-              <p class="textcheck">Lembre-se de mim</p>
+              <p class="textcheck text-black">Lembre-se de mim</p>
             </b-form-checkbox>
 
             <div></div>
@@ -80,7 +80,7 @@ export default {
 <style scoped>
 #login {
   margin-top: 100px !important;
-  width: 400px !important;
+  width: 30% !important;
   height: 400px !important;
 
   margin: auto;
@@ -90,12 +90,19 @@ export default {
   border: solid 0.5px;
 }
 
+@media (max-width: 750px)
+{
+  #login {
+  width: 100% !important;
+}
+}
+
 .login-header {
   text-align: center;
 }
 
 .user {
-  margin-top: 20px !important;
+  margin-top: 28px !important;
 }
 
 .password {
@@ -117,7 +124,7 @@ a:hover {
 }
 
 .custom-control {
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .textcheck {
@@ -131,8 +138,11 @@ a:hover {
   width: 200px !important;
   display: flex;
   align-items: center;
-  margin-top: 30px !important;
-  border-radius: 10px;
+  margin-top: 32px !important;
+  border-radius: 10px !important;
+  border: 0px solid transparent !important;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 .btn-login {
@@ -147,6 +157,7 @@ a:hover {
   text-align: center;
   margin-top: 34px !important;
   color: #fff;
+  margin-bottom: 30px;
 }
 
 .login-main {
