@@ -1,53 +1,31 @@
 <template>
   <div class="box">
-    <carousel-3d :controls-visible="true" :space="400">
-      <slide v-for="(slide, i) in slides" :index="i" :key="i">
-        <router-link to="InfoCourse" id="carousel">
-          <b-card class="card-carousel">
-            <img class="image-carousel" :src="slide.src" />
-          </b-card>
-        </router-link>
-      </slide>
-    </carousel-3d>
+    <div class="mainCarousel">
+      <carousel-3d :controls-visible="true" :space="400">
+        <slide v-for="(slide, i) in slideCount" :index="i" :key="i">
+          <template v-if="i < gameData.length">
+            <router-link to="InfoCourse" id="carousel">
+              <b-card class="card-carousel">
+                <img class="image-carousel" :src="gameData[i].imageUrl" />
+              </b-card>
+            </router-link>
+          </template>
+        </slide>
+      </carousel-3d>
+    </div>
   </div>
 </template>
 
 <script>
 import Carousel3d from "@/carousel-3d/Carousel3d";
 import Slide from "@/carousel-3d/Slide";
+import Games from "../services/courses";
 
 const slides = [
   {
-    title: "Slide 1",
-    desc:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, maxime.",
-    src:
-      "https://theclutch.com.br/wp-content/uploads/2021/03/csgo-capa-cts.jpg",
-  },
-  {
-    title: "Slide 2",
-    desc: "Lorem ipsum dolor sit amet ",
-    src:
-      "https://s2.glbimg.com/y6nngNdKtYKEZx9QiZIa-bW4cq4=/0x0:1200x675/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/E/T/z4H0MFRxKrUlZijtEnAQ/20190522035739-1200-675-league-of-legends.jpg",
-  },
-  {
-    title: "Slide 3",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. ",
-    src:
-      "https://www.mobilegamer.com.br/wp-content/uploads/2021/02/global-offensive-mobile.jpg",
-  },
-  {
-    title: "Slide 4",
-    desc: "Lorem ipsum dolor sit amet,  Enim, maxime.",
-    src:
-      "https://s2.glbimg.com/ztYuyapZXTARyNT5vw_b9lnhArs=/0x0:1200x675/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/j/U/iLO5YCRBmGHUsDwBIBHA/valorant-closed-beta-1200x675.png",
-  },
-  {
-    title: "Slide 5",
-    desc:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, maxime.",
-    src:
-      "https://image.api.playstation.com/vulcan/img/rnd/202106/0806/7KJILbdp9AEmmrELwJCMJqc2.png?w=440",
+    title: "",
+    desc: "",
+    src: "",
   },
 ];
 
@@ -61,7 +39,13 @@ export default {
     return {
       slides: slides,
       slideCount: 5,
+      gameData: [],
     };
+  },
+  mounted() {
+    Games.homeLoadData().then((apiResponse) => {
+      this.gameData = apiResponse.data.listGame;
+    });
   },
   methods: {
     onSlideChanged(index) {
@@ -98,6 +82,9 @@ export default {
 </script>
 
 <style scoped>
+.carousel-3d-slider {
+  position: relative !important;
+}
 #carousel {
   background-color: blueviolet !important;
 }
@@ -153,5 +140,8 @@ img {
 }
 h3 {
   margin-left: 30px;
+}
+#alo {
+  position: absolute !important;
 }
 </style>

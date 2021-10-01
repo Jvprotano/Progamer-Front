@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/routes'
+import store from './store'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -10,7 +11,9 @@ import Carousel3d from 'vue-carousel-3d'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueResource from 'vue-resource'
 
+Vue.use(VueResource)
 Vue.use(VueAwesomeSwiper)
 Vue.component('b-carousel', BCarousel)
 Vue.use(VueperSlides,VueperSlide)
@@ -22,5 +25,6 @@ Vue.use(BootstrapVue)
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
