@@ -30,7 +30,7 @@
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top"
-                id="lname"
+                id="lname" 
                 label="Último nome:"
                 label-for="lname"
               >
@@ -112,12 +112,13 @@
                     <li v-for="error in errors" :key="error">{{error}} </li>
                 </ul>
                 </p>
-          <b-row class="content-center">
-            <b-button type="submit" class="btn content-center"
+          <b-row class="content-center" v-show="btnSubmit">
+            <b-button type="submit" class="btn content-center" 
               >Cadastrar</b-button>
-              <vue-simple-spinner size="medium" message="Loading..."></vue-simple-spinner>
-              <!-- <button :disabled="errors.any() || !isCompleted" class="btn btn-primary" v-on:click="salvar();" data-dismiss="modal" type="submit">Send Invite</button> -->
           </b-row>
+          <div class="spinner" v-show="spinner">
+              <vue-simple-spinner size="medium" message="Carregando..."></vue-simple-spinner>
+          </div>
         </b-form>
       </div>
     </b-container>
@@ -126,8 +127,8 @@
 
 <script>
 import Header2 from "../components/Header2";
-import User from "../services/user";
 import VueSimpleSpinner from 'vue-simple-spinner';
+import User from "../services/user";
 export default {
   data() {
     return {
@@ -141,8 +142,11 @@ export default {
         dateBirth: null,
         },
         show: true,
+        spinner: false,
+        btnSubmit: true,
       }
-    },
+      
+},
 
  /*  let app = new Vue({
   el: '#app',
@@ -239,15 +243,21 @@ export default {
         return true;
       }
     },
-
     salvar(){
       let result = this.submitForm();
+      //começo do spinner
+      this.btnSubmit = false;
+      this.spinner = true;
       if (result){
         User.salvar(this.form).then(apiResponse => {
-        alert(`Bem-vindo ${this.form.name} ${this.form.lastName}`, apiResponse);
+        console.log(apiResponse);
+        this.spinner = false;
+        this.$router.push({name:'login'})
       })
-      .catch(error => this.errors.push(error.response.data.Message))
-      } 
+      .catch(error => this.errors.push(error.response.data.Message));
+      this.spinner = false;
+      this.btnSubmit = true;
+      }
     }
       
   },
@@ -258,12 +268,6 @@ export default {
     Header2,
     VueSimpleSpinner,
   },
-  /* computed: {
-  isComplete () {
-    return this.name && this.lastName && this.email && this.password;
-  }
-} */
-/* }); */
 };
 </script>
 
