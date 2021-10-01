@@ -168,9 +168,9 @@ h3 {
     text-align: center;
     color: #fff;
     margin-bottom: 0px;
-    margin-top: 55px;
-    font-size: 1.6rem;
-    margin-bottom: 32px;
+    margin-top: 110px;
+    font-size: 1.55rem;
+    margin-bottom: 35px;
     font-weight: bold;
 }
 

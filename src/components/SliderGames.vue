@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <h3 class="sub-title">Cursos em destaque</h3>
+    <h3 class="sub-title text-white">Cursos em destaque</h3>
     <carousel-games
       class="slid bg-secundary"
       :disable3d="true"

@@ -4,26 +4,14 @@
     <div id="info-course">
       <b-container class="info-main">
         <b-row>
-          <b-col cols="6">
-            <img
-              class="figure-img img-fluid rounded"
-              :src= courses.imageUrl
-              />
+
+          <b-col cols="6 pl-0">
+            <img class="img-fluid thumb" :src= courses.imageUrl />
           </b-col>
+
           <b-col class="text-side" cols="6">
-            <b-row class="title">
-              <h2>{{courses.title}}</h2>
-            </b-row>
-            <b-row class="instructor-name">
-              <h6>Instrutor: {{courses.instructorFullName}}</h6>
-            </b-row>
-            <b-row class="category">
-              <h6>Nível: {{courses.categoryName}}</h6>
-            </b-row>
-            <b-row class="duration">
-              <h6>Duração: {{courses.duration}} horas</h6>
-            </b-row>
-            <b-row>
+            <b-row class="mb">
+              <h2 class="title-course">{{courses.title}}</h2>
               <b-form-rating
                 id="rating-main"
                 class="rating"
@@ -32,12 +20,38 @@
                 v-model="value"
                 readonly
                 precision="1"
-                show-value
               ></b-form-rating>
             </b-row>
             <b-row>
-              <b-col class="price">
-                <h4>Valor R$ {{courses.value}}</h4>
+              <b-col cols="6">
+                  <b-row class="instructor-name">
+                    <h6><span class="font-bold">Instrutor:</span> {{courses.instructorFullName}}</h6>
+                  </b-row>
+              </b-col>
+              <b-col cols="6">
+                  <b-row class="instructor-name">
+                    <h6><span class="font-bold">Game:</span> {{courses.instructorFullName}}</h6>
+                  </b-row>
+              </b-col>
+            </b-row>
+            <b-row>
+              <b-col cols="6">
+                <b-row class="category">
+                  <h6><span class="font-bold">Nível:</span> {{courses.categoryName}}</h6>
+                </b-row>
+              </b-col>
+              <b-col cols="6">
+                <b-row class="duration">
+                  <h6><span class="font-bold">Duração:</span> {{courses.duration}} horas</h6>
+                </b-row>
+              </b-col>
+            </b-row>
+            <b-row>
+              <h6><span class="font-bold">Data de criação:</span> {{courses.duration}} horas</h6>
+            </b-row>
+            <b-row class="mt-price">
+              <b-col class="div-price">
+                <h4><span class="font-bold">Preço:</span> <span class="font-600">R${{courses.value}},90</span></h4>
               </b-col>
               <b-col class="buy">
                 <b-button>Comprar</b-button>
@@ -160,18 +174,18 @@ export default {
 </script>
 
 <style scoped>
+
 .info-main {
   color: #0e0e10;
-  border-radius: 10px;
+  border-radius: 16px;
   background-color: #f7f7f8;
   margin-top: 30px;
-  padding: 30px !important;
   box-shadow: 0 0 40px rgb(0 0 0 / 20%);
 }
 
 .description {
   color: #0e0e10;
-  border-radius: 10px;
+  border-radius: 16px;
   background-color: #f7f7f8;
   margin-top: 30px;
   padding: 30px !important;
@@ -179,17 +193,7 @@ export default {
 }
 
 .info-main {
-  margin-top: 2%;
-}
-
-.figure-img {
-  margin-top: 2%;
-  border: solid 0.5px;
-}
-
-.title {
-  margin-top: 2% !important;
-  padding-left: 1px;
+  margin-top: 9%;
 }
 
 .b-rating-star {
@@ -213,22 +217,22 @@ export default {
   padding-left: 2px;
 }
 
-.price {
-  margin-top: 20% !important;
-  padding-left: 2px;
-  padding-top: 10px;
+.mt-price {
+  margin-top: 3rem;
 }
 
 .buy {
-  margin-top: 20% !important;
   padding-left: 2px;
   text-align: center !important;
   border: none !important;
 }
 
 .btn {
-  width: 200px;
-  height: 60px;
+  padding: 0.7rem;
+  border: 0px solid transparent !important;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  border-radius: 12px !important;
 }
 
 .btn:hover {
@@ -241,7 +245,7 @@ export default {
 
 .comments-ratings {
   color: #0e0e10;
-  border-radius: 10px;
+  border-radius: 16px;
   background-color: #f7f7f8;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -262,4 +266,41 @@ export default {
 .title-cr {
   padding-bottom: 10px;
 }
+
+h1, h2, h3, h4, h5, h6, p{
+   color: #0E0E10;
+}
+
+.text-side{
+  padding: 18px;
+}
+
+.title-course{
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-bottom: 3px;
+}
+
+.thumb{
+  border-radius: 13px 0px 0px 13px !important;
+}
+
+.mb {
+  margin-bottom: 1.6rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+.div-price {
+  align-items: center;
+  display: flex;
+}
+
+.text-price{
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
 </style>

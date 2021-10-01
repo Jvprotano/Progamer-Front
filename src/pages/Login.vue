@@ -82,19 +82,32 @@ export default {
   margin-top: 100px !important;
   width: 30% !important;
   height: 400px !important;
-
   margin: auto;
   background-color: #f7f7f8 !important;
   color: #0e0e10;
-  border-radius: 10px;
+  border-radius: 20px;
   border: solid 0.5px;
 }
 
 @media (max-width: 750px)
 {
   #login {
-  width: 100% !important;
+    width: 100% !important;
+  }
 }
+
+@media (min-width: 1600px)
+{
+  #login {
+    width: 26% !important;
+  }
+}
+
+@media (min-width: 1920px)
+{
+  #login {
+    width: 21% !important;
+  }
 }
 
 .login-header {

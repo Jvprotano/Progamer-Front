@@ -61,7 +61,11 @@ export default {
   background-color: #533784;
   color: #fff !important;
   width: 100% !important;
-  padding: 5px;
+  padding: 11px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 0 60px rgb(0 0 0 / 80%);
 }
 
 #formulario {
@@ -83,7 +87,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   font-weight: 500;
-  margin-right: 15px;
+  margin-right: 26px;
 }
 
 .home {
