@@ -123,11 +123,10 @@ img {
 
 .carousel-3d-container {
   box-shadow: 0 0 40px rgb(0 0 0 / 95%);
-  height: 300px;
+  height: 415px !important;
   object-fit: cover;
   border-radius: 10px !important;
   box-sizing: border-box;
-  height: 375px !important;
 }
 .carousel-3d-slider {
   box-shadow: 0 0 40px rgb(0 0 0 / 15%) !;
@@ -137,11 +136,10 @@ img {
   box-sizing: border-box;  
 }
 .carousel-3d-slide {
-  height: 410px !important;
+  height: 440px !important;
   border-width: 0px !important;
   box-shadow: 0 0 40px rgb(0 0 0 / 25%) !important;
   border-radius: 4px !important;
-  width: 311px !important;
 }
 .card-carousel {
   margin: 0px !important;
@@ -152,7 +150,7 @@ img {
 
 .card-body {
   padding: 0px;
-  height: 410px;
+  height: 470px;
   object-fit: cover;
   border-radius: 10px !important;
   box-sizing: border-box;
@@ -168,14 +166,14 @@ h3 {
     text-align: center;
     color: #fff;
     margin-bottom: 0px;
-    margin-top: 110px;
-    font-size: 1.55rem;
-    margin-bottom: 35px;
+    margin-top: 102px;
+    font-size: 1.8rem;
+    margin-bottom: 34px;
     font-weight: bold;
 }
 
 .mainCarousel{
-  margin-bottom: 85px;
+  margin-bottom: 80px;
 }
 
 </style>
