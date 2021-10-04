@@ -8,6 +8,7 @@ import RegisterCourse from './pages/RegisterCourse';
 import CourseInstructor from './pages/CourseInstructor';
 import HistoryFinancial from './pages/HistoryFinancial';
 import MySales from './pages/MySales';
+import ListCourse from './pages/ListCourse';
 
 Vue.use(Router);
 
@@ -46,18 +47,22 @@ const router = new Router({
             component: RegisterUser,
 
         },
-    {
-        path: '/courseInstructor',
-        component: CourseInstructor,
-    },
-    {
-        path: '/historyFinancial',
-        component: HistoryFinancial,
-    },
-    {
-        path: '/mySales',
-        component: MySales,
-    },
+        {
+            path: '/courseInstructor',
+            component: CourseInstructor,
+        },
+        {
+            path: '/historyFinancial',
+            component: HistoryFinancial,
+        },
+        {
+            path: '/mySales',
+            component: MySales,
+        },
+        {
+            path: '/listCourse',
+            component: ListCourse,
+        }
  ]
 });
 
