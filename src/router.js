@@ -8,6 +8,7 @@ import RegisterCourse from './pages/RegisterCourse';
 import CourseInstructor from './pages/CourseInstructor';
 import HistoryFinancial from './pages/HistoryFinancial';
 import MySales from './pages/MySales';
+import Prova from './pages/Prova';
 
 Vue.use(Router);
 
@@ -18,6 +19,10 @@ const router = new Router({
         {
             path: '/',
             component: Home,
+        },
+        {
+            path: '/prova',
+            component: Prova,
         },
         {
             path: '/infoCourse',
