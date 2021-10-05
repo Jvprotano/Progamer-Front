@@ -126,6 +126,7 @@
 <script>
 import Header2 from "../components/Header2";
 import User from "../services/user";
+import Cadastro from '../services/courses';
 export default {
   data() {
     return {
@@ -143,6 +144,13 @@ export default {
     },
   
   methods: {
+    registerUser() {
+      Cadastro.registerUser(this.form).then(response => {
+        this.registerUser = response.registerUser
+        alert('salvo com sucesso!')
+      })
+    },
+      
     onSubmit(event) {
       event.preventDefault();
     },
