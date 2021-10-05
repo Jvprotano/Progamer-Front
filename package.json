@@ -20,7 +20,8 @@
     "vue-router": "^3.5.2",
     "vue-simple-spinner": "^1.2.10",
     "vue-split-carousel": "^2.2.0",
-    "vueperslides": "^2.15.2"
+    "vueperslides": "^2.15.2",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
