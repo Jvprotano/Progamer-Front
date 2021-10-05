@@ -8,6 +8,7 @@ import RegisterCourse from './pages/RegisterCourse';
 import CourseInstructor from './pages/CourseInstructor';
 import HistoryFinancial from './pages/HistoryFinancial';
 import MySales from './pages/MySales';
+import Pesquisa from './pages/Pesquisa';
 
 Vue.use(Router);
 
@@ -58,6 +59,10 @@ const router = new Router({
         path: '/mySales',
         component: MySales,
     },
+    {
+        path: '/pesquisa',
+        component: Pesquisa,
+    }
  ]
 });
 

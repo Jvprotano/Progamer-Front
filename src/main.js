@@ -10,7 +10,9 @@ import Carousel3d from 'vue-carousel-3d'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import UUID from 'vue-uuid'  
 
+Vue.use(UUID); 
 Vue.use(VueAwesomeSwiper)
 Vue.component('b-carousel', BCarousel)
 Vue.use(VueperSlides,VueperSlide)
