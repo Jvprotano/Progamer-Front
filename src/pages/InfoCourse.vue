@@ -138,7 +138,6 @@
 
 <script>
 import Header from "../components/Header";
-import Course from "../services/courses";
 export default {
   data() {
     return {
@@ -151,10 +150,7 @@ export default {
     Header,
   },
   mounted(){
-    Course.infoCourse().then(apiResponse => {
-      this.courses = apiResponse.data
-      console.log(this.courses)
-    })
+    
   }
 };
 </script>

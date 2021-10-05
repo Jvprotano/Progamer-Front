@@ -3,11 +3,10 @@ import Router from 'vue-router';
 import Home from './pages/Home';
 import InfoCourse from './pages/InfoCourse';
 import Login from './pages/Login';
-import RegisterUser from './pages/RegisterUser';
-import RegisterCourse from './pages/RegisterCourse';
-import CourseInstructor from './pages/CourseInstructor';
-import HistoryFinancial from './pages/HistoryFinancial';
+import RegisterResearch from './pages/RegisterResearch';
+import ShowResearch from './pages/ShowResearch';
 import MySales from './pages/MySales';
+import ListResearches from './components/ListResearches'
 
 Vue.use(Router);
 
@@ -29,31 +28,19 @@ const router = new Router({
             component: Login,
     
         },
+      
         {
-            path: '/registerCourse',
-            component: RegisterCourse,
-            /*Apenas exemplo para bloquear rotas...*/
-            /* beforeEnter: (to, from, next) => {
-                 if (!localStorage.getItem("token")) {
-                   next("/login");
-                 } else {
-                   next();
-                 }
-     
-         }*/
-        },
-        {
-            path: '/registerUser',
-            component: RegisterUser,
+            path: '/registerResearch',
+            component: RegisterResearch,
 
         },
     {
-        path: '/courseInstructor',
-        component: CourseInstructor,
+        path: '/showResearch',
+        component: ShowResearch,
     },
     {
-        path: '/historyFinancial',
-        component: HistoryFinancial,
+        path: '/ListResearches',
+        component: ListResearches,
     },
     {
         path: '/mySales',
