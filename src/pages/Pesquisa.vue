@@ -23,7 +23,7 @@
 
           <!-- NOME -->
           <b-row>
-            <b-col class="col-12 col-sm-12 col-md-12">
+            <b-col class="col-12 col-sm-12 col-md-8">
               <b-form-group
                 class="pad-top"
                 id="name"
@@ -37,11 +37,11 @@
                 ></b-form-input>
               </b-form-group>
             </b-col>
-          </b-row>
+          
 
           <!-- ANO -->
-          <b-row>      
-            <b-col class="col-12 col-sm-2 col-md-4">
+          
+            <b-col class="col-md-2">
               <b-form-group
                 class="pad-top-pass"
                 id="pass"
@@ -129,7 +129,7 @@ export default {
 
 .cards {
   margin-top: 2% !important;
-  width: 29% !important;
+  width: 50% !important;
   /* height: 40% !important; */
   padding: 3% !important;
   border: 10px;
