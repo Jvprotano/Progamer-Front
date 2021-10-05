@@ -4,11 +4,7 @@
     <b-container class="cards">
       <div>
         <b-row>
-          <h2 class="form-title">Cadastre-se agora</h2>
-          <p class="form-phrase">
-            Falta apenas alguns passos para você se tornar membro dessa enorme
-            comunidade!
-          </p>
+          <h2 class="form-title">Pesquisa</h2>          
         </b-row>
 
         <b-form @submit.prevent="salvar()" v-on:submit.prevent="submitForm" v-if="show">
@@ -17,96 +13,32 @@
               <b-form-group
                 class="pad-top"
                 id="name"
-                label="Primeiro nome:"
+                label="Nome"
                 label-for="name"
               >
                 <b-form-input
                   id="name"
                   v-model="form.name"
-                  placeholder="Primeiro nome"
+                  placeholder="Nome"
                 ></b-form-input>
               </b-form-group>
             </b-col>
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top"
-                id="lname" 
-                label="Último nome:"
-                label-for="lname"
+                id="year" 
+                label="Ano"
+                label-for="year"
               >
                 <b-form-input
-                  id="lname"
-                  v-model="form.lastName"
-                  placeholder="Último nome"
+                  id="year"
+                  v-model="form.year"
+                  placeholder="Ano"
+                  type="number"
                 ></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
-          <b-row>
-            <b-col class="col-12 col-sm-12 col-md-6">
-            <b-form-group
-              class="pad-top"
-              id="email"
-              label="Email:"
-              label-for="email"
-            >
-              <b-form-input
-                id="email"
-                v-model="form.email"
-                type="text"
-                placeholder="usuario@hotmail.com"
-              ></b-form-input>
-            </b-form-group>
-            </b-col>
-            <b-col class="col-12 col-sm-12 col-md-6">
-            <b-form-group
-              class="pad-top"
-              id="date"
-              label="Data de nascimento:"
-              label-for="date"
-            >
-              <b-form-input
-                id="date"
-                v-model="form.dateBirth"
-                type="date"
-                placeholder=""
-              ></b-form-input>
-            </b-form-group>
-            </b-col>
-          </b-row>
-          <b-row>
-            <b-col class="col-12 col-sm-12 col-md-6">
-              <b-form-group
-                class="pad-top-pass"
-                id="password"
-                label="Senha:"
-                label-for="password"
-              >
-                <b-form-input
-                  id="password"
-                  v-model="form.password"
-                  type="password"
-                ></b-form-input>
-                <p class="restpass"> Mínimo 8 caracteres, contendo pelo menos uma letra maiúscula, uma letra minúscula e um número.</p>
-              </b-form-group>
-            </b-col>
-            <b-col class="col-12 col-sm-12 col-md-6">
-              <b-form-group
-                class="pad-top-pass"
-                id="ConfirmPassword"
-                label="Confirme a senha:"
-                label-for="ConfirmPassword"
-              >
-                <b-form-input
-                  id="ConfirmPassword"
-                  v-model="form.ConfirmPassword"
-                  type="password"
-                  placeholder=""
-                ></b-form-input>
-              </b-form-group>
-            </b-col>
-          </b-row>
-          
           <p v-if="errors.length">
                 <ul>
                     <li v-for="error in errors" :key="error">{{error}} </li>
@@ -114,7 +46,7 @@
                 </p>
           <b-row class="content-center" v-show="btnSubmit">
             <b-button type="submit" class="btn content-center" 
-              >Cadastrar</b-button>
+              >Salvar</b-button>
           </b-row>
           <div class="spinner" v-show="spinner">
               <vue-simple-spinner size="medium" message="Carregando..."></vue-simple-spinner>
@@ -135,11 +67,7 @@ export default {
       errors: [],
         form:{
         name: "",
-        lastName: "",
-        email: "",
-        password: "",
-        ConfirmPassword: "",
-        dateBirth: null,
+        year: "",       
         },
         show: true,
         spinner: false,
@@ -169,13 +97,7 @@ export default {
     onReset(event) {
       event.preventDefault();
       this.form.name = "";
-      this.form.lastName = "";
-      this.form.email = "";
-      this.form.password = "";
-      this.form.ConfirmPassword = "";
-      this.form.dateBirth = "";
-      this.form.checked = [];
-      this.show = false;
+      this.form.year = "";
       this.$nextTick(() => {
         this.show = true;
       });
@@ -183,37 +105,37 @@ export default {
     submitForm: function(e) {
       this.errors = [];
       
-      if (!this.form.name) {
-        this.errors.push("O primeiro nome é obrigatório.");
-      }
+      // if (!this.form.name) {
+      //   this.errors.push("O primeiro nome é obrigatório.");
+      // }
       
-      if (!this.form.lastName) {
-        this.errors.push("O último nome é obrigatório.");
-      }
+      // if (!this.form.lastName) {
+      //   this.errors.push("O último nome é obrigatório.");
+      // }
 
-      if (!this.form.email) {
-        this.errors.push('O e-mail é obrigatório.');
-      } else if (!this.validEmail(this.form.email)) {
-        this.errors.push('Utilize um e-mail válido.');
-      }
+      // if (!this.form.email) {
+      //   this.errors.push('O e-mail é obrigatório.');
+      // } else if (!this.validEmail(this.form.email)) {
+      //   this.errors.push('Utilize um e-mail válido.');
+      // }
 
-      if (!this.form.dateBirth) {
-        this.errors.push("A data de nascimento é obrigatória.");
-      } else if (!this.validDate(this.form.dateBirth)) {
-        this.errors.push("A data de nascimento não é válida.");
-      }
+      // if (!this.form.dateBirth) {
+      //   this.errors.push("A data de nascimento é obrigatória.");
+      // } else if (!this.validDate(this.form.dateBirth)) {
+      //   this.errors.push("A data de nascimento não é válida.");
+      // }
       
-      if (!this.form.password) {
-        this.errors.push("A senha é obrigatória.");
-      } else if (!this.stardPassword(this.form.password)) {
-        this.errors.push("A senha precisa estar no padrão solicitado.");
-      } 
+      // if (!this.form.password) {
+      //   this.errors.push("A senha é obrigatória.");
+      // } else if (!this.stardPassword(this.form.password)) {
+      //   this.errors.push("A senha precisa estar no padrão solicitado.");
+      // } 
 
-      if (!this.form.ConfirmPassword) {
-        this.errors.push("A confirmação de senha é obrigatória.");
-      }  else if (!this.validPassword(this.form.ConfirmPassword)) {
-        this.errors.push("As senhas precisam ser iguais.");
-      } 
+      // if (!this.form.ConfirmPassword) {
+      //   this.errors.push("A confirmação de senha é obrigatória.");
+      // }  else if (!this.validPassword(this.form.ConfirmPassword)) {
+      //   this.errors.push("As senhas precisam ser iguais.");
+      // } 
 
       if (!this.errors.length) {
         return true;
@@ -249,6 +171,7 @@ export default {
       this.btnSubmit = false;
       this.spinner = true;
       if (result){
+        this.form.year = parseInt(this.form.year);
         User.salvar(this.form).then(apiResponse => {
         console.log(apiResponse);
         this.spinner = false;
