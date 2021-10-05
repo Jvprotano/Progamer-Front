@@ -1,6 +1,10 @@
 import {http} from './config'
 export default{
-    GetResearch:() => {
-        return http.get('pesquisa?id=1')
+    GetResearch:(id) => {
+        return http.get('research?id=' + id)
+    },
+
+    ListResearches:() => {
+        return http.get('research/list-researches')
     }
 }

@@ -50,6 +50,10 @@
             <b-button type="submit" class="btn content-center" 
               >Cadastrar</b-button>
           </b-row>
+          <b-row class="content-center" >
+            <b-button class="btn content-center" 
+              v-on:click="voltar()">Voltar</b-button>
+          </b-row>
           <div class="spinner" v-show="spinner">
               <vue-simple-spinner size="medium" message="Carregando..."></vue-simple-spinner>
           </div>
@@ -125,6 +129,10 @@ export default {
       this.spinner = false;
       this.btnSubmit = true;
       }
+    },
+
+    voltar(){
+        this.$router.push({name:'listResearches'})
     }
       
   },

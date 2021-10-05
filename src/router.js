@@ -35,10 +35,12 @@ const router = new Router({
 
         },
     {
-        path: '/showResearch',
+        name: 'showResearch',
+        path: '/showResearch/:id',
         component: ShowResearch,
     },
     {
+        name: 'listResearches',
         path: '/ListResearches',
         component: ListResearches,
     },

@@ -10,7 +10,7 @@
           </p>
         </b-row>
 
-        <b-form @submit.prevent="salvar()" v-on:submit.prevent="submitForm" v-if="show">
+        <b-form @submit.prevent="voltar()" v-on:submit.prevent="submitForm" v-if="show">
           <b-row>
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
@@ -22,7 +22,7 @@
                 <b-form-input readonly
                   id="name"
                   v-model="form.name"
-                  placeholder="research.nome"
+                  :placeholder= this.research.nome
                 ></b-form-input>
               </b-form-group>
             </b-col>
@@ -36,23 +36,15 @@
                 <b-form-input readonly
                   id="lname"
                   v-model="form.ano"
-                  placeholder="research.nome"
+                  :placeholder= this.research.ano
                 ></b-form-input>
               </b-form-group>
             </b-col>
           </b-row>
-          <p v-if="errors.length">
-                <ul>
-                    <li v-for="error in errors" :key="error">{{error}} </li>
-                </ul>
-                </p>
           <b-row class="content-center" v-show="btnSubmit">
             <b-button type="submit" class="btn content-center" 
               >Voltar</b-button>
           </b-row>
-          <div class="spinner" v-show="spinner">
-              <vue-simple-spinner size="medium" message="Carregando..."></vue-simple-spinner>
-          </div>
         </b-form>
       </div>
     </b-container>
@@ -61,74 +53,46 @@
 
 <script>
 import Header2 from "../components/Header2";
-import VueSimpleSpinner from 'vue-simple-spinner';
-import User from "../services/user";
 import GetResearch from "../services/research";
 export default {
   data() {
     return {
-      errors: [],
         form:{
         name: "",
-        ano: "",
+        ano: ""
         },
         research: [],
         show: true,
-        spinner: false,
         btnSubmit: true,
       }
 },
+ mounted(){
+   var id = this.$route.params.id
+    GetResearch.GetResearch(id).then(apiResponse => {
+      this.research = apiResponse.data
+    })
+  },
 
   methods: {
     onSubmit(event) {
       event.preventDefault();
     },
-    onReset(event) {
-      event.preventDefault();
-      this.form.name = "";
-      this.form.ano = "";
-      this.form.checked = [];
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
-    },
     submitForm: function(e) {
-      this.errors = [];
-      
-     
       e.preventDefault();
     },
-
    
-    salvar(){
-      let result = this.submitForm();
+    voltar(){
+      this.$router.push({name:'listResearches'})
       this.btnSubmit = false;
-      this.spinner = true;
-      if (result){
-        User.salvar(this.form).then(apiResponse => {
-        console.log(apiResponse);
-        this.spinner = false;
-        this.$router.push({name:'login'})
-      })
-      .catch(error => this.errors.push(error.response.data.Message));
-      this.spinner = false;
-      this.btnSubmit = true;
-      }
     }
       
   },
-  mounted(){
-    GetResearch.GetResearch().then(apiResponse => {
-      this.research = apiResponse.data
-      console.log(this.research)
-    })
-  },
+
   components: {
-    Header2,
-    VueSimpleSpinner,
+    Header2
   },
 };
+
 </script>
 
 <style scoped>
@@ -171,7 +135,6 @@ li:first-child{
 }
 
 li{
-   /* list-style: square; */
   color: red !important;
 }
 
