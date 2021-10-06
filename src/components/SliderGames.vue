@@ -44,8 +44,8 @@ const slides = [
   {
     title: "",
     desc: "",
-    src: ""
-  }
+    src: "",
+  },
 ];
 
 export default {
@@ -149,7 +149,7 @@ a {
   color: #0f0c1d !important;
 }
 
-.infos{
+.infos {
   padding: 4% !important;
 }
 </style>

@@ -33,15 +33,7 @@ const router = new Router({
         {
             path: '/registerCourse',
             component: RegisterCourse,
-            /*Apenas exemplo para bloquear rotas...*/
-            /* beforeEnter: (to, from, next) => {
-                 if (!localStorage.getItem("token")) {
-                   next("/login");
-                 } else {
-                   next();
-                 }
-     
-         }*/
+       
         },
         {
             path: '/registerUser',

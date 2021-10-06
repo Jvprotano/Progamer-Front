@@ -3,12 +3,12 @@
     <div class="mainCarousel">
       <carousel-3d :controls-visible="true" :space="400">
         <slide v-for="(slide, i) in slideCount" :index="i" :key="i">
-          <template  v-if=" i < gameData.length">
-          <router-link to="InfoCourse" id="carousel">
-            <b-card class="card-carousel">
-              <img class="image-carousel" :src= gameData[i].imageUrl />
-            </b-card>
-          </router-link>
+          <template v-if="i < gameData.length">
+            <router-link to="InfoCourse" id="carousel">
+              <b-card class="card-carousel">
+                <img class="image-carousel" :src="gameData[i].imageUrl" />
+              </b-card>
+            </router-link>
           </template>
         </slide>
       </carousel-3d>
@@ -19,14 +19,14 @@
 <script>
 import Carousel3d from "@/carousel-3d/Carousel3d";
 import Slide from "@/carousel-3d/Slide";
-import Games from "../services/courses"
+import Games from "../services/courses";
 
 const slides = [
   {
     title: "",
     desc: "",
     src: "",
-  }
+  },
 ];
 
 export default {
@@ -42,10 +42,10 @@ export default {
       gameData: [],
     };
   },
-  mounted(){
-    Games.homeLoadData().then(apiResponse =>{
-      this.gameData = apiResponse.data.listGame
-    })
+  mounted() {
+    Games.homeLoadData().then((apiResponse) => {
+      this.gameData = apiResponse.data.listGame;
+    });
   },
   methods: {
     onSlideChanged(index) {
