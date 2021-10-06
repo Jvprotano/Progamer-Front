@@ -4,6 +4,7 @@ import Login from "../modules/auth/pages/Login";
 import Home from '../pages/Home'
 import InfoCourse from '../pages/InfoCourse'
 import RegisterUser from '../pages/RegisterUser'
+import RegisterCourse from '../pages/RegisterCourse'
 
 import getters from "../modules/auth"
 Vue.use(Router);
@@ -36,6 +37,10 @@ export default new Router({
       component: RegisterUser,
       beforeEnter : guardMyroute,
     },
+  {
+      path: '/registerCourse',
+      component: RegisterCourse,
+  },
 
     {
       path: "/login",
