@@ -30,7 +30,7 @@
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top"
-                id="lname"
+                id="lname" 
                 label="Último nome:"
                 label-for="lname"
               >
@@ -112,11 +112,13 @@
                     <li v-for="error in errors" :key="error">{{error}} </li>
                 </ul>
                 </p>
-          <b-row class="content-center">
-            <b-button type="submit" class="btn content-center"
-              >Cadastrar</b-button
-            >
+          <b-row class="content-center" v-show="btnSubmit">
+            <b-button type="submit" class="btn content-center" 
+              >Cadastrar</b-button>
           </b-row>
+          <div class="spinner" v-show="spinner">
+              <vue-simple-spinner size="medium" message="Carregando..."></vue-simple-spinner>
+          </div>
         </b-form>
       </div>
     </b-container>
@@ -125,6 +127,7 @@
 
 <script>
 import Header2 from "../components/Header2";
+import VueSimpleSpinner from 'vue-simple-spinner';
 import User from "../services/user";
 import Cadastro from '../services/courses';
 export default {
@@ -132,16 +135,33 @@ export default {
     return {
       errors: [],
         form:{
-        name: "Jose",
+        name: "",
+        lastName: "",
+        email: "",
+        password: "",
+        ConfirmPassword: "",
+        dateBirth: null,
+        },
+        show: true,
+        spinner: false,
+        btnSubmit: true,
+      }
+      
+},
+
+ /*  let app = new Vue({
+  el: '#app',
+  data: {
+
+    errors: [],
+    name: "Jose",
         lastName: "Vinicius",
         email: "juse@hotmail.com",
         password: "Senha123",
         ConfirmPassword: "Senha123",
-        dateBirth: "null",
-        },
-        show: true,
-      }
-    },
+        dateBirth: null,
+  }, */
+  
   
   methods: {
     registerUser() {
@@ -171,29 +191,47 @@ export default {
     submitForm: function(e) {
       this.errors = [];
       
-      if (!this.validEmail(this.form.email)) {
+      if (!this.form.name) {
+        this.errors.push("O primeiro nome é obrigatório.");
+      }
+      
+      if (!this.form.lastName) {
+        this.errors.push("O último nome é obrigatório.");
+      }
+
+      if (!this.form.email) {
+        this.errors.push('O e-mail é obrigatório.');
+      } else if (!this.validEmail(this.form.email)) {
         this.errors.push('Utilize um e-mail válido.');
       }
-      if (!this.stardPassword(this.form.password)) {
-        this.errors.push("A senha precisa estar no padrão solicitado.");
-      }
-      if (!this.validDate(this.form.dateBirth)) {
+
+      if (!this.form.dateBirth) {
+        this.errors.push("A data de nascimento é obrigatória.");
+      } else if (!this.validDate(this.form.dateBirth)) {
         this.errors.push("A data de nascimento não é válida.");
       }
+      
+      if (!this.form.password) {
+        this.errors.push("A senha é obrigatória.");
+      } else if (!this.stardPassword(this.form.password)) {
+        this.errors.push("A senha precisa estar no padrão solicitado.");
+      } 
+
+      if (!this.form.ConfirmPassword) {
+        this.errors.push("A confirmação de senha é obrigatória.");
+      }  else if (!this.validPassword(this.form.ConfirmPassword)) {
+        this.errors.push("As senhas precisam ser iguais.");
+      } 
 
       if (!this.errors.length) {
         return true;
       }
 
-      e.preventDefault(e);
+      e.preventDefault();
     },
     validEmail: function (email) {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
-    },
-    stardPassword: function(password){
-      var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
-      return re.test(password);
     },
     validDate: function (dateBirth) {
       let today = new Date();
@@ -202,18 +240,41 @@ export default {
       today = (parts[0]);
       return dateBirth <= today ? true : false
     },
+    stardPassword: function (password){
+      var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+      return re.test(password);
+    },
+     validPassword: function() {
+      var pass1 = this.form.password;
+      var pass2 = this.form.ConfirmPassword;
+      if (pass1 === pass2) {
+        return true;
+      }
+    },
     salvar(){
-      User.salvar(this.form).then(apiResponse => {
-        alert(apiResponse)
+      let result = this.submitForm();
+      //começo do spinner
+      this.btnSubmit = false;
+      this.spinner = true;
+      if (result){
+        User.salvar(this.form).then(apiResponse => {
+        console.log(apiResponse);
+        this.spinner = false;
+        this.$router.push({name:'login'})
       })
-      .catch(error => this.errors.push(error.response.data.Message))
+      .catch(error => this.errors.push(error.response.data.Message));
+      this.spinner = false;
+      this.btnSubmit = true;
+      }
     }
+      
   },
   mounted(){
 
   },
   components: {
     Header2,
+    VueSimpleSpinner,
   },
 };
 </script>
