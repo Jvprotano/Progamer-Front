@@ -4,23 +4,21 @@ import Login from "../modules/auth/pages/Login";
 import Home from '../pages/Home'
 import InfoCourse from '../pages/InfoCourse'
 import RegisterUser from '../pages/RegisterUser'
+import RegisterCourse from '../pages/RegisterCourse'
 
 import getters from "../modules/auth"
 Vue.use(Router);
-function guardMyroute(to, from, next)
-{
-if(localStorage.token != null)
-  getters.isAuthenticated = true;
- else
- getters.isAuthenticated = false;
- if(getters.isAuthenticated) 
- {
-  next({name: 'home'}); 
- } 
- else
- {
-  next(); 
- }
+function guardMyroute(to, from, next) {
+  if (localStorage.token != null)
+    getters.isAuthenticated = true;
+  else
+    getters.isAuthenticated = false;
+  if (getters.isAuthenticated) {
+    next({ name: 'home' });
+  }
+  else {
+    next();
+  }
 }
 export default new Router({
   routes: [
@@ -28,27 +26,32 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home,
-      meta: {title: 'Home'}
+      meta: { title: 'Home' }
     },
 
     {
       path: '/registerUser',
       component: RegisterUser,
-      beforeEnter : guardMyroute,
+      beforeEnter: guardMyroute,
     },
 
     {
       path: "/login",
       name: "login",
-      beforeEnter : guardMyroute,
+      beforeEnter: guardMyroute,
       component: Login,
-      meta: {title: 'Login'}
+      meta: { title: 'Login' }
     },
     {
       path: '/infoCourse/:id',
       name: 'infoCourse',
       component: InfoCourse,
-        },
+    },
+    {
+      path: '/registerCourse',
+      component: RegisterCourse,
+
+    },
 
   ]
 });
