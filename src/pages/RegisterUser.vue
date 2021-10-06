@@ -10,7 +10,8 @@
             comunidade!
           </p>
         </b-row>
-        <b-form v-on:submit.prevent="submitForm" v-if="show">
+
+        <b-form @submit.prevent="salvar()" v-on:submit.prevent="submitForm" v-if="show">
           <b-row>
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
@@ -35,7 +36,7 @@
               >
                 <b-form-input
                   id="lname"
-                  v-model="form.lname"
+                  v-model="form.lastName"
                   placeholder="Último nome"
                 ></b-form-input>
               </b-form-group>
@@ -66,7 +67,7 @@
             >
               <b-form-input
                 id="date"
-                v-model="form.date"
+                v-model="form.dateBirth"
                 type="date"
                 placeholder=""
               ></b-form-input>
@@ -77,13 +78,13 @@
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top-pass"
-                id="pass"
+                id="password"
                 label="Senha:"
-                label-for="pass"
+                label-for="password"
               >
                 <b-form-input
-                  id="pass"
-                  v-model="form.pass"
+                  id="password"
+                  v-model="form.password"
                   type="password"
                 ></b-form-input>
                 <p class="restpass"> Mínimo 8 caracteres, contendo pelo menos uma letra maiúscula, uma letra minúscula e um número.</p>
@@ -92,13 +93,13 @@
             <b-col class="col-12 col-sm-12 col-md-6">
               <b-form-group
                 class="pad-top-pass"
-                id="confpass"
+                id="ConfirmPassword"
                 label="Confirme a senha:"
-                label-for="confpass"
+                label-for="ConfirmPassword"
               >
                 <b-form-input
-                  id="confpass"
-                  v-model="form.confpass"
+                  id="ConfirmPassword"
+                  v-model="form.ConfirmPassword"
                   type="password"
                   placeholder=""
                 ></b-form-input>
@@ -124,35 +125,43 @@
 
 <script>
 import Header2 from "../components/Header2";
+import User from "../services/user";
+import Cadastro from '../services/courses';
 export default {
   data() {
     return {
       errors: [],
-      form: {
-        name: "",
-        lname: "",
-        email: "",
-        pass: "",
-        confpass: "",
-        date: "",
-      },
-      show: true,
-    };
-  },
+        form:{
+        name: "Jose",
+        lastName: "Vinicius",
+        email: "juse@hotmail.com",
+        password: "Senha123",
+        ConfirmPassword: "Senha123",
+        dateBirth: "null",
+        },
+        show: true,
+      }
+    },
+  
   methods: {
+    registerUser() {
+      Cadastro.registerUser(this.form).then(response => {
+        this.registerUser = response.registerUser
+        alert('salvo com sucesso!')
+      })
+    },
+      
     onSubmit(event) {
       event.preventDefault();
-      /* alert(JSON.stringify(this.form)); */
     },
     onReset(event) {
       event.preventDefault();
-      // Reset our form values
       this.form.name = "";
-      this.form.lname = "";
+      this.form.lastName = "";
       this.form.email = "";
-      this.form.pass = "";
-      this.form.confpass = "";
-      this.form.date = "";
+      this.form.password = "";
+      this.form.ConfirmPassword = "";
+      this.form.dateBirth = "";
       this.form.checked = [];
       this.show = false;
       this.$nextTick(() => {
@@ -162,30 +171,13 @@ export default {
     submitForm: function(e) {
       this.errors = [];
       
-      if (!this.form.name) {
-        this.errors.push("O primeiro nome é obrigatório.");
-      }
-      if (!this.form.lname) {
-        this.errors.push("O último nome é obrigatório.");
-      }
-      if (!this.form.email) {
-        this.errors.push('O e-mail é obrigatório.');
-      } else if (!this.validEmail(this.form.email)) {
+      if (!this.validEmail(this.form.email)) {
         this.errors.push('Utilize um e-mail válido.');
       }
-      if (!this.form.pass) {
-        this.errors.push("A senha é obrigatória.");
-      } else if (!this.stardPassword(this.form.pass)) {
+      if (!this.stardPassword(this.form.password)) {
         this.errors.push("A senha precisa estar no padrão solicitado.");
       }
-      if (!this.form.confpass) {
-        this.errors.push("A confirmação de senha é obrigatória.");
-      }  else if (!this.validPassword(this.form.confpass)) {
-        this.errors.push("As senhas precisão ser iguais.");
-      } 
-      if (!this.form.date) {
-        this.errors.push("A data de nascimento é obrigatória.");
-      }  else if (!this.validDate(this.form.date)) {
+      if (!this.validDate(this.form.dateBirth)) {
         this.errors.push("A data de nascimento não é válida.");
       }
 
@@ -199,24 +191,26 @@ export default {
       var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     },
-    validPassword: function() {
-      var pass1 = document.getElementById("pass")
-      var pass2 = document.getElementById("confpass");
-      if (pass1 != pass2) {
-        return true;
-      }
-    },
-    stardPassword: function(pass){
+    stardPassword: function(password){
       var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
-      return re.test(pass);
+      return re.test(password);
     },
-    validDate: function (date) {
+    validDate: function (dateBirth) {
       let today = new Date();
       today = new Date(today.getTime() - (today.getTimezoneOffset() * 60000)).toISOString();
       let parts = today.split('T')
       today = (parts[0]);
-      return date <= today ? true : false
+      return dateBirth <= today ? true : false
     },
+    salvar(){
+      User.salvar(this.form).then(apiResponse => {
+        alert(apiResponse)
+      })
+      .catch(error => this.errors.push(error.response.data.Message))
+    }
+  },
+  mounted(){
+
   },
   components: {
     Header2,
@@ -237,17 +231,16 @@ export default {
   width: 78% !important;
 }
 
-#pass {
+#password {
   width: 85% !important;
 }
 
-#confpass {
+#ConfirmPassword {
   width: 85% !important;
 }
 .cards {
   margin-top: 2% !important;
   width: 55% !important;
-  /* height: 40% !important; */
   padding: 3% !important;
 }
 
