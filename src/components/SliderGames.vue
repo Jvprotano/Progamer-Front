@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <h3>Cursos em destaque</h3>
-    <carousel-3d
+    <carousel-games
       :disable3d="true"
       :space="375"
       :clickable="true"
@@ -10,35 +10,38 @@
       :loop="true"
     >
       <slide v-for="(slide, i) in slideCount" :index="i" :key="i">
-        <template  v-if=" i < homeData.length">
-        <router-link :to="{name: 'infoCourse', params: { id: homeData[i].id } }" id="buttonCourse">
-          <img :src= homeData[i].imageUrl />
-          <div class="infos">
-          <b-row>
-            <b-col sm="12">
-              <h4>{{ homeData[i].title }}</h4>
-            </b-col>
-          </b-row>
-          <b-row>
-            <b-col sm="12">
-              <h5>{{ homeData[i].instructorName }}</h5>
-            </b-col>
-            <b-col sm="12">
-              <p>{{ homeData[i].description }}</p>
-            </b-col>
-          </b-row>
-          </div>
-        </router-link>
+        <template v-if="i < homeData.length">
+          <router-link
+            :to="{ name: 'infoCourse', params: { id: homeData[i].id } }"
+            id="buttonCourse"
+          >
+            <img :src="homeData[i].imageUrl" />
+            <div class="infos">
+              <b-row>
+                <b-col sm="12">
+                  <h4>{{ homeData[i].title }}</h4>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col sm="12">
+                  <h5>{{ homeData[i].instructorName }}</h5>
+                </b-col>
+                <b-col sm="12">
+                  <p>{{ homeData[i].description }}</p>
+                </b-col>
+              </b-row>
+            </div>
+          </router-link>
         </template>
       </slide>
-    </carousel-3d>
+    </carousel-games>
   </div>
 </template>
 
 <script scoped>
-import Carousel3d from "@/carousel-3d/Carousel3d";
 import Slide from "@/carousel-3d/Slide";
-import Courses from '../services/courses';
+import Courses from "../services/courses";
+import CarouselGames from "../carousel-3d/CarouselGames.vue";
 
 const slides = [
   {
@@ -51,26 +54,25 @@ const slides = [
 export default {
   name: "App",
   idCourse: 1,
-  
+
   components: {
-    Carousel3d,
+    CarouselGames,
     Slide,
-    },
-    data() {
+  },
+  data() {
     return {
-      
       slides: slides,
       slideCount: 12,
       homeData: [],
-      id: ''
+      id: "",
     };
   },
-  mounted(){
-    Courses.homeLoadData().then(apiResponse => {
-      this.homeData = apiResponse.data.listCourseRecommended
-    })
+  mounted() {
+    Courses.homeLoadData().then((apiResponse) => {
+      this.homeData = apiResponse.data.listCourseRecommended;
+    });
   },
-  
+
   methods: {
     onSlideChanged(index) {
       console.log("onSlideChanged Callback Triggered", "Slide Index " + index);
@@ -78,8 +80,7 @@ export default {
     onLastSlide(index) {
       console.log("onLastSlide Callback Triggered", "Slide Index " + index);
     },
-    onMainSlideClick() {
-    },
+    onMainSlideClick() {},
     onAfterSlideChanged(index) {
       console.log(
         "@after-slide-changed Callback Triggered",

@@ -6,7 +6,4 @@ export default{
     homeLoadData:() => {
         return http.get('home/load-data');
     },
-    registerUser: (form) => {
-        return http.post('account/register-user', form);
-}
 }

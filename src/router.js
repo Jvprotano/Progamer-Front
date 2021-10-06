@@ -15,49 +15,25 @@ Vue.use(Router);
 const router = new Router({
     mode: 'history',
     routes: [
-  
+
         {
             path: '/',
             component: Home,
         },
         {
-            path: '/infoCourse/:id',
-            name: 'infoCourse',
-            component: InfoCourse,
+            path: '/courseInstructor',
+            component: CourseInstructor,
         },
         {
-            path: '/login',
-            name: 'login',
-            component: Login,
-    
+            path: '/historyFinancial',
+            component: HistoryFinancial,
         },
         {
-            path: '/registerCourse',
-            component: RegisterCourse,
-       
+            path: '/mySales',
+            component: MySales,
         },
-        {
-            path: '/registerUser',
-            component: RegisterUser,
 
-        },
-    {
-        path: '/courseInstructor',
-        component: CourseInstructor,
-    },
-    {
-        path: '/historyFinancial',
-        component: HistoryFinancial,
-    },
-    {
-        path: '/mySales',
-        component: MySales,
-    },
-    {
-        path: '/RegisterCard',
-        component: RegisterCard,
-    },
- ]
+    ]
 });
 
 export default router;

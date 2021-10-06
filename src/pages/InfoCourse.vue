@@ -5,23 +5,20 @@
       <b-container class="info-main">
         <b-row>
           <b-col cols="6">
-            <img
-              class="figure-img img-fluid rounded"
-              :src= courses.imageUrl
-              />
+            <img class="figure-img img-fluid rounded" :src="courses.imageUrl" />
           </b-col>
           <b-col class="text-side" cols="6">
             <b-row class="title">
-              <h2>{{courses.title}}</h2>
+              <h2>{{ courses.title }}</h2>
             </b-row>
             <b-row class="instructor-name">
-              <h6>Instrutor: {{courses.instructorFullName}}</h6>
+              <h6>Instrutor: {{ courses.instructorFullName }}</h6>
             </b-row>
             <b-row class="category">
-              <h6>Nível: {{courses.categoryName}}</h6>
+              <h6>Nível: {{ courses.categoryName }}</h6>
             </b-row>
             <b-row class="duration">
-              <h6>Duração: {{courses.duration}} horas</h6>
+              <h6>Duração: {{ courses.duration }} horas</h6>
             </b-row>
             <b-row>
               <b-form-rating
@@ -37,10 +34,12 @@
             </b-row>
             <b-row>
               <b-col class="price">
-                <h4>Valor R$ {{courses.value}}</h4>
+                <h4>R$ {{ courses.value }}</h4>
               </b-col>
               <b-col class="buy">
-                <b-button>Comprar</b-button>
+                <router-link id="registerCard" to="/registerCard">
+                  <b-button>Comprar</b-button>
+                </router-link>
               </b-col>
             </b-row>
           </b-col>
@@ -51,17 +50,17 @@
           <b-col>
             <h4>Descrição</h4>
             <p>
-              {{courses.description}}
+              {{ courses.description }}
             </p>
           </b-col>
         </b-row>
       </b-container>
       <b-container class="comments-ratings">
         <h4 class="title-cr">Comentários e avaliações</h4>
-        <b-row v-for=" i in courses.listRating" :key="i.id">
+        <b-row v-for="i in courses.listRating" :key="i.id">
           <b-col>
             <b-row>
-              <h6>{{i.userFullName}}</h6>
+              <h6>{{ i.userFullName }}</h6>
             </b-row>
             <b-row>
               <b-form-rating
@@ -75,7 +74,7 @@
               ></b-form-rating>
             </b-row>
             <p class="comment">
-              {{i.comment}}
+              {{ i.comment }}
             </p>
           </b-col>
         </b-row>
@@ -87,7 +86,7 @@
 <script>
 import Header from "../components/Header";
 import Course from "../services/courses";
-import idCourse from '../components/SliderGames.vue';
+import idCourse from "../components/SliderGames.vue";
 
 export default {
   data() {
@@ -100,14 +99,14 @@ export default {
   components: {
     Header,
   },
-  
-  mounted(){
-    console.log(idCourse)
-    var id = this.$route.params.id
-    Course.infoCourse(id).then(apiResponse => {
-      this.courses = apiResponse.data
-      console.log(this.courses)
-    })
+
+  mounted() {
+    console.log(idCourse);
+    var id = this.$route.params.id;
+    Course.infoCourse(id).then((apiResponse) => {
+      this.courses = apiResponse.data;
+      console.log(this.courses);
+    });
   },
 };
 </script>

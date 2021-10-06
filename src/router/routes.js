@@ -5,10 +5,11 @@ import Home from '../pages/Home'
 import InfoCourse from '../pages/InfoCourse'
 import RegisterUser from '../pages/RegisterUser'
 import RegisterCourse from '../pages/RegisterCourse'
+import RegisterCard from '../pages/RegisterCard'
 
 import getters from "../modules/auth"
 Vue.use(Router);
-function guardMyroute(to, from, next) {
+function cantBeLogged(to, from, next) {
   if (localStorage.token != null)
     getters.isAuthenticated = true;
   else
@@ -20,6 +21,20 @@ function guardMyroute(to, from, next) {
     next();
   }
 }
+
+function onlyAuthorized(to, from, next) {
+  if (localStorage.token != null)
+    getters.isAuthenticated = true;
+  else
+    getters.isAuthenticated = false;
+  if (!getters.isAuthenticated) {
+    next({ name: 'login' });
+  }
+  else {
+    next();
+  }
+}
+
 export default new Router({
   routes: [
     {
@@ -32,13 +47,13 @@ export default new Router({
     {
       path: '/registerUser',
       component: RegisterUser,
-      beforeEnter: guardMyroute,
+      beforeEnter: cantBeLogged,
     },
 
     {
       path: "/login",
       name: "login",
-      beforeEnter: guardMyroute,
+      beforeEnter: cantBeLogged,
       component: Login,
       meta: { title: 'Login' }
     },
@@ -50,8 +65,12 @@ export default new Router({
     {
       path: '/registerCourse',
       component: RegisterCourse,
-
+      beforeEnter: onlyAuthorized,
     },
+    {
+      path: '/RegisterCard',
+      component: RegisterCard,
+  },
 
   ]
 });

@@ -129,7 +129,6 @@
 import Header2 from "../components/Header2";
 import VueSimpleSpinner from 'vue-simple-spinner';
 import User from "../services/user";
-import Cadastro from '../services/courses';
 export default {
   data() {
     return {
@@ -148,28 +147,8 @@ export default {
       }
       
 },
-
- /*  let app = new Vue({
-  el: '#app',
-  data: {
-
-    errors: [],
-    name: "Jose",
-        lastName: "Vinicius",
-        email: "juse@hotmail.com",
-        password: "Senha123",
-        ConfirmPassword: "Senha123",
-        dateBirth: null,
-  }, */
-  
   
   methods: {
-    registerUser() {
-      Cadastro.registerUser(this.form).then(response => {
-        this.registerUser = response.registerUser
-        alert('salvo com sucesso!')
-      })
-    },
       
     onSubmit(event) {
       event.preventDefault();
@@ -257,8 +236,8 @@ export default {
       this.btnSubmit = false;
       this.spinner = true;
       if (result){
+        // eslint-disable-next-line no-unused-vars
         User.salvar(this.form).then(apiResponse => {
-        console.log(apiResponse);
         this.spinner = false;
         this.$router.push({name:'login'})
       })
@@ -330,7 +309,6 @@ li:first-child{
 }
 
 li{
-   /* list-style: square; */
   color: red !important;
 }
 
