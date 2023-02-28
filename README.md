@@ -1,4 +1,4 @@
-# progamer 1
+# Progamer - Front End
 
 ## Project setup
 ```
